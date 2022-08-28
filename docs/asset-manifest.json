@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.33c9ebd8.css",
+    "main.js": "/static/js/main.b72e8fad.js",
+    "static/media/card2.png": "/static/media/card2.80a523c2cb24cd64f880.png",
+    "static/media/card1.png": "/static/media/card1.401a3cf12133689c3e45.png",
+    "static/media/card3.png": "/static/media/card3.49fb6862ee709c388fbf.png",
+    "static/media/roboto-condensed-all-400-normal.woff": "/static/media/roboto-condensed-all-400-normal.242461da0ded06ef3693.woff",
+    "static/media/logo.svg": "/static/media/logo.28a3ea6154ba072177e113b90f43fac0.svg",
+    "static/media/logo-small.svg": "/static/media/logo-small.628f27f2fc43c8af18db0923402083f7.svg",
+    "static/media/people3.png": "/static/media/people3.eae4fbc57fbcc8cdc570.png",
+    "static/media/people1.png": "/static/media/people1.68018fcc30d4d0bc58ac.png",
+    "static/media/roboto-condensed-latin-400-normal.woff2": "/static/media/roboto-condensed-latin-400-normal.bb7a4e73944870e385e1.woff2",
+    "static/media/roboto-condensed-cyrillic-ext-400-normal.woff2": "/static/media/roboto-condensed-cyrillic-ext-400-normal.fcd8cab1a391e15a4a25.woff2",
+    "static/media/roboto-condensed-latin-ext-400-normal.woff2": "/static/media/roboto-condensed-latin-ext-400-normal.3977c6a007dc01cfd580.woff2",
+    "static/media/people2.png": "/static/media/people2.43bc9e719c8164898b55.png",
+    "static/media/roboto-condensed-cyrillic-400-normal.woff2": "/static/media/roboto-condensed-cyrillic-400-normal.0cf65c384ed898fe0b45.woff2",
+    "static/media/roboto-condensed-greek-400-normal.woff2": "/static/media/roboto-condensed-greek-400-normal.a11231a21f9d32e41d7a.woff2",
+    "static/media/roboto-condensed-vietnamese-400-normal.woff2": "/static/media/roboto-condensed-vietnamese-400-normal.edbb62e501e04eab6174.woff2",
+    "static/media/roboto-condensed-greek-ext-400-normal.woff2": "/static/media/roboto-condensed-greek-ext-400-normal.5df01ae6008986cc8d2e.woff2",
+    "index.html": "/index.html",
+    "static/media/grey-flash2.svg": "/static/media/grey-flash2.4209458c8511d4e2081efd0e29bcb59a.svg",
+    "static/media/red-flash1.svg": "/static/media/red-flash1.eeec6f4e83cf185d9eee9956852eca89.svg",
+    "static/media/grey-flash1.svg": "/static/media/grey-flash1.3e693f2a80f9f414a9f593499dc87420.svg",
+    "static/media/red-flash3.svg": "/static/media/red-flash3.d5d6d28d6eef2597f417cf3831e84630.svg",
+    "static/media/red-flash2.svg": "/static/media/red-flash2.682b073b4883d48cf9bd2e90d7f491c1.svg",
+    "main.33c9ebd8.css.map": "/static/css/main.33c9ebd8.css.map",
+    "main.b72e8fad.js.map": "/static/js/main.b72e8fad.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.33c9ebd8.css",
+    "static/js/main.b72e8fad.js"
+  ]
+}
