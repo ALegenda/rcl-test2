@@ -1,34 +1,35 @@
 {
   "files": {
-    "main.css": "/static/css/main.33c9ebd8.css",
-    "main.js": "/static/js/main.b72e8fad.js",
+    "main.css": "/static/css/main.3ea9c85f.css",
+    "main.js": "/static/js/main.30002d84.js",
+    "static/media/background.png": "/static/media/background.b025aae395b6d329cdc1.png",
     "static/media/card2.png": "/static/media/card2.80a523c2cb24cd64f880.png",
     "static/media/card1.png": "/static/media/card1.401a3cf12133689c3e45.png",
     "static/media/card3.png": "/static/media/card3.49fb6862ee709c388fbf.png",
-    "static/media/roboto-condensed-all-400-normal.woff": "/static/media/roboto-condensed-all-400-normal.242461da0ded06ef3693.woff",
+    "static/media/RobotoCondensed-Bold.woff": "/static/media/RobotoCondensed-Bold.19320e60e414cb6a40ae.woff",
+    "static/media/Raleway-ExtraBold.woff": "/static/media/Raleway-ExtraBold.c75549e0300fe2792d20.woff",
+    "static/media/Raleway-Regular.woff": "/static/media/Raleway-Regular.677059c868d6ab143e69.woff",
+    "static/media/RobotoCondensed-Bold.woff2": "/static/media/RobotoCondensed-Bold.ae3dbb07704803fbecc6.woff2",
+    "static/media/logo-medium.svg": "/static/media/logo-medium.9e0485ed19cfd4f05a49082a901fb914.svg",
     "static/media/logo.svg": "/static/media/logo.28a3ea6154ba072177e113b90f43fac0.svg",
     "static/media/logo-small.svg": "/static/media/logo-small.628f27f2fc43c8af18db0923402083f7.svg",
+    "static/media/Raleway-ExtraBold.woff2": "/static/media/Raleway-ExtraBold.c13c5b6db47955deb9eb.woff2",
+    "static/media/Raleway-Regular.woff2": "/static/media/Raleway-Regular.1828027077c58697d06a.woff2",
     "static/media/people3.png": "/static/media/people3.eae4fbc57fbcc8cdc570.png",
     "static/media/people1.png": "/static/media/people1.68018fcc30d4d0bc58ac.png",
-    "static/media/roboto-condensed-latin-400-normal.woff2": "/static/media/roboto-condensed-latin-400-normal.bb7a4e73944870e385e1.woff2",
-    "static/media/roboto-condensed-cyrillic-ext-400-normal.woff2": "/static/media/roboto-condensed-cyrillic-ext-400-normal.fcd8cab1a391e15a4a25.woff2",
-    "static/media/roboto-condensed-latin-ext-400-normal.woff2": "/static/media/roboto-condensed-latin-ext-400-normal.3977c6a007dc01cfd580.woff2",
     "static/media/people2.png": "/static/media/people2.43bc9e719c8164898b55.png",
-    "static/media/roboto-condensed-cyrillic-400-normal.woff2": "/static/media/roboto-condensed-cyrillic-400-normal.0cf65c384ed898fe0b45.woff2",
-    "static/media/roboto-condensed-greek-400-normal.woff2": "/static/media/roboto-condensed-greek-400-normal.a11231a21f9d32e41d7a.woff2",
-    "static/media/roboto-condensed-vietnamese-400-normal.woff2": "/static/media/roboto-condensed-vietnamese-400-normal.edbb62e501e04eab6174.woff2",
-    "static/media/roboto-condensed-greek-ext-400-normal.woff2": "/static/media/roboto-condensed-greek-ext-400-normal.5df01ae6008986cc8d2e.woff2",
+    "static/media/logo-btn.svg": "/static/media/logo-btn.473a759cf56f2d0a280d8ce3cd8bbcbe.svg",
     "index.html": "/index.html",
     "static/media/grey-flash2.svg": "/static/media/grey-flash2.4209458c8511d4e2081efd0e29bcb59a.svg",
     "static/media/red-flash1.svg": "/static/media/red-flash1.eeec6f4e83cf185d9eee9956852eca89.svg",
     "static/media/grey-flash1.svg": "/static/media/grey-flash1.3e693f2a80f9f414a9f593499dc87420.svg",
     "static/media/red-flash3.svg": "/static/media/red-flash3.d5d6d28d6eef2597f417cf3831e84630.svg",
     "static/media/red-flash2.svg": "/static/media/red-flash2.682b073b4883d48cf9bd2e90d7f491c1.svg",
-    "main.33c9ebd8.css.map": "/static/css/main.33c9ebd8.css.map",
-    "main.b72e8fad.js.map": "/static/js/main.b72e8fad.js.map"
+    "main.3ea9c85f.css.map": "/static/css/main.3ea9c85f.css.map",
+    "main.30002d84.js.map": "/static/js/main.30002d84.js.map"
   },
   "entrypoints": [
-    "static/css/main.33c9ebd8.css",
-    "static/js/main.b72e8fad.js"
+    "static/css/main.3ea9c85f.css",
+    "static/js/main.30002d84.js"
   ]
 }
