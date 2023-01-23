@@ -1,0 +1,10 @@
+# WebStorm
+/.idea
+
+# Backend
+/backend/node_modules
+/backend/src/migrations/info.json
+
+# Frontend
+/frontend/node_modules
+/frontend/build

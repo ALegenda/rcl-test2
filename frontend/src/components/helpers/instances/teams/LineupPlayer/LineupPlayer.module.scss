@@ -1,0 +1,86 @@
+@import 'tools/styles/helpers';
+@import 'tools/styles/flex';
+@import 'tools/styles/grid';
+
+.lineupPlayer {
+    background: #FFFFFF;
+    @include borderRadius(10px);
+    @include removeLinkUnderline();
+
+    .greyTop {
+        @include dFlex();
+        @include flexRow();
+        @include justifyContentCenter();
+        @include alignItemsEnd();
+
+        position: relative;
+
+        width: 118px;
+        height: 93px;
+
+        background: #eeeeee;
+        @include borderRadius(10px);
+
+        .avatarImg {
+            position: relative;
+
+            z-index: 1;
+
+            max-width: 100%;
+            max-height: calc(100% - 7px);
+        }
+
+        .backgroundLogo {
+            position: absolute;
+
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .whiteTop {
+        @extend .greyTop;
+        background: #ffffff;
+    }
+
+    .bottom {
+        @include dFlex();
+        @include flexColumn();
+        @include justifyContentBetween();
+
+        padding: 10px 0 13px 0;
+        gap: 8px;
+
+        .name {
+            @include dFlex();
+            @include flexRow();
+            @include justifyContentCenter();
+            @include alignItemsCenter();
+
+            font-size: 15px;
+            line-height: 16px;
+            font-weight: 500;
+            color: #000000;
+
+            gap: 3px;
+
+            .countryLogo {
+                width: 12px;
+                height: 8px;
+            }
+        }
+
+        .maps {
+            @include dFlex();
+            @include flexRow();
+            @include justifyContentCenter();
+            @include alignItemsCenter();
+
+            font-size: 15px;
+            line-height: 16px;
+            font-weight: 500;
+            color: #8491AC;
+        }
+    }
+}

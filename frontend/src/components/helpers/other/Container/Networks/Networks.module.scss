@@ -1,0 +1,22 @@
+@import 'tools/styles/flex';
+
+.networks {
+    @include dFlex();
+    @include flexRow();
+    @include justifyContentEnd();
+    @include alignItemsCenter();
+
+    width: 100%;
+
+    .network {
+        margin-right: 10px;
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

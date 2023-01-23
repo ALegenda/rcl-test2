@@ -1,0 +1,146 @@
+@import 'tools/styles/flex';
+@import 'tools/styles/helpers';
+@import 'tools/styles/adaptive';
+
+.player {
+    @include removeLinkUnderline();
+
+    background: #FFFFFF;
+
+    cursor: pointer;
+
+    .avatar {
+        @include dFlex();
+        @include flexRow();
+        @include justifyContentCenter();
+        @include alignItemsEnd();
+
+        position: relative;
+
+        .backgroundImage {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .avatarImage {
+            position: relative;
+        }
+    }
+    .name {
+        @include dFlex();
+        @include flexRow();
+        @include justifyContentCenter();
+        @include alignItemsCenter();
+
+        .countryImage {
+
+        }
+        .nickName {
+            font-style: normal;
+            font-weight: 500;
+            color: #313131;
+        }
+    }
+    .stats {
+        @include dFlex();
+        @include flexRow();
+        @include justifyContentCenter();
+
+        font-style: normal;
+        font-weight: 500;
+        color: #585858;
+    }
+}
+
+@include applyResponsive320() {
+    .player {
+        @include borderRadius(10px);
+
+        width: 102px;
+
+        .avatar {
+            width: 102px;
+            height: 93px;
+
+            margin-bottom: 10px;
+
+            .backgroundImage {
+
+            }
+            .avatarImage {
+                @include borderRadius(10px);
+
+                max-width: 100%;
+                max-height: calc(100% - 7px);
+            }
+        }
+        .name {
+            margin-bottom: 8px;
+
+            .countryImage {
+                width: 9px;
+                height: 6px;
+
+                margin-right: 3px;
+            }
+            .nickName {
+                font-size: 9px;
+                line-height: 11px;
+            }
+        }
+        .stats {
+            font-size: 5px;
+            line-height: 6px;
+
+            margin-bottom: 13px;
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .player {
+        @include borderRadius(10px);
+
+        width: 102px;
+
+        .avatar {
+            width: 102px;
+            height: 93px;
+
+            margin-bottom: 10px;
+
+            .backgroundImage {
+
+            }
+            .avatarImage {
+                @include borderRadius(10px);
+
+                max-width: 100%;
+                max-height: calc(100% - 7px);
+            }
+        }
+        .name {
+            margin-bottom: 8px;
+
+            .countryImage {
+                width: 12px;
+                height: 8px;
+
+                margin-right: 3px;
+            }
+            .nickName {
+                font-size: 15px;
+                line-height: 16px;
+            }
+        }
+        .stats {
+            font-size: 13px;
+            line-height: 14px;
+
+            margin-bottom: 13px;
+        }
+    }
+}

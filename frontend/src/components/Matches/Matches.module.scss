@@ -1,0 +1,139 @@
+@import 'styles/helpers';
+@import 'tools/styles/flex';
+@import 'tools/styles/grid';
+@import 'tools/styles/adaptive';
+
+.matches {
+    @include dFlex();
+    position: relative;
+
+    width: 100%;
+
+    .emptyResult {
+        text-align: center;
+    }
+
+    .magicTop {
+        position: absolute;
+
+        height: 30px;
+        background: #FFFFFF;
+        filter: blur(5px);
+
+        z-index: 3;
+    }
+
+    .list {
+        @include dGrid();
+        @include gridRows(1fr);
+        @include blueScrollBar();
+
+        width: 100%;
+    }
+
+    .magicBottom {
+        position: absolute;
+
+        height: 38px;
+        background: #FFFFFF;
+        filter: blur(7px);
+
+        z-index: 3;
+    }
+}
+
+@include applyResponsive320() {
+    .matches {
+        @include justifyContentCenter();
+
+        padding-left: 15px;
+        padding-right: 10px;
+
+        .magicTop {
+            display: none !important;
+        }
+
+        .list {
+            @include gridColumns(minmax(100%, 360px));
+
+            gap: 13px;
+            padding-right: 10px;
+        }
+
+        .magicBottom {
+            display: none !important;
+        }
+    }
+}
+
+@include applyResponsive768() {
+    .matches {
+        padding: 0;
+
+        .magicTop {
+            display: block !important;
+
+            top: -12px;
+            right: 34px;
+            left: 17px;
+        }
+
+        .list {
+            @include gridColumns(repeat(2, 1fr));
+
+            gap: 18px;
+            padding: 18px 18px 18px 0;
+        }
+
+        .magicBottom {
+            display: block !important;
+
+            right: 37px;
+            bottom: -22px;
+            left: 17px;
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .matches {
+        .magicTop {
+            top: -12px;
+            right: 64px;
+            left: 37px;
+        }
+
+        .list {
+            @include gridColumns(repeat(3, 1fr));
+
+            gap: 20px;
+            padding: 18px 25px 10px 0;
+        }
+
+        .magicBottom {
+            right: 65px;
+            bottom: -22px;
+            left: 36px;
+        }
+    }
+}
+
+@include applyResponsive1440 {
+    .matches {
+        .magicTop {
+            top: -20px;
+            right: 36px;
+            left: 10px;
+        }
+
+        .list {
+            padding-top: 18px;
+        }
+
+        .magicBottom {
+            right: 33px;
+            bottom: -22px;
+            left: 5px;
+        }
+    }
+}

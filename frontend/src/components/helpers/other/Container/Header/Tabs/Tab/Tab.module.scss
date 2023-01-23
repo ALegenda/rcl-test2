@@ -1,0 +1,26 @@
+@import 'tools/styles/helpers';
+
+.tab {
+    @include removeLinkUnderline();
+    @include borderRadius(5px);
+
+    display: block;
+    position: relative;
+    background: #F2F3F3;
+    width: fit-content;
+
+    font-style: normal;
+    font-weight: 400;
+    color: #7C7C7C;
+    cursor: pointer;
+
+    font-size: 9px;
+    line-height: 11px;
+
+    padding: 12px 20px 12px 20px;
+}
+
+.isActive {
+    color: #FFFFFF;
+    background: #446ABB;
+}

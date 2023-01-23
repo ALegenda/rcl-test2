@@ -1,0 +1,46 @@
+@import 'tools/styles/flex';
+@import 'tools/styles/adaptive';
+
+.downloadButton {
+    @include dFlex();
+    @include flexRow();
+    @include alignItemsCenter();
+
+    font-style: normal;
+    font-weight: 400;
+    color: #020202;
+    cursor: pointer;
+    text-decoration: underline;
+
+    .image {
+
+    }
+}
+
+@include applyResponsive320() {
+    .downloadButton {
+        font-size: 10px;
+        line-height: 12px;
+
+        .image {
+            width: 11px;
+            height: 10px;
+
+            margin-right: 7px;
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .downloadButton {
+        font-size: 10px;
+        line-height: 12px;
+
+        .image {
+            width: 11px;
+            height: 10px;
+
+            margin-right: 7px;
+        }
+    }
+}

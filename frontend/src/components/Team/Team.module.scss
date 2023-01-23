@@ -1,0 +1,175 @@
+@import 'tools/styles/flex';
+@import 'tools/styles/grid';
+@import 'tools/styles/helpers';
+@import 'tools/styles/adaptive';
+
+.team {
+    @include dFlex();
+
+    .baguetteContainer {
+        @include dFlex();
+
+        .baguette {
+            @include dFlex();
+
+            @include borderRadius(25px);
+            background: #F9F9FA;
+
+            .logoImg {}
+        }
+    }
+
+    .infoBlock {
+        font-size: 15px;
+        line-height: 35px;
+        font-weight: 500;
+
+        .basic {
+            @include dFlex();
+
+            .row {
+                @include dFlex();
+                @include flexRow();
+
+                gap: 23px;
+
+                .characteristic {
+                    width: 86px;
+
+                    color: #A0A0A0;
+                    text-align: end;
+                }
+
+                .value {
+                    @include dFlex();
+                    @include flexRow();
+                    @include alignItemsCenter();
+
+                    color: #000000;
+
+                    img {
+                        width: 19px;
+                        height: 13px;
+
+                        margin-bottom: 5px;
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include applyResponsive320() {
+    .team {
+        @include flexColumn();
+        @include alignItemsCenter();
+
+        gap: 20px;
+
+        .baguetteContainer {
+            @include justifyContentCenter();
+
+            width: 100%;
+            padding: 0 20px;
+
+            .baguette {
+                @include justifyContentCenter();
+
+                width: 100%;
+                max-width: 350px;
+
+                padding: 47px 69px 46px 69px;
+
+                .logoImg {
+                    min-width: 129px;
+                    height: 129px;
+
+                    margin: 5px 0;
+                }
+            }
+        }
+
+        .infoBlock {
+            .basic {
+                @include flexColumn();
+                @include alignItemsStart();
+
+                margin: 0 20px 46px 35px;
+            }
+        }
+    }
+}
+
+@include applyResponsive768() {
+    .team {
+        @include flexRow();
+        @include alignItemsStart();
+
+        .baguetteContainer {
+            width: auto;
+            padding: 0;
+
+            .baguette {
+                width: auto;
+                max-width: none;
+
+                padding: 65px 24px 51px 25px;
+
+                .logoImg {
+                    min-width: 187px;
+                    height: 187px;
+
+                    margin: 10px 0;
+                }
+            }
+        }
+
+        .infoBlock {
+            .basic {
+                margin: 0;
+                margin-bottom: 23px;
+            }
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .team {
+        @include flexRow();
+        gap: 36px;
+
+        .baguetteContainer {
+            .baguette {
+                padding: 67px 64px 62px 65px;
+
+                .logoImg {
+                    min-width: 217px;
+                    height: 217px;
+
+                    margin: 10px 0;
+                }
+            }
+        }
+
+        .infoBlock {
+            margin-top: 30px;
+
+            .basic {
+                margin-bottom: 23px;
+            }
+        }
+    }
+}
+
+@include applyResponsive1440() {
+    .team {
+        .infoBlock {
+            margin-top: 18px;
+
+            .basic {
+                margin-bottom: 34px;
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+@import 'tools/styles/adaptive';
+
+.row {
+    .item {
+        font-style: normal;
+        font-weight: 500;
+        color: #000000;
+        text-align: center;
+
+        &:not(:last-child) {
+            border-right: 1px solid #EDEDED;;
+        }
+    }
+}
+
+@include applyResponsive320() {
+    .row {
+        .item {
+            font-size: 12px;
+            line-height: 13px;
+
+            padding: 5px 0 10px 0;
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .row {
+        .item {
+            font-size: 12px;
+            line-height: 13px;
+
+            padding: 5px 0 10px 0;
+        }
+    }
+}

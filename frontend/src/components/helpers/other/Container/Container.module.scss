@@ -1,0 +1,81 @@
+@import 'tools/styles/flex';
+@import 'tools/styles/adaptive';
+
+.container {
+    @include dFlex();
+    @include flexColumn();
+    @include justifyContentBetween();
+
+    background: #FFFFFF;
+
+    min-height: 100vh;
+
+    .main {
+        @include dFlex();
+        @include flexColumn();
+        @include alignItemsCenter();
+
+        .teamsBar {
+            width: 100%;
+        }
+        .content {
+            position: relative;
+        }
+    }
+}
+
+@include applyResponsive320() {
+    .container {
+        .main {
+            .teamsBar {
+                margin-bottom: 15px;
+            }
+            .content {
+                width: 100%;
+                position: relative;
+            }
+        }
+    }
+}
+
+@include applyResponsive768() {
+    .container {
+        .main {
+            .teamsBar {
+                margin-bottom: 15px;
+            }
+            .content {
+                width: 768px - 20px;
+                position: relative;
+            }
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .container {
+        .main {
+            .teamsBar {
+                margin-bottom: 15px;
+            }
+            .content {
+                width: 1280px - 40px;
+                position: relative;
+            }
+        }
+    }
+}
+
+@include applyResponsive1440() {
+    .container {
+        .main {
+            .teamsBar {
+                margin-bottom: 43px;
+            }
+            .content {
+                width: 1292px;
+                position: relative;
+            }
+        }
+    }
+}

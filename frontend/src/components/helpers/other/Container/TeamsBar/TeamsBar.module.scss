@@ -1,0 +1,25 @@
+@import 'tools/styles/flex';
+@import 'tools/styles/helpers';
+
+.teamsBar {
+    @include dFlex();
+    @include flexRow();
+    @include hideScrollbar();
+
+    background: #F9F9FA;
+    overflow-x: auto;
+
+    .team {
+        padding: 31px 25px 32px 25px;
+
+        .icon {
+            min-width: 55px;
+            height: 55px;
+        }
+    }
+    .isActive {
+        @include borderRadius(5px);
+
+        background: #DB0036;
+    }
+}

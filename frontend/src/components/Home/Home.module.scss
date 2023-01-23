@@ -1,0 +1,150 @@
+@import 'tools/styles/flex';
+@import 'tools/styles/helpers';
+@import 'tools/styles/adaptive';
+
+.home {
+    @include dFlex();
+
+    .list {
+
+    }
+    .matchesAndPlayers {
+        @include dFlex();
+
+        .matches {
+            background: #F9F9FA;
+        }
+        .players {
+            background: #F9F9FA;
+        }
+    }
+    .reportsAndTeams {
+        @include dFlex();
+
+        .reports {
+            background: #F9F9FA;
+        }
+        .teams {
+            background: #F9F9FA;
+        }
+    }
+}
+
+@include applyResponsive320() {
+    .home {
+        @include flexColumn();
+        @include alignItemsCenter();
+
+        .list {
+
+        }
+        .matchesAndPlayers {
+            @include flexColumn();
+            @include borderRadius(0);
+
+            width: 100%;
+
+            padding: 0;
+
+            .matches {
+                @include borderRadius(15px);
+
+                padding: 32px 25px 25px 25px;
+                margin-right: 0;
+                margin-bottom: 7px;
+            }
+            .players {
+                @include borderRadius(15px);
+
+                padding: 29px 25px 24px 25px;
+            }
+        }
+        .reportsAndTeams {
+            @include flexColumnReverse();
+
+            .reports {
+                @include borderRadius(25px);
+
+                width: 320px;
+
+                padding: 32px 19px 18px 19px;
+            }
+            .teams {
+                @include borderRadius(25px);
+
+                width: 320px;
+
+                padding: 32px 11px 18px 10px;
+            }
+        }
+    }
+}
+
+@include applyResponsive768() {
+    .home {
+        @include flexColumn();
+
+        .matchesAndPlayers {
+            @include flexColumn();
+        }
+        .reportsAndTeams {
+            @include flexRow();
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .home {
+        @include flexRow();
+        @include alignItemsStart();
+        @include justifyContentCenter();
+
+        .list {
+            @include overflowY(auto);
+
+            max-height: calc(100vh - 302px);
+        }
+        .matchesAndPlayers {
+            @include flexRow();
+            @include borderRadius(25px);
+
+            width: 440px;
+            background: #F9F9FA;
+
+            padding: 32px 17px 0 32px;
+
+            .matches {
+                @include borderRadius(0);
+
+                width: 100%;
+
+                padding: 0;
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
+            .players {
+                @include borderRadius(0);
+
+                padding: 0;
+            }
+        }
+        .reportsAndTeams {
+            @include flexRow();
+
+            .reports {
+                @include borderRadius(25px);
+
+                width: 412px;
+
+                padding: 32px 21px 0 33px;
+            }
+            .teams {
+                @include borderRadius(25px);
+
+                width: 412px;
+
+                padding: 32px 21px 0 33px;
+            }
+        }
+    }
+}

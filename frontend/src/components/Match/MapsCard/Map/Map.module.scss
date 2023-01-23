@@ -1,0 +1,139 @@
+@import 'tools/styles/flex';
+@import 'tools/styles/helpers';
+@import 'tools/styles/adaptive';
+
+.map {
+    .card {
+        background: #FFFFFF;
+
+        cursor: pointer;
+
+        .previewImage {
+
+        }
+        .emptyPreview {
+            @include dFlex();
+            @include flexRow();
+            @include justifyContentCenter();
+            @include alignItemsCenter();
+
+            font-style: normal;
+            font-weight: 700;
+            color: #000000;
+        }
+        .info {
+            @include dFlex();
+            @include flexRow();
+            @include justifyContentBetween();
+            @include alignItemsCenter();
+
+            .data {
+                .scores {
+                    font-style: normal;
+                    font-weight: 700;
+                    color: #000000;
+                }
+                .name {
+                    font-style: normal;
+                    font-weight: 500;
+                    color: #A2A2A2;
+                }
+            }
+            .teamLogo {
+
+            }
+        }
+    }
+}
+
+@include applyResponsive320() {
+    .map {
+        width: 116px;
+
+        .card {
+            @include borderRadius(10px);
+
+            margin-bottom: 15px;
+
+            .previewImage {
+                @include borderRadius(10px);
+
+                width: 100%;
+                height: 88px;
+            }
+            .emptyPreview {
+                width: 100%;
+                height: 88px;
+
+                font-size: 15px;
+                line-height: 18px;
+            }
+            .info {
+                padding: 8px 12px 13px 13px;
+
+                .data {
+                    .scores {
+                        font-size: 15px;
+                        line-height: 18px;
+
+                        margin-bottom: 2px;
+                    }
+                    .name {
+                        font-size: 10px;
+                        line-height: 11px;
+                    }
+                }
+                .teamLogo {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .map {
+        width: 116px;
+
+        .card {
+            @include borderRadius(10px);
+
+            margin-bottom: 15px;
+
+            .previewImage {
+                @include borderRadius(10px);
+
+                width: 100%;
+                height: 88px;
+            }
+            .emptyPreview {
+                width: 100%;
+                height: 88px;
+
+                font-size: 15px;
+                line-height: 18px;
+            }
+            .info {
+                padding: 8px 12px 13px 13px;
+
+                .data {
+                    .scores {
+                        font-size: 15px;
+                        line-height: 18px;
+
+                        margin-bottom: 2px;
+                    }
+                    .name {
+                        font-size: 10px;
+                        line-height: 11px;
+                    }
+                }
+                .teamLogo {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}

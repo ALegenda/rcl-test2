@@ -1,0 +1,31 @@
+@import 'tools/styles/flex';
+@import 'tools/styles/helpers';
+
+.magicButton {
+    @include dFlex();
+    @include flexRow();
+    @include justifyContentCenter();
+    @include alignItemsCenter();
+    @include defaultButton();
+    @include borderRadius(5px);
+
+    position: relative;
+
+    color: #FFFFFF;
+    cursor: pointer;
+
+    background: #334D85;
+
+    .magic {
+        @include borderRadius(5px);
+
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 15px;
+        bottom: -10px;
+
+        background: rgba(51, 77, 133, 0.4);
+        filter: blur(15px);
+    }
+}

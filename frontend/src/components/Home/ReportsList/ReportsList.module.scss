@@ -1,0 +1,77 @@
+@import 'styles/helpers';
+@import 'tools/styles/flex';
+@import 'tools/styles/adaptive';
+
+.reportsList {
+    .title {
+        font-style: normal;
+        font-weight: 700;
+        color: #000000;
+    }
+    .list {
+        @include dFlex();
+        @include flexColumn();
+        @include blueScrollBar();
+    }
+    .moreButtonContainer {
+        .moreButton {
+            font-style: normal;
+            font-weight: 700;
+        }
+    }
+}
+
+@include applyResponsive320() {
+    .reportsList {
+        .title {
+            font-size: 19px;
+            line-height: 22px;
+
+            margin-bottom: 23px;
+            margin-left: 20px;
+        }
+        .list {
+            gap: 9px;
+
+            margin-bottom: 29px;
+        }
+        .moreButtonContainer {
+            @include dFlex();
+            @include flexRow();
+            @include justifyContentCenter();
+
+            .moreButton {
+                width: 172px;
+                height: 40px;
+
+                font-size: 9px;
+                line-height: 11px;
+            }
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .reportsList {
+        .title {
+            font-size: 19px;
+            line-height: 22px;
+
+            margin-bottom: 20px;
+            margin-left: 0;
+        }
+        .list {
+            gap: 9px;
+
+            padding-right: 16px;
+            margin-bottom: 0;
+        }
+        .moreButtonContainer {
+            display: none !important;
+
+            .moreButton {
+
+            }
+        }
+    }
+}

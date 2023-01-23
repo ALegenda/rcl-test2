@@ -1,0 +1,177 @@
+@import 'tools/styles/flex';
+@import 'tools/styles/helpers';
+@import 'tools/styles/adaptive';
+
+.match {
+    @include dFlex();
+
+    .left {
+        @include dFlex();
+
+        .commonCardContainer {
+            @include dFlex();
+
+            .commonCard {
+
+            }
+        }
+        .mapsCardContainer {
+            .mapsCard {
+
+            }
+        }
+    }
+    .statsCardContainer {
+        @include dFlex();
+
+        .statsCard {
+
+        }
+    }
+    .right {
+        @include dFlex();
+
+        .teamCardContainer {
+            .team1Card {
+
+            }
+            .team2Card {
+
+            }
+        }
+    }
+}
+
+@include applyResponsive320() {
+    .match {
+        @include flexColumn();
+
+        width: 100%;
+
+        .left {
+            @include flexColumn();
+
+            margin-right: 12px;
+
+            .commonCardContainer {
+                @include flexRow();
+                @include justifyContentCenter();
+
+                .commonCard {
+                    margin-bottom: 12px;
+                }
+            }
+            .mapsCardContainer {
+                @include hideScrollbar();
+
+                overflow: auto;
+
+                .mapsCard {
+                    width: fit-content;
+                }
+            }
+        }
+        .statsCardContainer {
+            @include flexRow();
+            @include justifyContentCenter();
+
+            .statsCard {
+                margin-right: 0;
+                margin-bottom: 12px;
+            }
+        }
+        .right {
+            @include flexColumn();
+
+            .teamCardContainer {
+                @include hideScrollbar();
+
+                overflow: auto;
+
+                .team1Card {
+                    width: fit-content;
+
+                    margin-bottom: 12px;
+                }
+                .team2Card {
+                    width: fit-content;
+                }
+            }
+        }
+    }
+}
+
+@include applyResponsive768() {
+    .match {
+        .left {
+            @include flexRow();
+
+            .commonCardContainer {
+                .commonCard {
+
+                }
+            }
+            .mapsCardContainer {
+                .mapsCard {
+
+                }
+            }
+        }
+        .statsCardContainer {
+            .statsCard {
+
+            }
+        }
+        .right {
+            @include alignItemsCenter();
+
+            .teamCardContainer {
+                .team1Card {
+
+                }
+                .team2Card {
+
+                }
+            }
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .match {
+        @include flexRow();
+
+        .left {
+            @include flexColumn();
+
+            margin-right: 12px;
+
+            .commonCardContainer {
+                .commonCard {
+                    margin-bottom: 12px;
+                }
+            }
+            .mapsCardContainer {
+                .mapsCard {
+
+                }
+            }
+        }
+        .statsCardContainer {
+            .statsCard {
+                margin-right: 12px;
+                margin-bottom: 0;
+            }
+        }
+        .right {
+            .teamCardContainer {
+                .team1Card {
+                    margin-bottom: 12px;
+                }
+                .team2Card {
+
+                }
+            }
+        }
+    }
+}

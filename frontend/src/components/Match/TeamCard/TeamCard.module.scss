@@ -1,0 +1,53 @@
+@import 'tools/styles/flex';
+@import 'tools/styles/helpers';
+@import 'tools/styles/adaptive';
+
+.teamCard {
+    background: #F9F9FA;
+
+    .title {
+        font-style: normal;
+        font-weight: 500;
+        color: #000000;
+    }
+    .list {
+        @include dFlex();
+        @include flexRow();
+    }
+}
+
+@include applyResponsive320() {
+    .teamCard {
+        @include borderRadius(10px);
+
+        padding: 17px 26px 26px 26px;
+
+        .title {
+            font-size: 12px;
+            line-height: 14px;
+
+            margin-bottom: 26px;
+        }
+        .list {
+            gap: 4px;
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .teamCard {
+        @include borderRadius(10px);
+
+        padding: 17px 26px 26px 26px;
+
+        .title {
+            font-size: 12px;
+            line-height: 14px;
+
+            margin-bottom: 26px;
+        }
+        .list {
+            gap: 4px;
+        }
+    }
+}

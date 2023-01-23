@@ -1,0 +1,58 @@
+@import 'tools/styles/grid';
+@import 'tools/styles/helpers';
+@import 'tools/styles/adaptive';
+
+.statsCard {
+    background: #F9F9FA;
+
+    .row {
+        @include dGrid();
+
+        .teamLogo {
+
+        }
+    }
+    .titleRow {
+        border-bottom: 1px solid #EDEDED;
+    }
+}
+
+@include applyResponsive320() {
+    .statsCard {
+        @include borderRadius(10px);
+
+        padding: 30px 20px 31px 14px;
+
+        .row {
+            @include gridColumns(16px + 84px 73px 54px 48px);
+
+            .teamLogo {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        .titleRow {
+
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .statsCard {
+        @include borderRadius(10px);
+
+        padding: 29px 20px 31px 14px;
+
+        .row {
+            @include gridColumns(16px + 84px 73px 54px 48px);
+
+            .teamLogo {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        .titleRow {
+
+        }
+    }
+}

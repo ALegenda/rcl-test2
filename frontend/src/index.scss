@@ -1,0 +1,17 @@
+@import 'styles/fonts';
+@import 'tools/styles/helpers';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    @include hideScrollbar();
+
+    margin: 0;
+
+    @include fontRaleway400();
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,16 @@
+@import 'tools/styles/helpers';
+
+@mixin blueScrollBar() {
+    @include customScrollbar() {
+        @include borderRadius(10px);
+
+        width: 4px;
+        background: #EDEDED;
+    }
+    @include customScrollThumb() {
+        @include borderRadius(10px);
+
+        width: 4px;
+        background: #3173FF;
+    }
+}

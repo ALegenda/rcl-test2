@@ -1,0 +1,67 @@
+@import 'tools/styles/flex';
+@import 'tools/styles/adaptive';
+
+.docs {
+    .title {
+        font-style: normal;
+        font-weight: 700;
+    }
+    .subtitle {
+        font-style: normal;
+        font-weight: 700;
+    }
+    .list {
+        @include dFlex();
+        @include flexColumn();
+    }
+}
+
+@include applyResponsive320() {
+    .docs {
+        padding: 0 20px 0 20px;
+        margin-bottom: 100px;
+
+        .title {
+            font-size: 25px;
+            line-height: 159.4%;
+
+            margin-bottom: 15px;
+        }
+        .subtitle {
+            font-size: 19px;
+            line-height: 22px;
+
+            margin-bottom: 10px;
+        }
+        .list {
+            gap: 10px;
+
+            padding-left: 20px;
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .docs {
+        padding: 0;
+        margin-bottom: 0;
+
+        .title {
+            font-size: 25px;
+            line-height: 159.4%;
+
+            margin-bottom: 20px;
+        }
+        .subtitle {
+            font-size: 19px;
+            line-height: 22px;
+
+            margin-bottom: 15px;
+        }
+        .list {
+            gap: 15px;
+
+            padding-left: 30px;
+        }
+    }
+}

@@ -1,0 +1,97 @@
+@import 'styles/helpers';
+@import 'tools/styles/flex';
+@import 'tools/styles/grid';
+@import 'tools/styles/helpers';
+@import 'tools/styles/adaptive';
+
+.teamsList {
+    .title {
+        font-style: normal;
+        font-weight: 700;
+        color: #000000;
+    }
+    .list {
+        @include blueScrollBar();
+        @include overflowY(auto);
+
+        background: #FFFFFF;
+
+        .item {
+            @include dGrid();
+            @include alignItemsCenter();
+
+            border-bottom: 1px solid #F2F2F2;
+        }
+    }
+    .moreButtonContainer {
+        .moreButton {
+            font-style: normal;
+            font-weight: 700;
+        }
+    }
+}
+
+@include applyResponsive320() {
+    .teamsList {
+        .title {
+            font-size: 19px;
+            line-height: 22px;
+
+            margin-bottom: 23px;
+            margin-left: 20px;
+        }
+        .list {
+            @include borderRadius(10px);
+
+            padding: 0 25px 0 25px;
+            margin-bottom: 21px;
+
+            .item {
+                @include gridColumns(22px + 18px 30px + 20px 35px 45px 27px + 11px 40px);
+            }
+        }
+        .moreButtonContainer {
+            @include dFlex();
+            @include flexRow();
+            @include justifyContentCenter();
+
+            .moreButton {
+                width: 122px;
+                height: 40px;
+
+                font-size: 9px;
+                line-height: 11px;
+            }
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .teamsList {
+        .title {
+            font-size: 19px;
+            line-height: 22px;
+
+            margin-bottom: 20px;
+            margin-left: 0;
+        }
+        .list {
+            @include borderRadius(10px);
+            @include blueScrollBar();
+
+            padding: 0 24px 0 24px;
+            margin-bottom: 0;
+
+            .item {
+                @include gridColumns(22px + 28px 30px + 30px 50px 50px 27px + 11px 40px);
+            }
+        }
+        .moreButtonContainer {
+            display: none !important;
+
+            .moreButton {
+
+            }
+        }
+    }
+}

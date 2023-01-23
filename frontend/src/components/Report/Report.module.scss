@@ -1,0 +1,139 @@
+@import 'styles/helpers';
+@import 'tools/styles/flex';
+@import 'tools/styles/adaptive';
+
+.report {
+    background: #F9F9FA;
+
+    .image {
+
+    }
+    .date {
+        font-style: normal;
+        font-weight: 500;
+        color: #565656;
+    }
+    .main {
+        @include blueScrollBar();
+
+        overflow: auto;
+
+        .title {
+            font-style: normal;
+            font-weight: 500;
+            color: #000000;
+        }
+
+        .content {
+            font-style: normal;
+            font-weight: 500;
+            color: #808080;
+        }
+    }
+    .anotherContainer {
+        .anotherButton {
+            font-style: normal;
+            font-weight: 400;
+        }
+    }
+}
+
+@include applyResponsive320() {
+    .report {
+        @include dFlex();
+        @include flexColumn();
+
+        padding: 0 27px 0 27px;
+
+        .image {
+            @include borderRadius(25px);
+
+            width: 253px;
+            min-width: 253px;
+            height: 253px;
+            min-height: 253px;
+
+            margin-bottom: 17px;
+        }
+        .date {
+            text-align: end;
+            font-size: 6px;
+            line-height: 159.4%;
+
+            margin-right: 21px;
+            margin-bottom: 15px;
+        }
+        .main {
+            padding: 0 26px 0 12px;
+            margin-bottom: 32px;
+
+            .title {
+                font-size: 15px;
+                line-height: 159.4%;
+            }
+            .content {
+                font-size: 11px;
+                line-height: 193.4%;
+            }
+        }
+        .anotherContainer {
+            @include dFlex();
+            @include flexRow();
+            @include justifyContentCenter();
+
+            margin-bottom: 61px;
+
+            .anotherButton {
+                width: 118px;
+                height: 35px;
+
+                font-size: 9px;
+                line-height: 11px;
+            }
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .report {
+        @include dFlex();
+        @include flexRow();
+
+        padding: 0;
+
+        .image {
+            @include borderRadius(25px);
+
+            width: 641px;
+            min-width: 641px;
+            height: 641px;
+            min-height: 641px;
+
+            margin-right: 30px;
+            margin-bottom: 0;
+        }
+        .date {
+            display: none;
+        }
+        .main {
+            padding: 0 25px 50px 0;
+
+            .title {
+                font-size: 15px;
+                line-height: 159.4%;
+            }
+
+            .content {
+                font-size: 13px;
+                line-height: 193.4%;
+            }
+        }
+        .anotherContainer {
+            display: none !important;
+
+            .anotherButton {
+
+            }
+        }
+    }
+}

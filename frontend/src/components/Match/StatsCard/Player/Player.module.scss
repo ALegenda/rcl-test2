@@ -1,0 +1,44 @@
+@import 'tools/styles/flex';
+@import 'tools/styles/adaptive';
+
+.player {
+    @include dFlex();
+    @include flexRow();
+    @include alignItemsCenter();
+
+    font-style: normal;
+    font-weight: 500;
+    color: #000000;
+
+    .countryLogo {
+
+    }
+}
+
+@include applyResponsive320() {
+    .player {
+        font-size: 13px;
+        line-height: 14px;
+
+        .countryLogo {
+            width: 13px;
+            height: 9px;
+
+            margin-right: 11px;
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .player {
+        font-size: 13px;
+        line-height: 14px;
+
+        .countryLogo {
+            width: 13px;
+            height: 9px;
+
+            margin-right: 11px;
+        }
+    }
+}

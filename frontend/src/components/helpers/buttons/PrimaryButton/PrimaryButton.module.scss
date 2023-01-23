@@ -1,0 +1,20 @@
+@import 'tools/styles/flex';
+@import 'tools/styles/helpers';
+
+.primaryButton {
+    @include dFlex();
+    @include flexRow();
+    @include justifyContentCenter();
+    @include alignItemsCenter();
+    @include defaultButton();
+    @include borderRadius(5px);
+
+    background: #446ABB;
+
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.link {
+    @include removeLinkUnderline();
+}

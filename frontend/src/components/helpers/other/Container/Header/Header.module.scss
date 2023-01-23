@@ -1,0 +1,109 @@
+@import 'tools/styles/flex';
+@import 'tools/styles/grid';
+@import 'tools/styles/helpers';
+@import 'tools/styles/adaptive';
+
+.header {
+    width: 100%;
+
+    .content {
+        @include dGrid();
+
+        .logoContainer {
+            .logo {
+                @include dFlex();
+                @include flexRow();
+                @include removeLinkUnderline();
+
+                width: fit-content;
+
+                img {
+
+                }
+                .title {
+                    font-style: normal;
+                    font-weight: 700;
+                    color: #11192A;
+                }
+            }
+        }
+        .tabsContainer {
+
+        }
+    }
+    .bottomTabsContainer {
+        .bottomTabs {
+
+        }
+    }
+}
+
+@include applyResponsive320() {
+    .header {
+        .content {
+            @include gridColumns(1fr 1fr);
+
+            padding: 13px 35px 6px 35px;
+
+            .logoContainer {
+                .logo {
+                    img {
+                        width: 37px;
+                        height: 38px;
+
+                        margin-right: 13px;
+                    }
+                    .title {
+                        font-size: 10px;
+                        line-height: 12px;
+                    }
+                }
+            }
+            .tabsContainer {
+                display: none;
+            }
+        }
+        .bottomTabsContainer {
+            @include dFlex();
+            @include flexRow();
+            @include justifyContentCenter();
+
+            padding-left: 35px;
+
+            .bottomTabs {
+                padding-right: 35px;
+            }
+        }
+    }
+}
+
+@include applyResponsive768() {
+    .header {
+        .content {
+            @include gridColumns(1fr 1fr 1fr);
+
+            padding: 26px 74px 27px 74px;
+
+            .logoContainer {
+                .logo {
+                    img {
+                        width: 37px;
+                        height: 38px;
+
+                        margin-right: 13px;
+                    }
+                    .title {
+                        font-size: 10px;
+                        line-height: 12px;
+                    }
+                }
+            }
+            .tabsContainer {
+                display: block;
+            }
+        }
+        .bottomTabsContainer {
+            display: none !important;
+        }
+    }
+}

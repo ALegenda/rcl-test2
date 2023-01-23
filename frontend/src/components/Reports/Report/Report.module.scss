@@ -1,0 +1,156 @@
+@import 'tools/styles/flex';
+@import 'tools/styles/helpers';
+@import 'tools/styles/adaptive';
+
+.report {
+    @include dFlex();
+
+    height: fit-content;
+
+    background: #F9F9FA;
+
+    .image {
+
+    }
+
+    .content {
+        .top {
+            .date {
+                font-style: normal;
+                font-weight: 500;
+                text-align: end;
+                color: #565656;
+            }
+
+            .title {
+                font-style: normal;
+                font-weight: 500;
+                color: #000000;
+            }
+
+            .promo {
+                font-style: normal;
+                font-weight: 500;
+                color: #565656;
+            }
+        }
+
+        .more {
+            @include removeLinkUnderline();
+
+            width: fit-content;
+            background: #446ABB;
+
+            font-style: normal;
+            font-weight: 400;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+    }
+}
+
+@include applyResponsive320() {
+    .report {
+        @include flexColumn();
+        @include borderRadius(25px);
+
+        .image {
+            @include borderRadius(25px);
+
+            min-width: 266px;
+            height: 253px;
+        }
+
+        .content {
+            padding: 17px 29px 28px 29px;
+
+            .top {
+                .date {
+                    font-size: 6px;
+                    line-height: 159.4%;
+
+                    margin-bottom: 15px;
+                }
+
+                .title {
+                    font-size: 15px;
+                    line-height: 159.4%;
+
+                    margin-bottom: 12px;
+                }
+
+                .promo {
+                    font-size: 11px;
+                    line-height: 159.4%;
+
+                    margin-bottom: 18px;
+                }
+            }
+
+            .more {
+                @include borderRadius(5px);
+
+                font-size: 9px;
+                line-height: 11px;
+
+                padding: 11px 20px 13px 20px;
+            }
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .report {
+        @include flexRow();
+        @include borderRadius(25px);
+
+        .image {
+            @include borderRadius(25px);
+
+            min-width: 246px;
+            height: 253px;
+        }
+
+        .content {
+            @include dFlex();
+            @include flexColumn();
+            @include justifyContentBetween();
+
+            width: 100%;
+
+            padding: 21px 22px 27px 31px;
+
+            .top {
+                .date {
+                    font-size: 6px;
+                    line-height: 159.4%;
+
+                    margin-bottom: 14px;
+                }
+
+                .title {
+                    font-size: 15px;
+                    line-height: 159.4%;
+
+                    margin-bottom: 16px;
+                }
+
+                .promo {
+                    font-size: 11px;
+                    line-height: 159.4%;
+
+                    margin-bottom: 26px;
+                }
+            }
+
+            .more {
+                @include borderRadius(5px);
+
+                font-size: 9px;
+                line-height: 11px;
+
+                padding: 11px 20px 13px 20px;
+            }
+        }
+    }
+}

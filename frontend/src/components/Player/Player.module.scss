@@ -1,0 +1,101 @@
+@import 'tools/styles/flex';
+@import 'tools/styles/grid';
+@import 'tools/styles/adaptive';
+
+.player {
+    @include dFlex();
+
+    .avatar {}
+
+    .infoBlock {
+        font-size: 15px;
+        line-height: 35px;
+        font-weight: 500;
+
+        .basic {
+            .row {
+                @include dFlex();
+                @include flexRow();
+                @include alignItemsCenter();
+
+                gap: 23px;
+
+                .characteristic {
+                    width: 75px;
+
+                    color: #A0A0A0;
+                    text-align: end;
+                }
+
+                .value {
+                    @include dFlex();
+                    @include flexRow();
+                    @include alignItemsCenter();
+
+                    color: #000000;
+
+                    img {
+                        width: 19px;
+                        height: 13px;
+
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include applyResponsive320() {
+    .player {
+        @include flexColumn();
+        @include alignItemsCenter();
+
+        gap: 22px;
+        margin-bottom: 15px;
+
+        .avatar {
+            width: 267px;
+            height: 364px;
+        }
+
+        .infoBlock {
+            .basic {
+                margin-bottom: 29px;
+            }
+        }
+    }
+}
+
+@include applyResponsive768() {
+    .player {
+        @include flexRow();
+        @include justifyContentCenter();
+        @include alignItemsStart();
+
+        gap: 47px;
+        margin-bottom: 0;
+    }
+}
+
+@include applyResponsive1280() {
+    .player {
+        .avatar {
+            width: 346px;
+            height: 472px;
+        }
+
+        .infoBlock {
+            .basic {
+                margin-bottom: 19px;
+            }
+        }
+    }
+}
+
+@include applyResponsive1440() {
+    .player {
+        @include justifyContentStart();
+        gap: 47px;
+    }
+}

@@ -1,0 +1,60 @@
+@import 'styles/helpers';
+@import 'tools/styles/flex';
+@import 'tools/styles/helpers';
+@import 'tools/styles/adaptive';
+
+.matchesList {
+    .title {
+        font-style: normal;
+        font-weight: 700;
+        color: #000000;
+    }
+    .list {
+        @include dFlex();
+        @include blueScrollBar();
+    }
+}
+
+@include applyResponsive320() {
+    .matchesList {
+        .title {
+            font-size: 19px;
+            line-height: 22px;
+
+            margin-bottom: 20px;
+        }
+        .list {
+            @include flexRow();
+            @include overflowX(auto);
+            @include hideScrollbar();
+
+            max-width: 100%;
+
+            gap: 7px;
+
+            margin-bottom: 0;
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .matchesList {
+        .title {
+            font-size: 19px;
+            line-height: 22px;
+
+            margin-bottom: 20px;
+        }
+        .list {
+            @include dFlex();
+            @include flexColumn();
+            @include showScrollbar();
+            @include blueScrollBar();
+
+            gap: 7px;
+
+            padding-right: 15px;
+            margin-bottom: 0;
+        }
+    }
+}
