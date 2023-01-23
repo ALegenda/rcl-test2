@@ -6,6 +6,8 @@
     @include dFlex();
     @include flexRow();
 
+    background: #FFFFFF;
+
     .image {
 
     }
@@ -38,8 +40,10 @@
 
 @include applyResponsive320() {
     .report {
+        @include borderRadius(10px);
+
         .image {
-            @include borderRadius(25px);
+            @include borderRadius(10px);
 
             width: 111px;
             min-width: 111px;
@@ -70,8 +74,10 @@
 
 @include applyResponsive1280() {
     .report {
+        @include borderRadius(10px);
+
         .image {
-            @include borderRadius(25px);
+            @include borderRadius(10px);
 
             width: 111px;
             min-width: 111px;

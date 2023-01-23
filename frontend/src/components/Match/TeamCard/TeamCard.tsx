@@ -35,7 +35,7 @@ const TeamCard: FC<IProps> = (props) => {
     return (
         <div className={classNames(styles.teamCard, props.className)}>
             <div className={styles.title}>
-                Актуальный состав
+                Состав команды
             </div>
             <div className={styles.list}>
                 {

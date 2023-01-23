@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "env-cmd -f ./src/env/DEV.env react-scripts start",
-    "build": "env-cmd -f ./src/env/DEV.env react-scripts build",
-    "test": "env-cmd -f ./src/env/DEV.env react-scripts test",
+    "start": "env-cmd -f ./src/env/PROD.env react-scripts start",
+    "build": "env-cmd -f ./src/env/PROD.env react-scripts build",
+    "test": "env-cmd -f ./src/env/PROD.env react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint **/*.{ts,tsx}",
     "slint": "npx stylelint **/*.scss"
