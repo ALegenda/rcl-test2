@@ -1,6 +1,8 @@
 export default async function(url: string, name: string): Promise<void> {
     try {
-        const res = await fetch(url);
+        const res = await fetch(url, {
+            mode: 'no-cors',
+        });
         const blob = await res.blob();
         const link = document.createElement('a');
 

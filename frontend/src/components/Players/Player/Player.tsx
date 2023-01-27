@@ -29,7 +29,7 @@ const Player: FC<IProps> = (props) => {
                 <div className={classNames(styles.column, styles.firstColumn)}>
                     <Image
                         className={styles.countryImage}
-                        src={props.player.team.countryLogo}
+                        src={props.player.player.countryLogo}
                         mode={'contain'}
                     />
                     <Image

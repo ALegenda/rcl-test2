@@ -73,7 +73,7 @@ const Map: FC<IProps> = (props) => {
             </div>
             <DownloadButton
                 url={props.map.demo}
-                matchId={props.matchId}
+                matchId={props.map.id}
             />
         </div>
     );

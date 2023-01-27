@@ -32,7 +32,7 @@ const Docs: FC = () => {
                     sizeKB={179}
                 />
                 <Doc
-                    url={`${process.env.PUBLIC_URL}/static/IESF Statutes 2021.pdf`}
+                    url={`${process.env.PUBLIC_URL}/static/IESF_Statutes_2021.pdf`}
                     name={'IESF Statutes 2021'}
                     sizeKB={726}
                 />

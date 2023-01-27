@@ -26,7 +26,7 @@ const Team: FC<IProps> = (props) => {
                 src={props.team.logo}
                 mode={'contain'}
             />
-            {props.team.city}
+            {props.team.name}
         </Link>
     );
 };

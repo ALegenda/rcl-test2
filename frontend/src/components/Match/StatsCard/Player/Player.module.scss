@@ -9,23 +9,12 @@
     font-style: normal;
     font-weight: 500;
     color: #000000;
-
-    .countryLogo {
-
-    }
 }
 
 @include applyResponsive320() {
     .player {
         font-size: 13px;
         line-height: 14px;
-
-        .countryLogo {
-            width: 13px;
-            height: 9px;
-
-            margin-right: 11px;
-        }
     }
 }
 
@@ -33,12 +22,5 @@
     .player {
         font-size: 13px;
         line-height: 14px;
-
-        .countryLogo {
-            width: 13px;
-            height: 9px;
-
-            margin-right: 11px;
-        }
     }
 }

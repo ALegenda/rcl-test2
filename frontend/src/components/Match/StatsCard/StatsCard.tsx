@@ -51,7 +51,6 @@ const StatsCard: FC<IProps> = (props) => {
                                             <Player
                                                 key={0}
                                                 nickname={stats.nickName}
-                                                countryLogo={props.team1.countryLogo}
                                             />,
                                             stats.kills,
                                             stats.deaths,
@@ -84,7 +83,6 @@ const StatsCard: FC<IProps> = (props) => {
                                             <Player
                                                 key={0}
                                                 nickname={stats.nickName}
-                                                countryLogo={props.team2.countryLogo}
                                             />,
                                             stats.kills,
                                             stats.deaths,

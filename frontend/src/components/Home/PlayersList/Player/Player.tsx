@@ -39,7 +39,7 @@ const Player: FC<IProps> = (props) => {
             <div className={styles.name}>
                 <img
                     className={styles.countryImage}
-                    src={props.player.team.countryLogo}
+                    src={props.player.player.countryLogo}
                     alt={''}
                 />
                 <div className={styles.nickName}>

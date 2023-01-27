@@ -106,6 +106,8 @@
         @include flexRow();
         @include alignItemsStart();
 
+        margin-bottom: 18px;
+
         .baguetteContainer {
             width: auto;
             padding: 0;
@@ -137,6 +139,8 @@
 @include applyResponsive1280() {
     .team {
         @include flexRow();
+
+        margin: 0;
         gap: 36px;
 
         .baguetteContainer {

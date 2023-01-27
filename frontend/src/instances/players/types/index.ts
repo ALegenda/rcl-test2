@@ -7,6 +7,7 @@ export interface IPlayerUser {
         nickName: string;
         age: number;
         country: string;
+        countryLogo: string;
         imageUrl: string;
     };
     team: {
