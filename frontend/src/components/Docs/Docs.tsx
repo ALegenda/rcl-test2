@@ -18,7 +18,7 @@ const Docs: FC = () => {
             <div className={styles.list}>
                 <Doc
                     url={`${process.env.PUBLIC_URL}/static/Договор_о_соорганизации_и_делегировании_между_РКЛ_и_ФКС_России.pdf`}
-                    name={'Договор о соорганизации и делегировании_между РКЛ и ФКС России'}
+                    name={'Договор о соорганизации и делегировании между РКЛ и ФКС России'}
                     sizeKB={979}
                 />
                 <Doc
@@ -38,7 +38,7 @@ const Docs: FC = () => {
                 />
                 <Doc
                     url={`${process.env.PUBLIC_URL}/static/CSGO_Rulebook.pdf`}
-                    name={'CSGO_Rulebook'}
+                    name={'CSGO Rulebook'}
                     sizeKB={5801}
                 />
             </div>

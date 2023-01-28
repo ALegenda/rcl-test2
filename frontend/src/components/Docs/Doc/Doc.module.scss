@@ -20,14 +20,14 @@
 @include applyResponsive320() {
     .doc {
         .name {
-            font-size: 12px;
-            line-height: 14px;
+            font-size: 15px;
+            line-height: 16px;
 
             margin-bottom: 2px;
         }
         .size {
-            font-size: 9px;
-            line-height: 11px;
+            font-size: 11px;
+            line-height: 13px;
         }
     }
 }
@@ -35,14 +35,14 @@
 @include applyResponsive1280() {
     .doc {
         .name {
-            font-size: 12px;
-            line-height: 14px;
+            font-size: 15px;
+            line-height: 16px;
 
             margin-bottom: 2px;
         }
         .size {
-            font-size: 9px;
-            line-height: 11px;
+            font-size: 11px;
+            line-height: 13px;
         }
     }
 }
