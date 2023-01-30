@@ -17,17 +17,7 @@ const Docs: FC = () => {
             </div>
             <div className={styles.list}>
                 <Doc
-                    url={`${process.env.PUBLIC_URL}/static/Договор_о_соорганизации_и_делегировании_между_РКЛ_и_ФКС_России.pdf`}
-                    name={'Договор о соорганизации и делегировании между РКЛ и ФКС России'}
-                    sizeKB={979}
-                />
-                <Doc
-                    url={`${process.env.PUBLIC_URL}/static/Регламент_Соревнования_РКЛ_Сезон_2023_года.pdf`}
-                    name={'Регламент Соревнования РКЛ Сезон 2023 года'}
-                    sizeKB={761}
-                />
-                <Doc
-                    url={`${process.env.PUBLIC_URL}/static/Положение_о_призовом_фонде_РКЛ_Сезон_2023.pdf`}
+                    url={`${process.env.PUBLIC_URL}/static/Polohenie_o_prizovom_fonde_RCL_2023.pdf`}
                     name={'Положение о призовом фонде РКЛ Сезон 2023'}
                     sizeKB={179}
                 />
