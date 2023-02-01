@@ -17,10 +17,6 @@ const Home: FC = () => {
                     className={styles.matches}
                     listClassName={styles.list}
                 />
-                <PlayersList
-                    className={styles.players}
-                    listClassName={styles.list}
-                />
             </div>
             <div className={styles.reportsAndTeams}>
                 <ReportsList
