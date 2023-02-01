@@ -32,7 +32,8 @@ const DownloadButton: FC<IProps> = (props) => {
         }
 
         setIsPending(true);
-        await downloadFile(props.url, getDemoFileName(props.matchId));
+        //await downloadFile(props.url, getDemoFileName(props.matchId));
+        window.open(props.url);
         setIsPending(false);
     };
 
