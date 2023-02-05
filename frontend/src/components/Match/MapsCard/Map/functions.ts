@@ -42,7 +42,7 @@ export function formatScores(team1Score: number, team2Score: number, status: MAP
         case MAP_STATUS.CLINCH:
         case MAP_STATUS.PENDING:
         case MAP_STATUS.STARTED: {
-            return '-';
+            return `${team1Score}-${team2Score}`;
         }
         case MAP_STATUS.FINISHED: {
             return `${team1Score}-${team2Score}`;
