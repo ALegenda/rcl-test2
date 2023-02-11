@@ -7,6 +7,7 @@
     @include dFlex();
     @include flexColumn();
     @include removeLinkUnderline();
+    @include alignItemsCenter();
 
     font-size: 15px;
     line-height: 30px;
@@ -23,8 +24,9 @@
 @include applyResponsive320() {
     .team {
         .teamImage {
-            min-width: 62px;
-            height: 80px;
+            width: auto;
+            height: auto;
+            max-height: 80px;
         }
     }
 }
@@ -32,8 +34,9 @@
 @include applyResponsive1280() {
     .team {
         .teamImage {
-            min-width: 62px;
-            height: 100px;
+            width: auto;
+            height: auto;
+            max-height: 100px;
         }
     }
 }
