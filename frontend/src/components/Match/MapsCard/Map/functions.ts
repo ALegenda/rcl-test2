@@ -50,12 +50,12 @@ export function formatScores(team1Score: number, team2Score: number, status: MAP
     }
 }
 
-export function formatTeamLogoSrc(team1Score: number, team2Score: number, teams: [ITeam, ITeam]): string | null {
+export function formatTeamLogoSrc(team1Score: number, team2Score: number, teams: [ITeam, ITeam], team1Id: number, team2Id: number): string | null {
     if (team1Score > team2Score) {
-        return teams[0].logo;
+        return teams.find((i) => i.id === team1Id)!.logo;
     }
     if (team1Score < team2Score) {
-        return teams[1].logo;
+        return teams.find((i) => i.id === team2Id)!.logo;
     }
 
     return null;

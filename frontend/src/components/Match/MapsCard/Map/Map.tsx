@@ -22,7 +22,7 @@ import {
 import styles from './Map.module.scss';
 
 const Map: FC<IProps> = (props) => {
-    const teamLogoSrc = formatTeamLogoSrc(props.map.team1Score, props.map.team2Score, props.teams);
+    const teamLogoSrc = formatTeamLogoSrc(props.map.team1Score, props.map.team2Score, props.teams, props.map.team1Id, props.map.team2Id);
     const previewSrc = formatPreviewSrc(props.map.mapName);
 
     const onChoose = () => {

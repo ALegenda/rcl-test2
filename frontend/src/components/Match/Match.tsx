@@ -69,9 +69,9 @@ const Match: FC = () => {
                 <div className={styles.commonCardContainer}>
                     <CommonCard
                         className={styles.commonCard}
-                        team1={match.teams[0]}
+                        team1={match.teams.find((i) => i.id === match.team1Id)!}
                         team1Score={match.team1Score}
-                        team2={match.teams[1]}
+                        team2={match.teams.find((i) => i.id === match.team2Id)!}
                         team2Score={match.team2Score}
                         startedAt={match.startedAt}
                         onClick={resetMatchMap}
@@ -90,8 +90,8 @@ const Match: FC = () => {
             <div className={styles.statsCardContainer}>
                 <StatsCard
                     className={styles.statsCard}
-                    team1={match.teams[0]}
-                    team2={match.teams[1]}
+                    team1={match.teams.find((i) => i.id === match.team1Id)!}
+                    team2={match.teams.find((i) => i.id === match.team2Id)!}
                     team1Stats={matchMap?.team1Stats ?? match.team1Stats}
                     team2Stats={matchMap?.team2Stats ?? match.team2Stats}
                     isPending={isPendingMap}
