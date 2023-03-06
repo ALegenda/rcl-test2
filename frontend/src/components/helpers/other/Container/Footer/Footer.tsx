@@ -49,7 +49,7 @@ const Footer: FC<IProps> = (props) => {
                             target={'_blank'}
                             rel={'noreferrer'}
                         >
-                            ДАННЫЕ ОБ ОРГАНИЗАЦИИ
+                            СВЕДЕНИЯ ОБ ОРГАНИЗАЦИИ
                         </a>
                         <a
                             className={styles.sites}
