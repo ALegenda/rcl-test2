@@ -14,6 +14,10 @@ import {
 } from 'react-router-dom';
 
 import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
+import {
     getDefaultQueryUser,
 } from 'instances/teams/functions';
 import {
@@ -36,6 +40,10 @@ const TeamsBar: FC<IProps> = (props) => {
         teamsTotal,
         getTeams,
     } = useTeamsStoredByUser();
+
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
 
     const location = useLocation();
 
@@ -73,7 +81,12 @@ const TeamsBar: FC<IProps> = (props) => {
 
     return (
         <InfiniteScroll
-            className={classNames(styles.teamsBar, props.className)}
+            className={
+                classNames(
+                    isDarkTheme && styles.darkTheme,
+                    styles.teamsBar,
+                    props.className)
+            }
             hasMore={teams.length < teamsTotal}
             loadMore={() => loadMoreTeams(teams.length)}
         >

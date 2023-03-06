@@ -21,6 +21,16 @@
 }
 
 .isActive {
-    color: #FFFFFF;
     background: #446ABB;
+    color: #FFFFFF;
+}
+
+.darkTheme {
+    background: #1F283C;
+    color: #616D86;
+}
+
+.isDarkActive {
+    background: #334D85;
+    color: #FFFFFF;
 }

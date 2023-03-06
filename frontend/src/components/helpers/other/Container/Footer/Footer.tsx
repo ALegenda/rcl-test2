@@ -7,28 +7,45 @@ import React, {
     FC,
 } from 'react';
 
+import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
 import Networks from '../Networks';
 
 import Text from './Text';
 
-import leftLogo from './media/left-logo.svg';
-import rightLogo from './media/right-logo.svg';
+import leftDarkLogo from './media/leftDarkLogo.svg';
+import leftLightLogo from './media/leftLightLogo.svg';
+import rightDarkLogo from './media/rightDarkLogo.svg';
+import rightLightLogo from './media/rightLightLogo.svg';
 
 import styles from './Footer.module.scss';
 
 const Footer: FC<IProps> = (props) => {
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
-        <div className={classNames(styles.footer, props.className)}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkTheme,
+                styles.footer,
+                props.className
+            )
+        }
+        >
             <div className={styles.topMobile}>
                 <div className={styles.logos}>
                     <img
                         className={styles.topLogo}
-                        src={leftLogo}
+                        src={isDarkTheme ? leftDarkLogo : leftLightLogo}
                         alt={''}
                     />
                     <img
                         className={styles.bottomLogo}
-                        src={rightLogo}
+                        src={isDarkTheme ? rightDarkLogo : rightLightLogo}
                         alt={''}
                     />
                 </div>
@@ -37,7 +54,7 @@ const Footer: FC<IProps> = (props) => {
             <div className={styles.top}>
                 <img
                     className={styles.leftLogo}
-                    src={leftLogo}
+                    src={isDarkTheme ? leftDarkLogo : leftLightLogo}
                     alt={''}
                 />
                 <div className={styles.middle}>
@@ -71,7 +88,7 @@ const Footer: FC<IProps> = (props) => {
                 </div>
                 <img
                     className={styles.rightLogo}
-                    src={rightLogo}
+                    src={isDarkTheme ? rightDarkLogo : rightLightLogo}
                     alt={''}
                 />
             </div>

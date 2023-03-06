@@ -17,9 +17,14 @@
             height: 55px;
         }
     }
+
     .isActive {
         @include borderRadius(5px);
 
         background: #DB0036;
     }
+}
+
+.darkTheme {
+    background: #11192B;
 }

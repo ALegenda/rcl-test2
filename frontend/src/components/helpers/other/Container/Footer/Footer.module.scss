@@ -6,27 +6,24 @@
 
     .topMobile {
         .logos {
-            .topLogo {
+            .topLogo {}
 
-            }
-            .bottomLogo {
-
-            }
+            .bottomLogo {}
         }
-        .text {
 
-        }
+        .text {}
     }
-    .top {
-        .leftLogo {
 
-        }
+    .top {
+        .leftLogo {}
+
         .middle {
             .text {
                 font-style: normal;
                 font-weight: 400;
                 color: #A4A4A4;
             }
+
             .files {
                 .agreement {
                     display: block;
@@ -37,6 +34,7 @@
 
                     margin-right: 69px;
                 }
+
                 .personalData {
                     display: block;
 
@@ -46,6 +44,7 @@
 
                     margin-right: 84px;
                 }
+
                 .sites {
                     display: block;
 
@@ -55,6 +54,7 @@
                 }
             }
         }
+
         .rightLogo {
             width: 101px;
             height: 34px;
@@ -62,6 +62,7 @@
             margin-left: 31px;
         }
     }
+
     .bottom {
         @include dFlex();
 
@@ -70,8 +71,39 @@
             font-weight: 400;
             color: #5C5C5C;
         }
+
         .networks {
             width: fit-content;
+        }
+    }
+}
+
+.darkTheme {
+    .top {
+        .middle {
+            .text {
+                color: #5C667D;
+            }
+
+            .files {
+                .agreement {
+                    color: #FFFFFF;
+                }
+
+                .personalData {
+                    color: #FFFFFF;
+                }
+
+                .sites {
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+
+    .bottom {
+        .copyright {
+            color: #5C667D;
         }
     }
 }
@@ -96,11 +128,13 @@
 
                     margin-bottom: 24px;
                 }
+
                 .bottomLogo {
                     width: 77px;
                     height: 26px;
                 }
             }
+
             .text {
                 font-style: normal;
                 font-weight: 400;
@@ -110,16 +144,19 @@
                 line-height: 177.69%;
             }
         }
+
         .top {
             margin-bottom: 34px;
 
             .leftLogo {
                 display: none;
             }
+
             .middle {
                 .text {
                     display: none;
                 }
+
                 .files {
                     .agreement {
                         font-size: 10px;
@@ -127,22 +164,26 @@
 
                         margin-bottom: 14px;
                     }
+
                     .personalData {
                         font-size: 10px;
                         line-height: 177.69%;
 
                         margin-bottom: 14px;
                     }
+
                     .sites {
                         font-size: 10px;
                         line-height: 177.69%;
                     }
                 }
             }
+
             .rightLogo {
                 display: none;
             }
         }
+
         .bottom {
             @include flexColumnReverse();
             @include alignItemsCenter();
@@ -153,6 +194,7 @@
 
                 margin-right: 0;
             }
+
             .networks {
                 width: fit-content;
 
@@ -170,17 +212,14 @@
             display: none !important;
 
             .logos {
-                .topLogo {
+                .topLogo {}
 
-                }
-                .bottomLogo {
-
-                }
+                .bottomLogo {}
             }
-            .text {
 
-            }
+            .text {}
         }
+
         .top {
             @include dFlex();
             @include flexRow();
@@ -195,6 +234,7 @@
 
                 margin-right: 31px;
             }
+
             .middle {
                 margin-bottom: 38px;
 
@@ -206,6 +246,7 @@
 
                     margin-bottom: 33px;
                 }
+
                 .files {
                     @include dFlex();
                     @include flexRow();
@@ -217,6 +258,7 @@
                         margin-right: 69px;
                         margin-bottom: 0;
                     }
+
                     .personalData {
                         font-size: 10px;
                         line-height: 177.69%;
@@ -224,12 +266,14 @@
                         margin-right: 84px;
                         margin-bottom: 0;
                     }
+
                     .sites {
                         font-size: 10px;
                         line-height: 177.69%;
                     }
                 }
             }
+
             .rightLogo {
                 display: block;
 
@@ -239,6 +283,7 @@
                 margin-left: 31px;
             }
         }
+
         .bottom {
             @include flexRow();
             @include justifyContentEnd();
@@ -250,6 +295,7 @@
 
                 margin-right: 27px;
             }
+
             .networks {
                 width: fit-content;
 

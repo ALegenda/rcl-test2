@@ -8,13 +8,24 @@ import React, {
     FC,
 } from 'react';
 
-import twitchImage from './media/icons8-twitch.svg';
-import vkImage from './media/VK_logo_Black.svg';
-import youtubeImage from './media/youtube-svgrepo.svg';
+import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
+import twitchBlueImage from './media/twitchBlue.svg';
+import twitchDarkImage from './media/twitchDark.svg';
+import vkBlueImage from './media/vkBlue.svg';
+import vkDarkImage from './media/vkDark.svg';
+import youtubeBlueImage from './media/youtubeBlue.svg';
+import youtubeDarkImage from './media/youtubeDark.svg';
 
 import styles from './Networks.module.scss';
 
 const Networks: FC<IProps> = (props) => {
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
         <div className={classNames(styles.networks, props.className)}>
             <a
@@ -24,7 +35,7 @@ const Networks: FC<IProps> = (props) => {
                 rel={'noreferrer'}
             >
                 <img
-                    src={vkImage}
+                    src={isDarkTheme ? vkBlueImage : vkDarkImage}
                     alt={''}
                 />
             </a>
@@ -35,7 +46,7 @@ const Networks: FC<IProps> = (props) => {
                 rel={'noreferrer'}
             >
                 <img
-                    src={twitchImage}
+                    src={isDarkTheme ? twitchBlueImage : twitchDarkImage}
                     alt={''}
                 />
             </a>
@@ -46,7 +57,7 @@ const Networks: FC<IProps> = (props) => {
                 rel={'noreferrer'}
             >
                 <img
-                    src={youtubeImage}
+                    src={isDarkTheme ? youtubeBlueImage : youtubeDarkImage}
                     alt={''}
                 />
             </a>

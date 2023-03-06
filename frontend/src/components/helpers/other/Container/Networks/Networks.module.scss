@@ -1,4 +1,5 @@
 @import 'tools/styles/flex';
+@import 'tools/styles/adaptive';
 
 .networks {
     @include dFlex();
@@ -11,12 +12,41 @@
     .network {
         margin-right: 10px;
 
-        img {
-            width: 30px;
-            height: 30px;
-        }
         &:last-child {
             margin-right: 0;
+        }
+    }
+}
+
+@include applyResponsive320() {
+    .networks {
+        .network {
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}
+
+@include applyResponsive768() {
+    .networks {
+        .network {
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .networks {
+        .network {
+            img {
+                width: 30px;
+                height: 30px;
+            }
         }
     }
 }

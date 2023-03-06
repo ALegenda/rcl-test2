@@ -17,9 +17,8 @@
 
                 width: fit-content;
 
-                img {
+                img {}
 
-                }
                 .title {
                     font-style: normal;
                     font-weight: 700;
@@ -27,23 +26,35 @@
                 }
             }
         }
-        .tabsContainer {
 
-        }
+        .tabsContainer {}
     }
-    .bottomTabsContainer {
-        .bottomTabs {
 
+    .bottomTabsContainer {
+        .bottomTabs {}
+    }
+}
+
+.darkTheme {
+    .content {
+        .logoContainer {
+            .logo {
+                .title {
+                    color: #FFFFFF;
+                }
+            }
         }
     }
 }
 
 @include applyResponsive320() {
     .header {
+        padding-bottom: 25px;
+
         .content {
             @include gridColumns(1fr 1fr);
 
-            padding: 13px 35px 6px 35px;
+            padding: 33px 27px 25px 35px;
 
             .logoContainer {
                 .logo {
@@ -53,16 +64,19 @@
 
                         margin-right: 13px;
                     }
+
                     .title {
                         font-size: 10px;
                         line-height: 12px;
                     }
                 }
             }
+
             .tabsContainer {
                 display: none;
             }
         }
+
         .bottomTabsContainer {
             @include dFlex();
             @include flexRow();
@@ -79,6 +93,8 @@
 
 @include applyResponsive768() {
     .header {
+        padding-bottom: 0;
+
         .content {
             @include gridColumns(1fr 1fr 1fr);
 
@@ -92,16 +108,19 @@
 
                         margin-right: 13px;
                     }
+
                     .title {
                         font-size: 10px;
                         line-height: 12px;
                     }
                 }
             }
+
             .tabsContainer {
                 display: block;
             }
         }
+
         .bottomTabsContainer {
             display: none !important;
         }

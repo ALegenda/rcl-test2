@@ -1,0 +1,64 @@
+@import 'tools/styles/adaptive';
+@import 'tools/styles/helpers';
+@import 'tools/styles/animations';
+
+.toggle {
+    position: relative;
+    display: inline-block;
+
+    width: 60px;
+    height: 30px;
+
+    input {
+        width: 0;
+        height: 0;
+
+        opacity: 0;
+
+        &:checked+span {
+            background: #1F283C;
+        }
+
+        &:checked+span::before {
+            @include transform(translateX(29px));
+            background: #334D85;
+        }
+    }
+
+    span {
+        @include borderRadius(30px);
+        @include easeTransition();
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        background: #000000;
+        cursor: pointer;
+
+        &::before {
+            @include borderRadius(50%);
+            @include easeTransition();
+
+            position: absolute;
+            left: 3px;
+            bottom: 2.6px;
+
+            width: 25px;
+            height: 25px;
+
+            background: #ffffff;
+            content: '';
+        }
+    }
+}
+
+@include applyResponsive320() {
+    .toggle {}
+}
+
+@include applyResponsive768() {
+    .toggle {}
+}

@@ -6,9 +6,8 @@
     @include flexColumn();
     @include justifyContentBetween();
 
-    background: #FFFFFF;
-
     min-height: 100vh;
+    background: #FFFFFF;
 
     .main {
         @include dFlex();
@@ -18,10 +17,15 @@
         .teamsBar {
             width: 100%;
         }
+
         .content {
             position: relative;
         }
     }
+}
+
+.darkTheme {
+    background: #0C1425;
 }
 
 @include applyResponsive320() {
@@ -30,6 +34,7 @@
             .teamsBar {
                 margin-bottom: 15px;
             }
+
             .content {
                 width: 100%;
                 position: relative;
@@ -44,6 +49,7 @@
             .teamsBar {
                 margin-bottom: 15px;
             }
+
             .content {
                 width: 768px - 20px;
                 position: relative;
@@ -58,6 +64,7 @@
             .teamsBar {
                 margin-bottom: 15px;
             }
+
             .content {
                 width: 1280px - 40px;
                 position: relative;
@@ -72,6 +79,7 @@
             .teamsBar {
                 margin-bottom: 43px;
             }
+
             .content {
                 width: 1292px;
                 position: relative;

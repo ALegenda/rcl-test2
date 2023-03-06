@@ -10,17 +10,38 @@ import {
     Link,
 } from 'react-router-dom';
 
+import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
+import {
+    Toggle,
+} from 'components/helpers/inputs';
+
 import Networks from '../Networks';
 
 import Tabs from './Tabs';
 
-import logoImage from './media/logo.svg';
+import darkLogoImage from './media/darkLogo.svg';
+import lightLogoImage from './media/lightLogo.svg';
 
 import styles from './Header.module.scss';
 
 const Header: FC<IProps> = (props) => {
+    const {
+        isDarkTheme,
+        setIsDarkTheme,
+    } = useDarkTheme();
+
     return (
-        <div className={classNames(styles.header, props.className)}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkTheme,
+                styles.header,
+                props.className
+            )
+        }
+        >
             <div className={styles.content}>
                 <div className={styles.logoContainer}>
                     <Link
@@ -28,7 +49,7 @@ const Header: FC<IProps> = (props) => {
                         to={'/'}
                     >
                         <img
-                            src={logoImage}
+                            src={isDarkTheme ? lightLogoImage : darkLogoImage}
                             alt={''}
                         />
                         <div className={styles.title}>
@@ -44,6 +65,10 @@ const Header: FC<IProps> = (props) => {
                     <Tabs/>
                 </div>
                 <Networks/>
+                <Toggle
+                    isMode={isDarkTheme}
+                    setIsMode={() => setIsDarkTheme(!isDarkTheme)}
+                />
             </div>
             <div className={styles.bottomTabsContainer}>
                 <Tabs className={styles.bottomTabs}/>
