@@ -44,28 +44,20 @@ const Footer: FC<IProps> = (props) => {
                     <Text className={styles.text}/>
                     <div className={styles.files}>
                         <a
-                            className={styles.agreement}
-                            href={`${process.env.PUBLIC_URL}/static/agreement.txt`}
-                            target={'_blank'}
-                            rel={'noreferrer'}
-                        >
-                            ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ
-                        </a>
-                        <a
                             className={styles.personalData}
-                            href={`${process.env.PUBLIC_URL}/static/personal-data.txt`}
+                            href={`${process.env.PUBLIC_URL}/static/Kartochka_organizacii.pdf`}
                             target={'_blank'}
                             rel={'noreferrer'}
                         >
-                            ПОЛОЖЕНИЕ ОБ ОБРАБОТКЕ ПЕРСОНАЛЬНЫХ ДАННЫХ ООО &quot;РКЛ&quot;
+                            ДАННЫЕ ОБ ОРГАНИЗАЦИИ &quot;РКЛ&quot;
                         </a>
                         <a
                             className={styles.sites}
-                            href={`${process.env.PUBLIC_URL}/static/sites.txt`}
+                            href={`${process.env.PUBLIC_URL}/static/Usloviya_polzovania_saitom.docx`}
                             target={'_blank'}
                             rel={'noreferrer'}
                         >
-                            УСЛОВИЯ ПОЛЬЗОВАНИЯ САЙТАМИ РКЛ
+                            УСЛОВИЯ ПОЛЬЗОВАНИЯ САЙТОМ
                         </a>
                     </div>
                 </div>
