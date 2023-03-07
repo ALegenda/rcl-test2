@@ -44,7 +44,7 @@ const Footer: FC<IProps> = (props) => {
                     <Text className={styles.text}/>
                     <div className={styles.files}>
                         <a
-                            className={styles.personalData}
+                            className={styles.agreement}
                             href={`${process.env.PUBLIC_URL}/static/Kartochka_organizacii.pdf`}
                             target={'_blank'}
                             rel={'noreferrer'}
@@ -52,7 +52,7 @@ const Footer: FC<IProps> = (props) => {
                             СВЕДЕНИЯ ОБ ОРГАНИЗАЦИИ
                         </a>
                         <a
-                            className={styles.sites}
+                            className={styles.personalData}
                             href={`${process.env.PUBLIC_URL}/static/Usloviya_polzovania_saitom.docx`}
                             target={'_blank'}
                             rel={'noreferrer'}
