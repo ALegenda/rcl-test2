@@ -59,6 +59,14 @@ const Footer: FC<IProps> = (props) => {
                         >
                             УСЛОВИЯ ПОЛЬЗОВАНИЯ САЙТОМ
                         </a>
+                        <a
+                            className={styles.sites}
+                            href={`${process.env.PUBLIC_URL}/static/Contacts.pdf`}
+                            target={'_blank'}
+                            rel={'noreferrer'}
+                        >
+                            КОНТАКТЫ
+                        </a>
                     </div>
                 </div>
                 <img
