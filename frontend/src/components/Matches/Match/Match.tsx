@@ -11,6 +11,10 @@ import {
 } from 'react-router-dom';
 
 import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
+import {
     formatDate,
     formatTime,
 } from 'instances/matches/functions';
@@ -19,13 +23,25 @@ import {
     Image,
 } from 'components/helpers/other';
 
-import vsImage from './media/vs.svg';
+import vsDarkImage from './media/vs-dark.svg';
+import vsLightImage from './media/vs-light.svg';
 
 import styles from './Match.module.scss';
 
 const Match: FC<IProps> = (props) => {
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
-        <div className={classNames(styles.match, props.className)}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkMatch,
+                styles.match,
+                props.className
+            )
+        }
+        >
             <Link
                 className={styles.date}
                 to={`/games/${props.match.id}`}
@@ -53,7 +69,7 @@ const Match: FC<IProps> = (props) => {
                 />
                 <img
                     className={styles.vsImage}
-                    src={vsImage}
+                    src={isDarkTheme ? vsDarkImage : vsLightImage}
                     alt={''}
                 />
             </div>

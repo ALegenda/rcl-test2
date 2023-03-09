@@ -4,35 +4,41 @@
 @import 'tools/styles/adaptive';
 
 .lineupContainer {
+    @include dFlex();
+
+    width: 100%;
+    overflow: auto;
+
     .lineup {
-        height: fit-content;
-
         @include borderRadius(25px);
-        background: #F9F9FA;
 
-        padding: 20px 26px 20px 26px;
+        height: fit-content;
+        background: #F9F9FA;
 
         .content {
             @include dFlex();
-            @include flexColumn();
-
-            gap: 16px;
 
             .title {
-                font-size: 12px;
-                line-height: 14px;
                 font-weight: 500;
+                color: #000000;
             }
 
             .players {
                 @include dFlex();
-                @include flexRow();
 
-                gap: 5px;
+                .player {}
+            }
+        }
+    }
+}
 
-                .player {
-                    width: 118px;
-                }
+.darkLineupContainer {
+    .lineup {
+        background: #1F283B;
+
+        .content {
+            .title {
+                color: #FFFFFF;
             }
         }
     }
@@ -40,25 +46,29 @@
 
 @include applyResponsive320() {
     .lineupContainer {
-        @include dFlex();
-
-        width: 100%;
-        overflow: auto;
-
         .lineup {
-            width: 100%;
-            min-width: 660px;
-            max-width: 660px;
+            width: fit-content;
 
-            margin: 0 17px 20px 17px;
-        }
-    }
-}
+            padding: 20px 26px 20px 26px;
 
-@include applyResponsive768() {
-    .lineupContainer {
-        .lineup {
-            margin: 0;
+            .content {
+                @include flexColumn();
+                gap: 16px;
+
+                .title {
+                    font-size: 12px;
+                    line-height: 14px;
+                }
+
+                .players {
+                    @include flexRow();
+                    gap: 5px;
+
+                    .player {
+                        width: 118px;
+                    }
+                }
+            }
         }
     }
 }
@@ -66,12 +76,5 @@
 @include applyResponsive1280() {
     .lineupContainer {
         @include justifyContentCenter();
-        margin-left: 90px;
-    }
-}
-
-@include applyResponsive1440() {
-    .lineupContainer {
-        margin-left: 67px;
     }
 }

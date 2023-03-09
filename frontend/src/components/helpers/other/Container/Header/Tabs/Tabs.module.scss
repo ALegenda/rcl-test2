@@ -1,5 +1,6 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/helpers';
+@import 'tools/styles/adaptive';
 
 .tabs {
     @include dFlex();
@@ -16,5 +17,11 @@
         &:last-child {
             margin-right: 0;
         }
+    }
+}
+
+@include applyResponsive768() {
+    .tabs {
+        @include justifyContentCenter();
     }
 }

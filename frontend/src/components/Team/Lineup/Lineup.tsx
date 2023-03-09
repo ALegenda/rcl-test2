@@ -2,10 +2,15 @@ import {
     IProps,
 } from './types';
 
+import classNames from 'classnames';
 import React, {
     FC,
     useEffect,
 } from 'react';
+
+import {
+    useDarkTheme,
+} from 'helpers/hooks';
 
 import {
     usePlayersLineupByUser,
@@ -26,6 +31,10 @@ const Lineup: FC<IProps> = (props) => {
         getPlayersLineup,
     } = usePlayersLineupByUser();
 
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     useEffect(() => {
         (async () => {
             await getPlayersLineup(parseInt(props.id ?? ''));
@@ -33,7 +42,14 @@ const Lineup: FC<IProps> = (props) => {
     }, [props.id]);
 
     return (
-        <div className={styles.lineupContainer}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkLineupContainer,
+                styles.lineupContainer,
+                props.className
+            )
+        }
+        >
             <div className={styles.lineup}>
                 <div className={styles.content}>
                     <div className={styles.title}>

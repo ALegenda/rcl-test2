@@ -4,15 +4,28 @@
 .docs {
     .title {
         font-style: normal;
-        font-weight: 700;
+        font-weight: 500;
     }
+
     .subtitle {
         font-style: normal;
-        font-weight: 700;
+        font-weight: 500;
+        color: #A1A1A1;
     }
+
     .list {
         @include dFlex();
         @include flexColumn();
+    }
+}
+
+.darkDocs {
+    .title {
+        color: #FFFFFF;
+    }
+
+    .subtitle {
+        color: #7282A3;
     }
 }
 
@@ -25,17 +38,18 @@
             font-size: 25px;
             line-height: 159.4%;
 
-            margin-bottom: 15px;
+            margin-bottom: 5px;
         }
+
         .subtitle {
-            font-size: 19px;
+            font-size: 15px;
             line-height: 22px;
 
             margin-bottom: 10px;
         }
+
         .list {
             gap: 10px;
-
             padding-left: 20px;
         }
     }
@@ -46,21 +60,15 @@
         padding: 0;
         margin-bottom: 0;
 
-        .title {
-            font-size: 25px;
-            line-height: 159.4%;
+        .subtitle {
+            font-size: 16px;
+            line-height: 22px;
 
             margin-bottom: 20px;
         }
-        .subtitle {
-            font-size: 19px;
-            line-height: 22px;
 
-            margin-bottom: 15px;
-        }
         .list {
             gap: 15px;
-
             padding-left: 30px;
         }
     }

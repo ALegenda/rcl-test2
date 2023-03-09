@@ -62,7 +62,6 @@ const Matches: FC = () => {
                         Ни один матч еще не завершён. Следите за обновлениями!
                     </div> :
                     <div>
-                        <div className={styles.magicTop}></div>
                         <InfiniteScroll
                             className={styles.list}
                             hasMore={matches.length < matchesTotal}
@@ -78,7 +77,6 @@ const Matches: FC = () => {
                                 )
                             }
                         </InfiniteScroll>
-                        <div className={styles.magicBottom}></div>
                     </div>
             }
         </div>

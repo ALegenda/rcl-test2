@@ -61,6 +61,20 @@
     }
 }
 
+.darkMatch {
+    background: #273249;
+
+    .basic {
+        .score {
+            color: #FFFFFF;
+        }
+    }
+
+    .time {
+        color: #FFFFFF;
+    }
+}
+
 @include applyResponsive320 {
     .match {
         padding: 28px 20px 39px 20px;

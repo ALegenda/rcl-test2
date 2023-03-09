@@ -35,7 +35,7 @@
     }
 }
 
-.darkTheme {
+.darkHeader {
     .content {
         .logoContainer {
             .logo {
@@ -52,9 +52,11 @@
         padding-bottom: 25px;
 
         .content {
-            @include gridColumns(1fr 1fr);
+            @include gridColumns(1fr auto auto);
+            @include alignItemsCenter();
 
-            padding: 33px 27px 25px 35px;
+            gap: 9px;
+            padding: 33px 25px 25px 30px;
 
             .logoContainer {
                 .logo {
@@ -62,12 +64,14 @@
                         width: 37px;
                         height: 38px;
 
-                        margin-right: 13px;
+                        padding-right: 6px;
                     }
 
                     .title {
                         font-size: 10px;
                         line-height: 12px;
+
+                        padding-top: 3px;
                     }
                 }
             }
@@ -82,7 +86,7 @@
             @include flexRow();
             @include justifyContentCenter();
 
-            padding-left: 35px;
+            padding-left: 30px;
 
             .bottomTabs {
                 padding-right: 35px;
@@ -96,17 +100,17 @@
         padding-bottom: 0;
 
         .content {
-            @include gridColumns(1fr 1fr 1fr);
+            @include gridColumns(auto 1fr auto auto);
 
-            padding: 26px 74px 27px 74px;
+            padding: 26px 30px 27px 50px;
 
             .logoContainer {
                 .logo {
                     img {
-                        width: 37px;
+                        width: 46px;
                         height: 38px;
 
-                        margin-right: 13px;
+                        padding-right: 10px;
                     }
 
                     .title {
@@ -123,6 +127,23 @@
 
         .bottomTabsContainer {
             display: none !important;
+        }
+    }
+}
+
+@include applyResponsive1024() {
+    .header {
+        .content {
+            gap: 25px;
+            padding: 26px 75px 27px 75px;
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .header {
+        .content {
+            gap: 30px;
         }
     }
 }

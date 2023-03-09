@@ -40,6 +40,10 @@
     }
 }
 
+.darkPlayer {
+    color: #FFFFFF;
+}
+
 @include applyResponsive320() {
     .player {
         .row {

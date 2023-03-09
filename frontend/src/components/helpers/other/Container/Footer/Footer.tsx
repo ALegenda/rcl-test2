@@ -15,10 +15,10 @@ import Networks from '../Networks';
 
 import Text from './Text';
 
-import leftDarkLogo from './media/leftDarkLogo.svg';
-import leftLightLogo from './media/leftLightLogo.svg';
-import rightDarkLogo from './media/rightDarkLogo.svg';
-import rightLightLogo from './media/rightLightLogo.svg';
+import leftDarkLogo from './media/left-dark-logo.svg';
+import leftLightLogo from './media/left-light-logo.svg';
+import rightDarkLogo from './media/right-dark-logo.svg';
+import rightLightLogo from './media/right-light-logo.svg';
 
 import styles from './Footer.module.scss';
 
@@ -30,7 +30,7 @@ const Footer: FC<IProps> = (props) => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkTheme,
+                isDarkTheme && styles.darkFooter,
                 styles.footer,
                 props.className
             )

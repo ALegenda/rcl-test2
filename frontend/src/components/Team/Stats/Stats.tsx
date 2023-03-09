@@ -9,6 +9,10 @@ import React, {
 } from 'react';
 
 import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
+import {
     useTeamByUser,
 } from 'instances/teams/hooks';
 
@@ -24,6 +28,10 @@ const Stats: FC<IProps> = (props) => {
         getStats,
     } = useTeamByUser();
 
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     useEffect(() => {
         (async () => {
             await getStats(parseInt(props.id ?? ''));
@@ -37,7 +45,14 @@ const Stats: FC<IProps> = (props) => {
     }
 
     return (
-        <div className={styles.stats}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkStats,
+                styles.stats,
+                props.className
+            )
+        }
+        >
             <div className={styles.content}>
                 <div className={styles.card}>
                     <div className={styles.value}>

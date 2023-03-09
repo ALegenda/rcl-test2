@@ -9,18 +9,16 @@
 
     width: 100%;
 
-    .network {
-        margin-right: 10px;
-
-        &:last-child {
-            margin-right: 0;
-        }
-    }
+    .network {}
 }
 
 @include applyResponsive320() {
     .networks {
+        gap: 7px;
+
         .network {
+            padding-top: 4px;
+
             img {
                 width: 20px;
                 height: 20px;
@@ -31,6 +29,8 @@
 
 @include applyResponsive768() {
     .networks {
+        gap: 10px;
+
         .network {
             img {
                 width: 24px;

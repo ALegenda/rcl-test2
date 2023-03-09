@@ -3,56 +3,67 @@
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
 
-.team {
-    @include dFlex();
-
-    .baguetteContainer {
+.teamContainer {
+    .team {
         @include dFlex();
 
-        .baguette {
+        .baguetteLogo {
             @include dFlex();
-
             @include borderRadius(25px);
+
             background: #F9F9FA;
 
             .logoImg {}
         }
-    }
 
-    .infoBlock {
-        font-size: 15px;
-        line-height: 35px;
-        font-weight: 500;
-
-        .basic {
+        .infoContainer {
             @include dFlex();
+            font-weight: 500;
 
-            .row {
+            .basic {
                 @include dFlex();
-                @include flexRow();
 
-                gap: 23px;
+                .row {
+                    @include dFlex();
 
-                .characteristic {
-                    width: 86px;
+                    .characteristic {
+                        text-align: end;
+                        color: #A0A0A0;
+                    }
 
-                    color: #A0A0A0;
-                    text-align: end;
+                    .value {
+                        @include dFlex();
+                        color: #000000;
+
+                        img {}
+                    }
                 }
 
-                .value {
-                    @include dFlex();
-                    @include flexRow();
-                    @include alignItemsCenter();
+                .stats {}
 
-                    color: #000000;
+                .insideLineup {}
+            }
+        }
 
-                    img {
-                        width: 19px;
-                        height: 13px;
+        .outsideLineup {}
+    }
+}
 
-                        margin-bottom: 5px;
-                        margin-left: 10px;
+.darkTeamContainer {
+    .team {
+        .baguetteLogo {
+            background: #1F283B;
+        }
+
+        .infoContainer {
+            .basic {
+                .row {
+                    .characteristic {
+                        color: #525E76;
+                    }
+
+                    .value {
+                        color: #FFFFFF;
                     }
                 }
             }
@@ -61,19 +72,15 @@
 }
 
 @include applyResponsive320() {
-    .team {
-        @include flexColumn();
-        @include alignItemsCenter();
+    .teamContainer {
+        .team {
+            @include flexColumn();
+            @include alignItemsCenter();
 
-        gap: 20px;
+            gap: 20px;
+            padding: 28px 15px 13px 15px;
 
-        .baguetteContainer {
-            @include justifyContentCenter();
-
-            width: 100%;
-            padding: 0 20px;
-
-            .baguette {
+            .baguetteLogo {
                 @include justifyContentCenter();
 
                 width: 100%;
@@ -84,96 +91,116 @@
                 .logoImg {
                     min-width: 129px;
                     height: 129px;
+                }
+            }
 
-                    margin: 5px 0;
+            .infoContainer {
+                @include flexColumn();
+
+                font-size: 15px;
+                line-height: 35px;
+
+                .basic {
+                    @include flexColumn();
+                    @include alignItemsStart();
+
+                    padding-bottom: 46px;
+
+                    .row {
+                        @include flexRow();
+                        gap: 23px;
+
+                        .characteristic {
+                            width: 86px;
+                        }
+
+                        .value {
+                            @include flexRow();
+                            @include alignItemsCenter();
+
+                            img {
+                                width: 19px;
+                                height: 13px;
+
+                                margin-bottom: 5px;
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
+
+                .insideLineup {
+                    display: none !important;
                 }
             }
         }
 
-        .infoBlock {
-            .basic {
-                @include flexColumn();
-                @include alignItemsStart();
-
-                margin: 0 20px 46px 35px;
-            }
+        .outsideLineup {
+            padding: 0 15px 20px 15px;
         }
     }
 }
 
 @include applyResponsive768() {
-    .team {
-        @include flexRow();
-        @include alignItemsStart();
+    .teamContainer {
+        .team {
+            @include flexRow();
+            @include justifyContentCenter();
+            @include alignItemsStart();
 
-        margin-bottom: 18px;
+            padding-bottom: 20px;
 
-        .baguetteContainer {
-            width: auto;
-            padding: 0;
-
-            .baguette {
-                width: auto;
-                max-width: none;
-
-                padding: 65px 24px 51px 25px;
+            .baguetteLogo {
+                padding: 68px 15px 68px 15px;
 
                 .logoImg {
-                    min-width: 187px;
-                    height: 187px;
+                    min-width: 159px;
+                    height: 159px;
+                }
+            }
 
-                    margin: 10px 0;
+            .infoContainer {
+                .basic {
+                    padding-bottom: 15px;
                 }
             }
         }
 
-        .infoBlock {
-            .basic {
-                margin: 0;
-                margin-bottom: 23px;
-            }
+        .outsideLineup {
+            padding-bottom: 28px;
         }
     }
 }
 
 @include applyResponsive1280() {
-    .team {
-        @include flexRow();
+    .teamContainer {
+        .team {
+            gap: 43px;
 
-        margin: 0;
-        gap: 36px;
-
-        .baguetteContainer {
-            .baguette {
+            .baguetteLogo {
                 padding: 67px 64px 62px 65px;
 
                 .logoImg {
                     min-width: 217px;
                     height: 217px;
+                }
+            }
 
-                    margin: 10px 0;
+            .infoContainer {
+                gap: 11px;
+
+                .basic {
+                    padding-bottom: 12px;
+                }
+
+                .insideLineup {
+                    @include dFlex();
                 }
             }
         }
 
-        .infoBlock {
-            margin-top: 30px;
-
-            .basic {
-                margin-bottom: 23px;
-            }
-        }
-    }
-}
-
-@include applyResponsive1440() {
-    .team {
-        .infoBlock {
-            margin-top: 18px;
-
-            .basic {
-                margin-bottom: 34px;
-            }
+        .outsideLineup {
+            display: none !important;
         }
     }
 }

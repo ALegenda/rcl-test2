@@ -1,14 +1,29 @@
+import classNames from 'classnames';
 import React, {
     FC,
 } from 'react';
+
+import {
+    useDarkTheme,
+} from 'helpers/hooks';
 
 import Doc from './Doc';
 
 import styles from './Docs.module.scss';
 
 const Docs: FC = () => {
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
-        <div className={styles.docs}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkDocs,
+                styles.docs
+            )
+        }
+        >
             <div className={styles.title}>
                 Документы
             </div>

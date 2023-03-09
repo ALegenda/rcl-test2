@@ -10,30 +10,25 @@
     position: relative;
 
     .top {
+        @include dFlex();
+        @include flexColumn();
+        @include alignItemsStart();
+
+        width: 100%;
         font-weight: 500;
 
         .title {
             font-size: 25px;
             line-height: 40px;
+            color: #000000;
         }
 
         .dateSeason {
             font-size: 15px;
             line-height: 30px;
+            white-space: nowrap;
             color: #A1A1A1;
         }
-    }
-
-    .magicTop {
-        position: absolute;
-        left: -20px;
-        right: 15px;
-        top: 68px;
-
-        height: 38px;
-
-        background: #FFFFFF;
-        filter: blur(7px);
     }
 
     .list {
@@ -41,17 +36,19 @@
         @include gridRows(1fr);
         @include blueScrollBar();
     }
+}
 
-    .magicBottom {
-        position: absolute;
-        left: -20px;
-        right: 15px;
-        bottom: -20px;
+.darkTeams {
+    .top {
+        padding-bottom: 17px;
 
-        height: 38px;
+        .title {
+            color: #FFFFFF;
+        }
 
-        background: #FFFFFF;
-        filter: blur(7px);
+        .dateSeason {
+            color: #7282A3;
+        }
     }
 }
 
@@ -59,15 +56,6 @@
     .teams {
         @include alignItemsCenter();
         padding: 44px 15px 20px 38px;
-
-        .top {
-            margin-right: 140px;
-            margin-bottom: 17px;
-        }
-
-        .magicTop {
-            display: none !important;
-        }
 
         .list {
             @include gridColumns(repeat(2, 1fr));
@@ -77,26 +65,22 @@
             gap: 35px 45px;
             padding: 15px 30px 15px 0;
         }
+    }
+}
 
-        .magicBottom {
-            display: none !important;
+@include applyResponsive512() {
+    .teams {
+        .list {
+            @include gridColumns(repeat(3, 1fr));
         }
     }
 }
 
 @include applyResponsive768() {
     .teams {
-        .top {
-            margin-right: 550px;
-        }
-
-        .magicTop {}
-
         .list {
             @include gridColumns(repeat(5, 1fr));
         }
-
-        .magicBottom {}
     }
 }
 
@@ -104,14 +88,10 @@
     .teams {
         @include alignItemsStart();
 
-        .magicTop {}
-
         .list {
             @include gridColumns(repeat(8, 1fr));
             gap: 30px;
         }
-
-        .magicBottom {}
     }
 }
 
@@ -119,12 +99,8 @@
     .teams {
         padding: 44px 0;
 
-        .magicTop {}
-
         .list {
             @include gridColumns(repeat(10, 1fr));
         }
-
-        .magicBottom {}
     }
 }

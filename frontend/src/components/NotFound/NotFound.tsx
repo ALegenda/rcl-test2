@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React, {
     FC,
 } from 'react';
@@ -5,18 +6,33 @@ import {
     Link,
 } from 'react-router-dom';
 
-import leftLogoImage from './media/left-logo.svg';
+import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
+import leftDarkLogoImage from './media/left-dark-logo.svg';
+import leftLightLogoImage from './media/left-light-logo.svg';
 import notFoundImage from './media/not-found.svg';
 
 import styles from './NotFound.module.scss';
 
 const NotFound: FC = () => {
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
-        <div className={styles.notFound}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkNotFound,
+                styles.notFound
+            )
+        }
+        >
             <div className={styles.left}>
                 <img
                     className={styles.leftLogo}
-                    src={leftLogoImage}
+                    src={isDarkTheme ? leftDarkLogoImage : leftLightLogoImage}
                     alt={''}
                 />
             </div>

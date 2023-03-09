@@ -3,31 +3,20 @@
 @import 'tools/styles/adaptive';
 
 .stats {
-    max-width: 551px;
-
     @include borderRadius(25px);
     background: #F9F9FA;
 
     .content {
         @include dGrid();
-        @include gridRows(1fr 1fr);
-
-        gap: 8px;
 
         .card {
+            @include borderRadius(10px);
+            background: #FFFFFF;
+
             font-weight: 500;
 
-            background: #FFFFFF;
-            @include borderRadius(10px);
-
-            padding: 14px 15px 15px 16px;
-
             .value {
-                font-size: 16px;
-                line-height: 18px;
                 color: #040404;
-
-                margin-bottom: 4px;
             }
 
             .center {
@@ -35,10 +24,26 @@
             }
 
             .characteristic {
-                font-size: 9px;
-                line-height: 10px;
                 white-space: nowrap;
                 color: #AFAFAF;
+            }
+        }
+    }
+}
+
+.darkStats {
+    background: #1F283B;
+
+    .content {
+        .card {
+            background: #273249;
+
+            .value {
+                color: #FFFFFF;
+            }
+
+            .characteristic {
+                color: #606E8C;
             }
         }
     }
@@ -47,15 +52,32 @@
 
 @include applyResponsive320 {
     .stats {
+        max-width: 551px;
         padding: 23px 18px 23px 17px;
-        margin: 0 22px 13px 17px;
 
         .content {
+            @include gridRows(1fr 1fr);
             @include gridColumns(repeat(2, 1fr));
 
+            gap: 10px;
+
             .card {
+                padding: 14px 15px 15px 16px;
+
+                .value {
+                    font-size: 16px;
+                    line-height: 18px;
+
+                    padding-bottom: 4px;
+                }
+
                 .center {
                     text-align: start;
+                }
+
+                .characteristic {
+                    font-size: 9px;
+                    line-height: 10px;
                 }
             }
         }
@@ -64,11 +86,9 @@
 
 @include applyResponsive768 {
     .stats {
-        margin: 0;
-        margin-bottom: 18px;
-
         .content {
             @include gridColumns(repeat(3, 1fr));
+            gap: 8px;
         }
     }
 }
@@ -76,6 +96,5 @@
 @include applyResponsive1280 {
     .stats {
         padding: 22px 26px 22px 26px;
-        margin-bottom: 11px;
     }
 }

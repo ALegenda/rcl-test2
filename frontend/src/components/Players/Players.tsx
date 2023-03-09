@@ -10,6 +10,10 @@ import {
 } from 'tools/hooks';
 
 import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
+import {
     getDefaultQueryUser,
 } from 'instances/players/functions';
 import {
@@ -20,7 +24,6 @@ import {
     MagicButton,
 } from 'components/helpers/buttons';
 import {
-    Container,
     InfiniteScroll,
     Loading,
 } from 'components/helpers/other';
@@ -42,6 +45,10 @@ const Players: FC = () => {
         playersTotal,
         getPlayers,
     } = usePlayersByUser();
+
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
 
     const loadMorePlayers = async (skip: number) => {
         if (isPending) {
@@ -69,7 +76,13 @@ const Players: FC = () => {
     }
 
     return (
-        <div className={styles.players}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkPlayers,
+                styles.players
+            )
+        }
+        >
             <div className={styles.tableContainer}>
                 <div className={styles.table}>
                     <div className={classNames(styles.row, styles.rowTop)}>
@@ -98,7 +111,6 @@ const Players: FC = () => {
                             K-D diff
                         </div>
                     </div>
-                    <div className={styles.magicTop}/>
                     <InfiniteScroll
                         className={styles.list}
                         hasMore={players.length < playersTotal && windowWidth >= WINDOW_WIDTH.W1280}
@@ -116,7 +128,6 @@ const Players: FC = () => {
                             )
                         }
                     </InfiniteScroll>
-                    <div className={styles.magicBottom}/>
                 </div>
             </div>
             {

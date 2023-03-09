@@ -25,7 +25,7 @@ const Container: FC<IProps> = (props) => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkTheme,
+                isDarkTheme && styles.darkContainer,
                 styles.container,
                 props.containerClassName
             )

@@ -22,8 +22,8 @@ import Networks from '../Networks';
 
 import Tabs from './Tabs';
 
-import darkLogoImage from './media/darkLogo.svg';
-import lightLogoImage from './media/lightLogo.svg';
+import darkLogoImage from './media/dark-logo.svg';
+import lightLogoImage from './media/light-logo.svg';
 
 import styles from './Header.module.scss';
 
@@ -36,7 +36,7 @@ const Header: FC<IProps> = (props) => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkTheme,
+                isDarkTheme && styles.darkHeader,
                 styles.header,
                 props.className
             )

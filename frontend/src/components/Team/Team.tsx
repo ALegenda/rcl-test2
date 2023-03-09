@@ -2,6 +2,7 @@ import {
     IParams,
 } from './types';
 
+import classNames from 'classnames';
 import React, {
     FC,
     useEffect,
@@ -9,6 +10,10 @@ import React, {
 import {
     useParams,
 } from 'react-router-dom';
+
+import {
+    useDarkTheme,
+} from 'helpers/hooks';
 
 import {
     useTeamByUser,
@@ -34,6 +39,10 @@ const Team: FC = () => {
         getTeam,
     } = useTeamByUser();
 
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     useEffect(() => {
         (async () => {
             await getTeam(parseInt(id ?? ''));
@@ -47,18 +56,22 @@ const Team: FC = () => {
     }
 
     return (
-        <div>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkTeamContainer,
+                styles.teamContainer
+            )
+        }
+        >
             <div className={styles.team}>
-                <div className={styles.baguetteContainer}>
-                    <div className={styles.baguette}>
-                        <Image
-                            className={styles.logoImg}
-                            src={team.logo}
-                            mode={'contain'}
-                        />
-                    </div>
+                <div className={styles.baguetteLogo}>
+                    <Image
+                        className={styles.logoImg}
+                        src={team.logo}
+                        mode={'contain'}
+                    />
                 </div>
-                <div className={styles.infoBlock}>
+                <div className={styles.infoContainer}>
                     <div className={styles.basic}>
                         <div className={styles.row}>
                             <div className={styles.characteristic}>
@@ -90,14 +103,22 @@ const Team: FC = () => {
                         </div>
                     </div>
                     <Stats
+                        className={styles.stats}
                         id={id ?? ''}
                         totalWins={team.totalWins}
                         totalDraws={team.totalDraws}
                         totalLoses={team.totalLoses}
                     />
+                    <Lineup
+                        className={styles.insideLineup}
+                        id={id ?? ''}
+                    />
                 </div>
             </div>
-            <Lineup id={id ?? ''}/>
+            <Lineup
+                className={styles.outsideLineup}
+                id={id ?? ''}
+            />
         </div>
     );
 };

@@ -10,10 +10,17 @@
         color: #3173FF;
         cursor: pointer;
     }
+
     .size {
         font-style: normal;
         font-weight: 400;
         color: #7C7C7C;
+    }
+}
+
+.darkTheme {
+    .size {
+        color: #7282A3;
     }
 }
 
@@ -25,6 +32,7 @@
 
             margin-bottom: 2px;
         }
+
         .size {
             font-size: 11px;
             line-height: 13px;
@@ -40,6 +48,7 @@
 
             margin-bottom: 2px;
         }
+
         .size {
             font-size: 11px;
             line-height: 13px;
