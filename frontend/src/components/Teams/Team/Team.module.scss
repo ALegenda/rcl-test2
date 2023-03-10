@@ -2,6 +2,7 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/grid';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .team {
     @include dFlex();
@@ -14,7 +15,7 @@
     font-weight: 500;
     text-align: center;
     word-wrap: break-word;
-    color: #000000;
+    color: $black3;
 
     gap: 5px;
 
@@ -22,7 +23,7 @@
 }
 
 .darkTheme {
-    color: #FFFFFF;
+    color: $white1;
 }
 
 @include applyResponsive320() {

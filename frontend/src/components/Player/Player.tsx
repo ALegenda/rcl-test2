@@ -2,6 +2,7 @@ import {
     IParams,
 } from './types';
 
+import classNames from 'classnames';
 import React, {
     FC,
     useEffect,
@@ -9,6 +10,10 @@ import React, {
 import {
     useParams,
 } from 'react-router-dom';
+
+import {
+    useDarkTheme,
+} from 'helpers/hooks';
 
 import {
     usePlayerByUser,
@@ -39,6 +44,10 @@ const Player: FC = () => {
         getBaseInfo,
     } = usePlayerByUser();
 
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     useEffect(() => {
         (async () => {
             await getBaseInfo(parseInt(id ?? ''));
@@ -52,7 +61,13 @@ const Player: FC = () => {
     }
 
     return (
-        <div className={styles.player}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkPlayer,
+                styles.player
+            )
+        }
+        >
             <Avatar
                 className={styles.avatar}
                 avatarSrc={baseInfo.imageUrl}
@@ -64,7 +79,7 @@ const Player: FC = () => {
                         <div className={styles.characteristic}>
                             Имя:
                         </div>
-                        <div className={styles.value}>
+                        <div className={classNames(styles.value, styles.name)}>
                             {formatName(baseInfo.nickName, baseInfo.firstName, baseInfo.lastName)}
                         </div>
                     </div>

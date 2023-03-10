@@ -9,6 +9,10 @@ import React, {
 } from 'react';
 
 import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
+import {
     usePendingMatchesByUser,
 } from 'instances/matches/hooks';
 
@@ -26,6 +30,10 @@ const MatchesList: FC<IProps> = (props) => {
         getMatches,
     } = usePendingMatchesByUser();
 
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     useEffect(() => {
         (async () => {
             await getMatches();
@@ -33,7 +41,14 @@ const MatchesList: FC<IProps> = (props) => {
     }, []);
 
     return (
-        <div className={classNames(styles.matchesList, props.className)}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkMatchesList,
+                styles.matchesList,
+                props.className
+            )
+        }
+        >
             <div className={styles.title}>
                 Ближайшие матчи
             </div>

@@ -1,16 +1,16 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .report {
     @include dFlex();
     @include flexRow();
 
-    background: #FFFFFF;
+    background: $white1;
 
-    .image {
+    .image {}
 
-    }
     .content {
         @include dFlex();
         @include flexColumn();
@@ -19,8 +19,9 @@
         .title {
             font-style: normal;
             font-weight: 500;
-            color: #000000;
+            color: $black3;
         }
+
         .moreLink {
             @include dFlex();
             @include flexRow();
@@ -28,12 +29,24 @@
 
             font-style: normal;
             font-weight: 500;
-            color: #000000;
+            color: $black3;
             cursor: pointer;
 
-            .arrowImage {
+            .arrowImage {}
+        }
+    }
+}
 
-            }
+.darkReport {
+    background: $indigo2;
+
+    .content {
+        .title {
+            color: $white1;
+        }
+
+        .moreLink {
+            color: $white1;
         }
     }
 }
@@ -50,6 +63,7 @@
             height: 100px;
             min-height: 100px;
         }
+
         .content {
             padding: 18px 7px 12px 19px;
 
@@ -57,6 +71,7 @@
                 font-size: 11px;
                 line-height: 13px;
             }
+
             .moreLink {
                 font-size: 10px;
                 line-height: 11px;
@@ -84,6 +99,7 @@
             height: 100px;
             min-height: 100px;
         }
+
         .content {
             padding: 18px 63px 12px 19px;
 
@@ -91,6 +107,7 @@
                 font-size: 13px;
                 line-height: 14px;
             }
+
             .moreLink {
                 font-size: 10px;
                 line-height: 11px;

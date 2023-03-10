@@ -2,6 +2,7 @@ import {
     IProps,
 } from './types';
 
+import classNames from 'classnames';
 import React, {
     FC,
 } from 'react';
@@ -14,6 +15,10 @@ import {
 } from 'tools/functions';
 
 import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
+import {
     Image,
     MultilineText,
 } from 'components/helpers/other';
@@ -21,8 +26,18 @@ import {
 import styles from './Report.module.scss';
 
 const Report: FC<IProps> = (props) => {
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
-        <div className={styles.report}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkReport,
+                styles.report
+            )
+        }
+        >
             <Image
                 className={styles.image}
                 src={props.report.imageUrl}

@@ -1,5 +1,6 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .downloadButton {
     @include dFlex();
@@ -8,13 +9,11 @@
 
     font-style: normal;
     font-weight: 400;
-    color: #020202;
+    color: $black2;
     cursor: pointer;
     text-decoration: underline;
 
-    .image {
-
-    }
+    .image {}
 }
 
 @include applyResponsive320() {

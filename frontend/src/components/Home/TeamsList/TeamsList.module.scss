@@ -3,30 +3,49 @@
 @import 'tools/styles/grid';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .teamsList {
     .title {
         font-style: normal;
         font-weight: 700;
-        color: #000000;
+        color: $black3;
     }
+
     .list {
-        @include blueScrollBar();
+        @include lightBlueScrollBar();
         @include overflowY(auto);
 
-        background: #FFFFFF;
+        background: $white1;
 
         .item {
             @include dGrid();
             @include alignItemsCenter();
 
-            border-bottom: 1px solid #F2F2F2;
+            border-bottom: 1px solid $white2;
         }
     }
+
     .moreButtonContainer {
         .moreButton {
             font-style: normal;
             font-weight: 700;
+        }
+    }
+}
+
+.darkTeamsList {
+    .title {
+        color: $white1;
+    }
+
+    .list {
+        @include darkBlueScrollBar();
+        background: $indigo2;
+
+        .item {
+            border-bottom: 1px solid $lightIndigo8;
+
         }
     }
 }
@@ -40,6 +59,7 @@
             margin-bottom: 23px;
             margin-left: 20px;
         }
+
         .list {
             @include borderRadius(10px);
 
@@ -50,6 +70,7 @@
                 @include gridColumns(22px + 18px 30px + 20px 35px 45px 27px + 11px 40px);
             }
         }
+
         .moreButtonContainer {
             @include dFlex();
             @include flexRow();
@@ -75,9 +96,10 @@
             margin-bottom: 20px;
             margin-left: 0;
         }
+
         .list {
             @include borderRadius(10px);
-            @include blueScrollBar();
+            @include lightBlueScrollBar();
 
             padding: 0 24px 0 24px;
             margin-bottom: 0;
@@ -86,12 +108,17 @@
                 @include gridColumns(22px + 28px 30px + 30px 50px 50px 27px + 11px 40px);
             }
         }
+
         .moreButtonContainer {
             display: none !important;
 
-            .moreButton {
+            .moreButton {}
+        }
+    }
 
-            }
+    .darkTeamsList {
+        .list {
+            @include darkBlueScrollBar();
         }
     }
 }

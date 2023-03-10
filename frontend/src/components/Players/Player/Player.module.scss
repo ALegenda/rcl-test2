@@ -2,9 +2,10 @@
 @import 'tools/styles/grid';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .player {
-    color: #000000;
+    color: $black3;
     @include removeLinkUnderline();
 
     .row {
@@ -41,7 +42,7 @@
 }
 
 .darkPlayer {
-    color: #FFFFFF;
+    color: $white1;
 }
 
 @include applyResponsive320() {

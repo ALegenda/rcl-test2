@@ -18,6 +18,10 @@ import {
     Image,
 } from 'components/helpers/other';
 
+import {
+    BACKGROUND_COLOR,
+} from './constants';
+
 import darkBackgroundLogo from './media/dark-background-logo.svg';
 import lightBackgroundLogo from './media/light-background-logo.svg';
 
@@ -39,7 +43,12 @@ const LineupPlayer: FC<IProps> = (props) => {
             }
             to={`/players/${props.player.id}`}
         >
-            <div className={props.lineup ? styles.greyTop : styles.whiteTop}>
+            <div className={
+                props.backgroundColor === BACKGROUND_COLOR.GREY ?
+                    styles.greyTop :
+                    styles.whiteTop
+            }
+            >
                 <Image
                     className={styles.avatarImg}
                     src={props.player.imageUrl}

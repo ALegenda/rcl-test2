@@ -14,6 +14,10 @@ import {
 } from 'tools/hooks';
 
 import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
+import {
     getDefaultDemoQueryUser,
 } from 'instances/teams/functions';
 import {
@@ -49,6 +53,10 @@ const TeamsList: FC<IProps> = (props) => {
         getTeams,
     } = useTeamsDemoByUser();
 
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     useEffect(() => {
         (async () => {
             await getTeams(getDefaultDemoQueryUser());
@@ -56,7 +64,14 @@ const TeamsList: FC<IProps> = (props) => {
     }, []);
 
     return (
-        <div className={classNames(styles.teamsList, props.className)}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkTeamsList,
+                styles.teamsList,
+                props.className
+            )
+        }
+        >
             <div className={styles.title}>
                 Турнирная таблица
             </div>

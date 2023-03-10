@@ -1,5 +1,6 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/helpers';
+@import 'styles/constants';
 
 .magicButton {
     @include dFlex();
@@ -11,10 +12,10 @@
 
     position: relative;
 
-    color: #FFFFFF;
+    color: $white1;
     cursor: pointer;
 
-    background: #334D85;
+    background: $blue1;
 
     .magic {
         @include borderRadius(5px);

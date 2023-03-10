@@ -8,16 +8,32 @@ import React, {
 } from 'react';
 
 import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
+import {
     Image,
 } from 'components/helpers/other';
 
-import backgroundLogo from './media/backgroundLogo.svg';
+import darkBackgroundLogo from './media/dark-background-logo.svg';
+import lightBackgroundLogo from './media/light-background-logo.svg';
 
 import styles from './Avatar.module.scss';
 
 const Avatar: FC<IProps> = (props) => {
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
-        <div className={classNames(styles.avatar, props.className)}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkAvatar,
+                styles.avatar,
+                props.className
+            )
+        }
+        >
             <Image
                 className={styles.teamImg}
                 src={props.teamSrc}
@@ -30,7 +46,7 @@ const Avatar: FC<IProps> = (props) => {
             />
             <img
                 className={styles.backgroundLogo}
-                src={backgroundLogo}
+                src={isDarkTheme ? darkBackgroundLogo : lightBackgroundLogo}
                 alt={''}
             />
         </div>

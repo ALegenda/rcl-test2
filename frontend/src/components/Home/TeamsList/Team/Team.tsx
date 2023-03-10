@@ -10,11 +10,26 @@ import {
     Link,
 } from 'react-router-dom';
 
+import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
 import styles from './Team.module.scss';
 
 const Team: FC<IProps> = (props) => {
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
-        <div className={classNames(styles.team, props.className)}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkTeam,
+                styles.team,
+                props.className
+            )
+        }
+        >
             <div className={styles.order}>
                 {props.team.place}
             </div>

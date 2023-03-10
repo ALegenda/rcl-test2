@@ -14,6 +14,10 @@ import {
 } from 'tools/hooks';
 
 import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
+import {
     getDefaultQueryUser,
 } from 'instances/reports/functions';
 import {
@@ -41,6 +45,10 @@ const ReportsList: FC<IProps> = (props) => {
     } = useWindowWidth();
 
     const {
+        isDarkTheme,
+    } = useDarkTheme();
+
+    const {
         reports,
         reportsTotal,
         getReports,
@@ -66,7 +74,14 @@ const ReportsList: FC<IProps> = (props) => {
     }, []);
 
     return (
-        <div className={classNames(styles.reportsList, props.className)}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkReportsList,
+                styles.reportsList,
+                props.className
+            )
+        }
+        >
             <div className={styles.title}>
                 Новости
             </div>

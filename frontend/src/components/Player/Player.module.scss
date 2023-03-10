@@ -1,6 +1,7 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/grid';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .player {
     @include dFlex();
@@ -8,38 +9,40 @@
     .avatar {}
 
     .infoBlock {
-        font-size: 15px;
-        line-height: 35px;
         font-weight: 500;
 
         .basic {
             .row {
                 @include dFlex();
-                @include flexRow();
-                @include alignItemsCenter();
-
-                gap: 23px;
 
                 .characteristic {
-                    width: 75px;
-
-                    color: #A0A0A0;
+                    color: $grey4;
                     text-align: end;
                 }
 
                 .value {
                     @include dFlex();
-                    @include flexRow();
-                    @include alignItemsCenter();
+                    color: $black3;
 
-                    color: #000000;
+                    img {}
+                }
 
-                    img {
-                        width: 19px;
-                        height: 13px;
+                .name {}
+            }
+        }
+    }
+}
 
-                        margin-left: 10px;
-                    }
+.darkPlayer {
+    .infoBlock {
+        .basic {
+            .row {
+                .characteristic {
+                    color: $lightIndigo6;
+                }
+
+                .value {
+                    color: $white1;
                 }
             }
         }
@@ -52,7 +55,7 @@
         @include alignItemsCenter();
 
         gap: 22px;
-        margin-bottom: 15px;
+        padding: 10px 15px 15px 15px;
 
         .avatar {
             width: 267px;
@@ -60,8 +63,38 @@
         }
 
         .infoBlock {
+            font-size: 15px;
+            line-height: 35px;
+
             .basic {
-                margin-bottom: 29px;
+                padding-bottom: 29px;
+
+                .row {
+                    @include flexRow();
+                    @include alignItemsCenter();
+
+                    gap: 23px;
+
+                    .characteristic {
+                        width: 75px;
+                    }
+
+                    .value {
+                        @include flexRow();
+                        @include alignItemsCenter();
+
+                        img {
+                            width: 19px;
+                            height: 13px;
+
+                            margin-left: 10px;
+                        }
+                    }
+
+                    .name {
+                        line-height: 21px;
+                    }
+                }
             }
         }
     }
@@ -73,13 +106,16 @@
         @include justifyContentCenter();
         @include alignItemsStart();
 
-        gap: 47px;
-        margin-bottom: 0;
+        gap: 23px;
+        padding-top: 15px;
     }
 }
 
 @include applyResponsive1280() {
     .player {
+        gap: 43px;
+        padding: 30px 0;
+
         .avatar {
             width: 346px;
             height: 472px;
@@ -87,7 +123,7 @@
 
         .infoBlock {
             .basic {
-                margin-bottom: 19px;
+                padding-bottom: 19px;
             }
         }
     }

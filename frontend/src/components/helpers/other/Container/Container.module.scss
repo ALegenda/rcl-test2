@@ -1,5 +1,6 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .container {
     @include dFlex();
@@ -7,7 +8,7 @@
     @include justifyContentBetween();
 
     min-height: 100vh;
-    background: #FFFFFF;
+    background: $white1;
 
     .main {
         @include dFlex();
@@ -25,7 +26,7 @@
 }
 
 .darkContainer {
-    background: #0C1425;
+    background: $indigo6;
 }
 
 @include applyResponsive320() {

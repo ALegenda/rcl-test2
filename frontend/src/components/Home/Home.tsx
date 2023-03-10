@@ -1,17 +1,31 @@
+import classNames from 'classnames';
 import React, {
     FC,
 } from 'react';
 
+import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
 import MatchesList from './MatchesList';
-import PlayersList from './PlayersList';
 import ReportsList from './ReportsList';
 import TeamsList from './TeamsList';
 
 import styles from './Home.module.scss';
 
 const Home: FC = () => {
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
-        <div className={styles.home}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkHome,
+                styles.home
+            )
+        }
+        >
             <div className={styles.matchesAndPlayers}>
                 <MatchesList
                     className={styles.matches}

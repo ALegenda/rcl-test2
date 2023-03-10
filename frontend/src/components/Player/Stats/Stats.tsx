@@ -2,10 +2,15 @@ import {
     IProps,
 } from './types';
 
+import classNames from 'classnames';
 import React, {
     FC,
     useEffect,
 } from 'react';
+
+import {
+    useDarkTheme,
+} from 'helpers/hooks';
 
 import {
     usePlayerStatsByUser,
@@ -23,6 +28,10 @@ const Stats: FC<IProps> = (props) => {
         getStats,
     } = usePlayerStatsByUser();
 
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     useEffect(() => {
         (async () => {
             await getStats(parseInt(props.id ?? ''));
@@ -36,7 +45,13 @@ const Stats: FC<IProps> = (props) => {
     }
 
     return (
-        <div className={styles.stats}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkStats,
+                styles.stats
+            )
+        }
+        >
             <div className={styles.content}>
                 <div className={styles.card}>
                     <div className={styles.value}>

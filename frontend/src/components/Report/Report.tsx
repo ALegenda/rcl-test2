@@ -2,6 +2,7 @@ import {
     IParams,
 } from './types';
 
+import classNames from 'classnames';
 import React, {
     FC,
     useEffect,
@@ -13,6 +14,10 @@ import {
 import {
     formatDate,
 } from 'tools/functions';
+
+import {
+    useDarkTheme,
+} from 'helpers/hooks';
 
 import {
     useReportByUser,
@@ -40,6 +45,10 @@ const Report: FC = () => {
         getReport,
     } = useReportByUser();
 
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     useEffect(() => {
         (async () => {
             await getReport(parseInt(id ?? ''));
@@ -53,7 +62,13 @@ const Report: FC = () => {
     }
 
     return (
-        <div className={styles.report}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkReport,
+                styles.report
+            )
+        }
+        >
             <Image
                 className={styles.image}
                 src={report.imageUrl}

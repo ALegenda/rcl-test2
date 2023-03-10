@@ -1,6 +1,7 @@
 @import 'tools/styles/adaptive';
 @import 'tools/styles/helpers';
 @import 'tools/styles/animations';
+@import 'styles/constants';
 
 .toggle {
     position: relative;
@@ -13,11 +14,11 @@
         opacity: 0;
 
         &:checked+span {
-            background: #1F283C;
+            background: $indigo4;
         }
 
         &:checked+span::before {
-            background: #334D85;
+            background: $blue1;
         }
     }
 
@@ -31,7 +32,7 @@
         bottom: 0;
         left: 0;
 
-        background: #000000;
+        background: $black3;
         cursor: pointer;
 
         &::before {
@@ -42,7 +43,7 @@
             left: 3px;
             bottom: 2px;
 
-            background: #ffffff;
+            background: $white1;
             content: '';
         }
     }

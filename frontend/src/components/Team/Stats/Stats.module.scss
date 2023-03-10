@@ -1,22 +1,23 @@
 @import 'tools/styles/grid';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .stats {
     @include borderRadius(25px);
-    background: #F9F9FA;
+    background: $white4;
 
     .content {
         @include dGrid();
 
         .card {
             @include borderRadius(10px);
-            background: #FFFFFF;
+            background: $white1;
 
             font-weight: 500;
 
             .value {
-                color: #040404;
+                color: $black1;
             }
 
             .center {
@@ -25,25 +26,25 @@
 
             .characteristic {
                 white-space: nowrap;
-                color: #AFAFAF;
+                color: $grey1;
             }
         }
     }
 }
 
 .darkStats {
-    background: #1F283B;
+    background: $indigo4;
 
     .content {
         .card {
-            background: #273249;
+            background: $indigo2;
 
             .value {
-                color: #FFFFFF;
+                color: $white1;
             }
 
             .characteristic {
-                color: #606E8C;
+                color: $lightIndigo4;
             }
         }
     }

@@ -8,6 +8,10 @@ import React, {
 } from 'react';
 
 import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
+import {
     Image,
 } from 'components/helpers/other';
 
@@ -22,6 +26,10 @@ import {
 import styles from './Map.module.scss';
 
 const Map: FC<IProps> = (props) => {
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     const teamLogoSrc = formatTeamLogoSrc(props.map.team1Score, props.map.team2Score, props.teams, props.map.team1Id, props.map.team2Id);
     const previewSrc = formatPreviewSrc(props.map.mapName);
 
@@ -34,7 +42,14 @@ const Map: FC<IProps> = (props) => {
     };
 
     return (
-        <div className={classNames(styles.map, props.className)}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkMap,
+                styles.map,
+                props.className
+            )
+        }
+        >
             <div
                 className={styles.card}
                 onClick={onChoose}

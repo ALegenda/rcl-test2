@@ -1,6 +1,7 @@
 @import 'styles/helpers';
 @import 'tools/styles/grid';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .reports {
     .list {
@@ -8,9 +9,8 @@
 
         overflow: auto;
     }
-    .magic {
 
-    }
+    .magic {}
 }
 
 @include applyResponsive320() {
@@ -22,6 +22,7 @@
 
             padding: 0 27px 0 27px;
         }
+
         .magic {
             display: none;
         }
@@ -32,12 +33,13 @@
     .reports {
         .list {
             @include gridColumns(1fr 1fr);
-            @include blueScrollBar();
+            @include lightBlueScrollBar();
 
             gap: 10px;
 
             padding: 0 25px 50px 0;
         }
+
         .magic {
             position: absolute;
             left: -50px;
@@ -46,8 +48,14 @@
 
             height: 132px;
 
-            background: #FFFFFF;
+            background: $white1;
             filter: blur(18px);
+        }
+    }
+
+    .darkPeports {
+        .list {
+            @include darkBlueScrollBar();
         }
     }
 }

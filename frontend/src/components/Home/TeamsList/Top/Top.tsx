@@ -7,11 +7,26 @@ import React, {
     FC,
 } from 'react';
 
+import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
 import styles from './Top.module.scss';
 
 const Top: FC<IProps> = (props) => {
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
-        <div className={classNames(styles.top, props.className)}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkTop,
+                styles.top,
+                props.className
+            )
+        }
+        >
             <div className={styles.item}>
                 Место
             </div>

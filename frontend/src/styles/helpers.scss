@@ -1,16 +1,34 @@
 @import 'tools/styles/helpers';
+@import 'styles/constants';
 
-@mixin blueScrollBar() {
+@mixin lightBlueScrollBar() {
     @include customScrollbar() {
         @include borderRadius(10px);
 
         width: 4px;
-        background: #EDEDED;
+        background: $white5;
     }
+
     @include customScrollThumb() {
         @include borderRadius(10px);
 
         width: 4px;
-        background: #3173FF;
+        background: $brightBlue;
+    }
+}
+
+@mixin darkBlueScrollBar() {
+    @include customScrollbar() {
+        @include borderRadius(10px);
+
+        width: 4px;
+        background: $indigo1;
+    }
+
+    @include customScrollThumb() {
+        @include borderRadius(10px);
+
+        width: 4px;
+        background: $brightBlue;
     }
 }

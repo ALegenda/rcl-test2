@@ -1,12 +1,13 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .avatar {
-    position: relative;
-
-    background: #F9F9FA;
     @include borderRadius(25px);
+
+    position: relative;
+    background: $white4;
 
     .teamImg {
         position: absolute;
@@ -43,4 +44,8 @@
 
         padding: 33px 21px 125px 21px;
     }
+}
+
+.darkAvatar {
+    background: $indigo4;
 }

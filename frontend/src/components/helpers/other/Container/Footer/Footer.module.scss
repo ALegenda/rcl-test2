@@ -1,5 +1,6 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .footer {
     width: 100%;
@@ -30,7 +31,7 @@
 
                     font-size: 10px;
                     line-height: 177.69%;
-                    color: #000000;
+                    color: $black3;
 
                     margin-right: 69px;
                 }
@@ -40,7 +41,7 @@
 
                     font-size: 10px;
                     line-height: 177.69%;
-                    color: #000000;
+                    color: $black3;
 
                     margin-right: 84px;
                 }
@@ -50,7 +51,7 @@
 
                     font-size: 10px;
                     line-height: 177.69%;
-                    color: #000000;
+                    color: $black3;
                 }
             }
         }
@@ -69,7 +70,7 @@
         .copyright {
             font-style: normal;
             font-weight: 400;
-            color: #5C5C5C;
+            color: $grey8;
         }
 
         .networks {
@@ -82,20 +83,20 @@
     .top {
         .middle {
             .text {
-                color: #5C667D;
+                color: $lightIndigo5;
             }
 
             .files {
                 .agreement {
-                    color: #FFFFFF;
+                    color: $white1;
                 }
 
                 .personalData {
-                    color: #FFFFFF;
+                    color: $white1;
                 }
 
                 .sites {
-                    color: #FFFFFF;
+                    color: $white1;
                 }
             }
         }
@@ -103,7 +104,7 @@
 
     .bottom {
         .copyright {
-            color: #5C667D;
+            color: $lightIndigo5;
         }
     }
 }
@@ -138,7 +139,7 @@
             .text {
                 font-style: normal;
                 font-weight: 400;
-                color: #8A8A8A;
+                color: $grey6;
 
                 font-size: 6px;
                 line-height: 177.69%;

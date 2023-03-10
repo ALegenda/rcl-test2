@@ -1,39 +1,60 @@
 @import 'styles/helpers';
 @import 'tools/styles/flex';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .report {
-    background: #F9F9FA;
+    background: transparent;
 
-    .image {
+    .image {}
 
-    }
     .date {
         font-style: normal;
         font-weight: 500;
-        color: #565656;
+        color: $grey8;
     }
+
     .main {
-        @include blueScrollBar();
+        @include lightBlueScrollBar();
 
         overflow: auto;
 
         .title {
             font-style: normal;
             font-weight: 500;
-            color: #000000;
+            color: $black3;
         }
 
         .content {
             font-style: normal;
             font-weight: 500;
-            color: #808080;
+            color: $grey6;
         }
     }
+
     .anotherContainer {
         .anotherButton {
             font-style: normal;
             font-weight: 400;
+        }
+    }
+}
+
+.darkReport {
+    .date {
+        color: $lightIndigo2;
+    }
+
+    .main {
+        @include darkBlueScrollBar();
+
+        .title {
+            color: $white1;
+        }
+
+        .content {
+            color: $lightIndigo2;
+
         }
     }
 }
@@ -55,6 +76,7 @@
 
             margin-bottom: 17px;
         }
+
         .date {
             text-align: end;
             font-size: 6px;
@@ -63,6 +85,7 @@
             margin-right: 21px;
             margin-bottom: 15px;
         }
+
         .main {
             padding: 0 26px 0 12px;
             margin-bottom: 32px;
@@ -71,11 +94,13 @@
                 font-size: 15px;
                 line-height: 159.4%;
             }
+
             .content {
                 font-size: 11px;
                 line-height: 193.4%;
             }
         }
+
         .anotherContainer {
             @include dFlex();
             @include flexRow();
@@ -112,9 +137,11 @@
             margin-right: 30px;
             margin-bottom: 0;
         }
+
         .date {
             display: none;
         }
+
         .main {
             padding: 0 25px 50px 0;
 
@@ -128,12 +155,11 @@
                 line-height: 193.4%;
             }
         }
+
         .anotherContainer {
             display: none !important;
 
-            .anotherButton {
-
-            }
+            .anotherButton {}
         }
     }
 }

@@ -2,6 +2,7 @@
 @import 'tools/styles/grid';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .header {
     width: 100%;
@@ -22,7 +23,7 @@
                 .title {
                     font-style: normal;
                     font-weight: 700;
-                    color: #11192A;
+                    color: $indigo5;
                 }
             }
         }
@@ -40,7 +41,7 @@
         .logoContainer {
             .logo {
                 .title {
-                    color: #FFFFFF;
+                    color: $white1;
                 }
             }
         }

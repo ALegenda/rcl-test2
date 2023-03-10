@@ -2,6 +2,7 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .notFound {
     .left {
@@ -34,11 +35,11 @@
 
             position: absolute;
 
-            background: #494949;
+            background: $grey9;
 
             font-style: normal;
             font-weight: 700;
-            color: #FFFFFF;
+            color: $white1;
             cursor: pointer;
         }
     }
@@ -47,7 +48,7 @@
         .rightText {
             font-style: normal;
             font-weight: 400;
-            color: #000000;
+            color: $black3;
         }
     }
 }
@@ -55,13 +56,13 @@
 .darkNotFound {
     .main {
         .mainButton {
-            background: #4465AD;
+            background: $blue2;
         }
     }
 
     .right {
         .rightText {
-            color: #5C667D;
+            color: $lightIndigo5;
         }
     }
 }

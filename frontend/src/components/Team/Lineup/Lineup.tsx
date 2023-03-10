@@ -20,6 +20,9 @@ import {
     LineupPlayer,
 } from 'components/helpers/instances/teams';
 import {
+    BACKGROUND_COLOR,
+} from 'components/helpers/instances/teams/LineupPlayer/constants';
+import {
     Loading,
 } from 'components/helpers/other';
 
@@ -64,7 +67,7 @@ const Lineup: FC<IProps> = (props) => {
                                             className={styles.player}
                                             key={player.id}
                                             player={player}
-                                            lineup={true}
+                                            backgroundColor={BACKGROUND_COLOR.GREY}
                                         />
                                 ) :
                                 <Loading size={40}/>

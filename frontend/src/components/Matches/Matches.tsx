@@ -1,8 +1,13 @@
+import classNames from 'classnames';
 import React, {
     FC,
     useEffect,
     useState,
 } from 'react';
+
+import {
+    useDarkTheme,
+} from 'helpers/hooks';
 
 import {
     getDefaultQueryUser,
@@ -28,6 +33,10 @@ const Matches: FC = () => {
         matchesTotal,
         getMatches,
     } = useMatchFinishedByUser();
+
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
 
     const loadMoreMatches = async (skip: number) => {
         if (isPending) {
@@ -55,7 +64,13 @@ const Matches: FC = () => {
     }
 
     return (
-        <div className={styles.matches}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkMatches,
+                styles.matches
+            )
+        }
+        >
             {
                 matchesTotal === 0 ?
                     <div className={styles.emptyResult}>

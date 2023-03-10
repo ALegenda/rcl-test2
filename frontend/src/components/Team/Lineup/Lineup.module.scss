@@ -2,6 +2,7 @@
 @import 'tools/styles/grid';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .lineupContainer {
     @include dFlex();
@@ -13,14 +14,14 @@
         @include borderRadius(25px);
 
         height: fit-content;
-        background: #F9F9FA;
+        background: $white4;
 
         .content {
             @include dFlex();
 
             .title {
                 font-weight: 500;
-                color: #000000;
+                color: $black3;
             }
 
             .players {
@@ -34,11 +35,11 @@
 
 .darkLineupContainer {
     .lineup {
-        background: #1F283B;
+        background: $indigo4;
 
         .content {
             .title {
-                color: #FFFFFF;
+                color: $white1;
             }
         }
     }

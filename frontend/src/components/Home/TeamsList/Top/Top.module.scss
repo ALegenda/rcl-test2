@@ -1,16 +1,26 @@
+@import 'styles/constants';
+
 .top {
     padding: 18px 0 9px 0;
     position: sticky;
     top: 0;
-    background-color:white;
+    background: $white1;
 
     .item {
         font-style: normal;
         font-weight: 500;
-        color: #3D3D3D;
+        color: $grey3;
         text-align: start;
 
         font-size: 11px;
         line-height: 12px;
+    }
+}
+
+.darkTop {
+    background: $indigo2;
+
+    .item {
+        color: $white1;
     }
 }

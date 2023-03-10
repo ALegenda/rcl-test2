@@ -1,6 +1,7 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .match {
     @include dFlex();
@@ -11,14 +12,14 @@
     min-height: 196px;
 
     @include borderRadius(10px);
-    background: #F9F9FA;
+    background: $white4;
 
     .date {
         font-size: 12px;
         font-style: normal;
         font-weight: 400;
         line-height: 14px;
-        color: #3173FF;
+        color: $brightBlue;
     }
 
     .basic {
@@ -39,7 +40,7 @@
 
             font-style: normal;
             font-weight: 700;
-            color: #020202;
+            color: $black2;
 
             gap: 50px;
             padding: 0 25px;
@@ -57,21 +58,21 @@
         font-size: 10px;
         font-style: normal;
         font-weight: 400;
-        color: #020202;
+        color: $black2;
     }
 }
 
 .darkMatch {
-    background: #273249;
+    background: $indigo2;
 
     .basic {
         .score {
-            color: #FFFFFF;
+            color: $white1;
         }
     }
 
     .time {
-        color: #FFFFFF;
+        color: $white1;
     }
 }
 

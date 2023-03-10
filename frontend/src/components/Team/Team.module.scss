@@ -2,6 +2,7 @@
 @import 'tools/styles/grid';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .teamContainer {
     .team {
@@ -11,7 +12,7 @@
             @include dFlex();
             @include borderRadius(25px);
 
-            background: #F9F9FA;
+            background: $white4;
 
             .logoImg {}
         }
@@ -28,12 +29,12 @@
 
                     .characteristic {
                         text-align: end;
-                        color: #A0A0A0;
+                        color: $grey4;
                     }
 
                     .value {
                         @include dFlex();
-                        color: #000000;
+                        color: $black3;
 
                         img {}
                     }
@@ -52,18 +53,18 @@
 .darkTeamContainer {
     .team {
         .baguetteLogo {
-            background: #1F283B;
+            background: $indigo4;
         }
 
         .infoContainer {
             .basic {
                 .row {
                     .characteristic {
-                        color: #525E76;
+                        color: $lightIndigo6;
                     }
 
                     .value {
-                        color: #FFFFFF;
+                        color: $white1;
                     }
                 }
             }
@@ -136,6 +137,8 @@
         }
 
         .outsideLineup {
+            @include hideScrollbar();
+
             padding: 0 15px 20px 15px;
         }
     }

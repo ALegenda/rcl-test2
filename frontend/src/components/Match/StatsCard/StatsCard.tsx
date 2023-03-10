@@ -8,6 +8,10 @@ import React, {
 } from 'react';
 
 import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
+import {
     Image,
     Loading,
 } from 'components/helpers/other';
@@ -18,8 +22,19 @@ import Row from './Row';
 import styles from './StatsCard.module.scss';
 
 const StatsCard: FC<IProps> = (props) => {
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
-        <div className={classNames(styles.statsCard, props.className)}>
+        <div className={
+            classNames(
+                isDarkTheme && styles.darkStatsCard,
+                styles.statsCard,
+                props.className
+            )
+        }
+        >
             {
                 props.isPending ?
                     <Loading

@@ -16,9 +16,15 @@
     .list {
         @include dGrid();
         @include gridRows(1fr);
-        @include blueScrollBar();
+        @include lightBlueScrollBar();
 
         width: 100%;
+    }
+}
+
+.darkMatches {
+    .list {
+        @include darkBlueScrollBar();
     }
 }
 

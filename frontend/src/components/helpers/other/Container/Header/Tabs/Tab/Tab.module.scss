@@ -1,5 +1,6 @@
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .tab {
     @include removeLinkUnderline();
@@ -7,7 +8,7 @@
 
     display: block;
     position: relative;
-    background: #F2F3F3;
+    background: $white3;
     width: fit-content;
 
     font-style: normal;
@@ -20,18 +21,18 @@
 }
 
 .isActive {
-    background: #446ABB;
-    color: #FFFFFF;
+    background: $blue2;
+    color: $white1;
 }
 
 .darkTheme {
-    background: #1F283C;
-    color: #616D86;
+    background: $indigo4;
+    color: $lightIndigo3;
 }
 
 .isDarkActive {
-    background: #334D85;
-    color: #FFFFFF;
+    background: $blue1;
+    color: $white1;
 }
 
 @include applyResponsive320() {

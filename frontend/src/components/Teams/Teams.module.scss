@@ -2,6 +2,7 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/grid';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .teams {
     @include dFlex();
@@ -20,21 +21,21 @@
         .title {
             font-size: 25px;
             line-height: 40px;
-            color: #000000;
+            color: $black3;
         }
 
         .dateSeason {
             font-size: 15px;
             line-height: 30px;
             white-space: nowrap;
-            color: #A1A1A1;
+            color: $grey3;
         }
     }
 
     .list {
         @include dGrid();
         @include gridRows(1fr);
-        @include blueScrollBar();
+        @include lightBlueScrollBar();
     }
 }
 
@@ -43,12 +44,16 @@
         padding-bottom: 17px;
 
         .title {
-            color: #FFFFFF;
+            color: $white1;
         }
 
         .dateSeason {
-            color: #7282A3;
+            color: $lightIndigo2;
         }
+    }
+
+    .list {
+        @include darkBlueScrollBar();
     }
 }
 

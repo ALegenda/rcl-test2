@@ -1,28 +1,29 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .commonCard {
-    background: #F9F9FA;
+    background: $white4;
 
     cursor: pointer;
 
     .date {
         font-style: normal;
         font-weight: 400;
-        color: #3173FF;
+        color: $brightBlue;
         text-align: center;
         text-decoration: underline;
     }
+
     .content {
         @include dFlex();
         @include flexRow();
         @include justifyContentBetween();
         @include alignItemsCenter();
 
-        .teamImage {
+        .teamImage {}
 
-        }
         .result {
             @include dFlex();
             @include flexRow();
@@ -36,18 +37,37 @@
 
                 font-style: normal;
                 font-weight: 700;
-                color: #020202;
+                color: $black2;
             }
+
             .vsImage {
                 position: absolute;
             }
         }
     }
+
     .time {
         font-style: normal;
         font-weight: 400;
-        color: #020202;
+        color: $black2;
         text-align: center;
+    }
+}
+
+.darkCommonCard {
+    background: $indigo4;
+
+    .content {
+        .result {
+            .value {
+                color: $white1;
+            }
+        }
+    }
+
+    .time {
+        color: $white1;
+
     }
 }
 
@@ -65,6 +85,7 @@
 
             margin-bottom: 7px;
         }
+
         .content {
             padding: 9px 0 17px 0;
 
@@ -72,6 +93,7 @@
                 width: 47px;
                 height: 47px;
             }
+
             .result {
                 width: 73px;
                 height: 100%;
@@ -80,6 +102,7 @@
                     font-size: 23px;
                     line-height: 27px;
                 }
+
                 .vsImage {
                     top: -30px;
                     left: 10px;
@@ -91,6 +114,7 @@
                 }
             }
         }
+
         .time {
             font-size: 10px;
             line-height: 12px;
@@ -112,6 +136,7 @@
 
             margin-bottom: 7px;
         }
+
         .content {
             padding: 9px 0 17px 0;
 
@@ -119,6 +144,7 @@
                 width: 72px;
                 height: 72px;
             }
+
             .result {
                 width: 95px;
                 height: 100%;
@@ -127,6 +153,7 @@
                     font-size: 30px;
                     line-height: 35px;
                 }
+
                 .vsImage {
                     top: -30px;
                     left: 10px;
@@ -138,6 +165,7 @@
                 }
             }
         }
+
         .time {
             font-size: 10px;
             line-height: 12px;

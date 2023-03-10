@@ -3,6 +3,7 @@
 @import 'tools/styles/grid';
 @import 'tools/styles/animations';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .players {
     .tableContainer {
@@ -10,10 +11,10 @@
             font-size: 12px;
             line-height: 14px;
             font-weight: 500;
-            color: #000000;
+            color: $black3;
 
             @include borderRadius(25px);
-            background: #F9F9FA;
+            background: $white4;
 
             .row {
                 @include dGrid();
@@ -36,7 +37,7 @@
                     @include borderRadius(10px);
 
                     &:nth-child(odd) {
-                        background: #FFFFFF;
+                        background: $white1;
                     }
                 }
             }
@@ -54,13 +55,13 @@
 .darkPlayers {
     .tableContainer {
         .table {
-            color: #FFFFFF;
-            background: #1F283B;
+            color: $white1;
+            background: $indigo4;
 
             .list {
                 .player {
                     &:nth-child(odd) {
-                        background: #273249;
+                        background: $indigo2;
                     }
                 }
             }
@@ -152,9 +153,19 @@
                 }
 
                 .list {
-                    @include blueScrollBar();
+                    @include lightBlueScrollBar();
 
                     padding: 10px 25px 18px 0;
+                }
+            }
+        }
+    }
+
+    .darkPlayers {
+        .tableContainer {
+            .table {
+                .list {
+                    @include darkBlueScrollBar();
                 }
             }
         }

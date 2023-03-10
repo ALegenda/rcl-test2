@@ -1,17 +1,16 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .report {
     @include dFlex();
 
     height: fit-content;
 
-    background: #F9F9FA;
+    background: $white4;
 
-    .image {
-
-    }
+    .image {}
 
     .content {
         .top {
@@ -19,19 +18,23 @@
                 font-style: normal;
                 font-weight: 500;
                 text-align: end;
-                color: #565656;
+                color: $grey8;
             }
 
             .title {
                 font-style: normal;
                 font-weight: 500;
-                color: #000000;
+                color: $black3;
             }
 
             .promo {
                 font-style: normal;
                 font-weight: 500;
-                color: #565656;
+                color: $grey8;
+
+                a {
+                    color: $grey8;
+                }
             }
         }
 
@@ -39,12 +42,40 @@
             @include removeLinkUnderline();
 
             width: fit-content;
-            background: #446ABB;
+            background: $blue2;
 
             font-style: normal;
             font-weight: 400;
-            color: #FFFFFF;
+            color: $white1;
             cursor: pointer;
+        }
+    }
+}
+
+.darkReport {
+    background: $indigo4;
+
+    .content {
+        .top {
+            .date {
+                color: $lightIndigo2;
+            }
+
+            .title {
+                color: $white1;
+            }
+
+            .promo {
+                color: $lightIndigo2;
+
+                a {
+                    color: $lightIndigo2;
+                }
+            }
+        }
+
+        .more {
+            background: $dullBlue;
         }
     }
 }
