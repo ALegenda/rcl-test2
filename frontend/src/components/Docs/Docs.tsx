@@ -32,9 +32,24 @@ const Docs: FC = () => {
             </div>
             <div className={styles.list}>
                 <Doc
+                    url={`${process.env.PUBLIC_URL}/static/Reglament_Sorevnovaniya_RCL_2023.pdf`}
+                    name={'Регламент совернования РКЛ Сезон 2023'}
+                    sizeKB={3239}
+                />
+                <Doc
+                    url={`${process.env.PUBLIC_URL}/static/Disciplinarniy_reglament_RCL_2023.pdf`}
+                    name={'Дисциплинарный регламент РКЛ Сезон 2023'}
+                    sizeKB={650}
+                />
+                <Doc
+                    url={`${process.env.PUBLIC_URL}/static/Polojenie_o_disciplinarnom_komitete_RCL_2023.pdf`}
+                    name={'Положение о дисциплинарном комитете РКЛ Сезон 2023'}
+                    sizeKB={179}
+                />
+                <Doc
                     url={`${process.env.PUBLIC_URL}/static/Polohenie_o_prizovom_fonde_RCL_2023.pdf`}
                     name={'Положение о призовом фонде РКЛ Сезон 2023'}
-                    sizeKB={179}
+                    sizeKB={2048}
                 />
                 <Doc
                     url={`${process.env.PUBLIC_URL}/static/IESF_Statutes_2021.pdf`}
