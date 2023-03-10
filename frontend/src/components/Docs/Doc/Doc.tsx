@@ -9,11 +9,18 @@ import React, {
 
 import {
     useDarkTheme,
+    useIntl,
 } from 'helpers/hooks';
+
+import {
+    INTL_DATA,
+} from './intl';
 
 import styles from './Doc.module.scss';
 
 const Doc: FC<IProps> = (props) => {
+    const intl = useIntl();
+
     const {
         isDarkTheme,
     } = useDarkTheme();
@@ -38,7 +45,7 @@ const Doc: FC<IProps> = (props) => {
             <div className={styles.size}>
                 {props.sizeKB}
                 {' '}
-                Кб
+                {intl(INTL_DATA.KB)}
             </div>
         </div>
     );

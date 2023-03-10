@@ -1,0 +1,11 @@
+{
+  "locale": "en",
+  "messages": {
+    "docs/title": "Документы",
+    "docs/subtitle": "Сезон 2022 – 2023",
+    "docs/prize": "Положение о призовом фонде РКЛ Сезон 2023",
+    "docs/IESF": "IESF Statutes 2021",
+    "docs/CSGO": "CSGO Rulebook",
+    "docs/doc/kb": "Кб"
+  }
+}
