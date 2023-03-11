@@ -10,6 +10,7 @@ import React, {
 
 import {
     useDarkTheme,
+    useIntl,
 } from 'helpers/hooks';
 
 import {
@@ -20,17 +21,23 @@ import {
     Loading,
 } from 'components/helpers/other';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './Stats.module.scss';
 
 const Stats: FC<IProps> = (props) => {
-    const {
-        stats,
-        getStats,
-    } = usePlayerStatsByUser();
+    const intl = useIntl();
 
     const {
         isDarkTheme,
     } = useDarkTheme();
+
+    const {
+        stats,
+        getStats,
+    } = usePlayerStatsByUser();
 
     useEffect(() => {
         (async () => {
@@ -58,7 +65,7 @@ const Stats: FC<IProps> = (props) => {
                         {stats.games}
                     </div>
                     <div className={styles.characteristic}>
-                        Матчей
+                        {intl(INTL_DATA.MATCHES)}
                     </div>
                 </div>
                 <div className={styles.card}>
@@ -66,7 +73,7 @@ const Stats: FC<IProps> = (props) => {
                         {stats.kills}
                     </div>
                     <div className={styles.characteristic}>
-                        Фрагов
+                        {intl(INTL_DATA.KILLS)}
                     </div>
                 </div>
                 <div className={styles.card}>
@@ -74,7 +81,7 @@ const Stats: FC<IProps> = (props) => {
                         {stats.deaths}
                     </div>
                     <div className={styles.characteristic}>
-                        Смертей
+                        {intl(INTL_DATA.DEATHS)}
                     </div>
                 </div>
                 <div className={styles.card}>
@@ -82,7 +89,7 @@ const Stats: FC<IProps> = (props) => {
                         {stats.assists}
                     </div>
                     <div className={styles.characteristic}>
-                        Помощи
+                        {intl(INTL_DATA.ASSISTS)}
                     </div>
                 </div>
                 <div className={styles.card}>
@@ -90,7 +97,7 @@ const Stats: FC<IProps> = (props) => {
                         {stats.kd?.toFixed(2) ?? '-'}
                     </div>
                     <div className={styles.characteristic}>
-                        K/D
+                        {intl(INTL_DATA.KD)}
                     </div>
                 </div>
                 <div className={styles.card}>
@@ -98,7 +105,7 @@ const Stats: FC<IProps> = (props) => {
                         {stats.kdDiff}
                     </div>
                     <div className={styles.characteristic}>
-                        K-D разница
+                        {intl(INTL_DATA.KD_DIFF)}
                     </div>
                 </div>
             </div>

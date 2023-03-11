@@ -88,15 +88,22 @@ const Header: FC<IProps> = (props) => {
                     isMode={isDarkTheme}
                     setIsMode={() => setIsDarkTheme(!isDarkTheme)}
                 />
+                <div
+                    className={styles.buttonLocale}
+                    onClick={
+                        () => getTranslation(
+                            translation?.locale === LOCALE.RU ?
+                                LOCALE.EN :
+                                LOCALE.RU
+                        )
+                    }
+                >
+                    {translation?.locale}
+                </div>
             </div>
             <div className={styles.bottomTabsContainer}>
                 <Tabs className={styles.bottomTabs}/>
             </div>
-            <button
-                onClick={() => getTranslation(LOCALE.EN)}
-            >
-                {translation?.locale}
-            </button>
         </div>
     );
 };

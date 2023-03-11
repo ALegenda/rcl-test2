@@ -10,6 +10,11 @@
     "helpers/other/container/header/title1": "Russian",
     "helpers/other/container/header/title2": "Сybersport",
     "helpers/other/container/header/title3": "League",
+    "helpers/other/container/header/tabs/tab/news": "News",
+    "helpers/other/container/header/tabs/tab/results": "Results",
+    "helpers/other/container/header/tabs/tab/teams": "Teams",
+    "helpers/other/container/header/tabs/tab/players": "Players",
+    "helpers/other/container/header/tabs/tab/docs": "Docs",
     "helpers/other/container/footer/agreement": "INFORMATION ABOUT THE ORGANIZATION",
     "helpers/other/container/footer/personalData": "TERMS OF USE OF THE SITE",
     "helpers/other/container/footer/sites": "CONTACTS",
@@ -37,6 +42,12 @@
     "player/age": "Age:",
     "player/country": "Country:",
     "player/team": "Team:",
+    "player/stats/matches": "Matches",
+    "player/stats/kills": "Frags",
+    "player/stats/deaths": "Deaths",
+    "player/stats/assists": "Assists",
+    "player/stats/kd": "K/D",
+    "player/stats/kdDiff": "K/D ratio",
     "players/player": "Player",
     "players/team": "Team",
     "players/matches": "Matches",
@@ -59,6 +70,6 @@
     "team/lineup/title": "Current lineup",
     "team/lineup/player/maps": "Maps",
     "teams/title": "Clubs",
-    "teams/subtitle": "Season 2022/2023",
+    "teams/subtitle": "Season 2022/2023"
   }
 }

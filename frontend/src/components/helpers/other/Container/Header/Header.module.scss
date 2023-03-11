@@ -29,6 +29,14 @@
         }
 
         .tabsContainer {}
+
+        .buttonLocale {
+            font-weight: bold;
+            text-transform: uppercase;
+            color: $black3;
+
+            cursor: pointer;
+        }
     }
 
     .bottomTabsContainer {
@@ -44,6 +52,10 @@
                     color: $white1;
                 }
             }
+        }
+
+        .buttonLocale {
+            color: $white1;
         }
     }
 }
@@ -79,6 +91,15 @@
 
             .tabsContainer {
                 display: none;
+            }
+
+            .buttonLocale {
+                width: fit-content;
+
+                font-size: 13px;
+                line-height: 15px;
+
+                margin-left: 6px;
             }
         }
 
@@ -124,6 +145,10 @@
             .tabsContainer {
                 display: block;
             }
+
+            .buttonLocale {
+                margin-left: 8px;
+            }
         }
 
         .bottomTabsContainer {
@@ -135,8 +160,18 @@
 @include applyResponsive1024() {
     .header {
         .content {
-            gap: 25px;
+            @include gridColumns(auto 1fr auto auto auto);
+
+            gap: 10px;
             padding: 26px 75px 27px 75px;
+
+            .buttonLocale {
+                font-size: 16px;
+                line-height: 18px;
+
+                padding-top: 2px;
+                margin: 0;
+            }
         }
     }
 }
@@ -144,7 +179,14 @@
 @include applyResponsive1280() {
     .header {
         .content {
-            gap: 30px;
+            gap: 18px;
+        }
+
+        .buttonLocale {
+            font-size: 18px;
+            line-height: 20px;
+
+            padding: 0;
         }
     }
 }
