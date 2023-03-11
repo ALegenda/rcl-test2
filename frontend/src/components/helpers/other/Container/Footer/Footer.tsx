@@ -9,11 +9,16 @@ import React, {
 
 import {
     useDarkTheme,
+    useIntl,
 } from 'helpers/hooks';
 
 import Networks from '../Networks';
 
 import Text from './Text';
+
+import {
+    INTL_DATA,
+} from './intl';
 
 import leftDarkLogo from './media/left-dark-logo.svg';
 import leftLightLogo from './media/left-light-logo.svg';
@@ -23,6 +28,8 @@ import rightLightLogo from './media/right-light-logo.svg';
 import styles from './Footer.module.scss';
 
 const Footer: FC<IProps> = (props) => {
+    const intl = useIntl();
+
     const {
         isDarkTheme,
     } = useDarkTheme();
@@ -66,7 +73,7 @@ const Footer: FC<IProps> = (props) => {
                             target={'_blank'}
                             rel={'noreferrer'}
                         >
-                            СВЕДЕНИЯ ОБ ОРГАНИЗАЦИИ
+                            {intl(INTL_DATA.AGREEMENT)}
                         </a>
                         <a
                             className={styles.personalData}
@@ -74,7 +81,7 @@ const Footer: FC<IProps> = (props) => {
                             target={'_blank'}
                             rel={'noreferrer'}
                         >
-                            УСЛОВИЯ ПОЛЬЗОВАНИЯ САЙТОМ
+                            {intl(INTL_DATA.PERSONAL_DATE)}
                         </a>
                         <a
                             className={styles.sites}
@@ -82,7 +89,7 @@ const Footer: FC<IProps> = (props) => {
                             target={'_blank'}
                             rel={'noreferrer'}
                         >
-                            КОНТАКТЫ
+                            {intl(INTL_DATA.SITES)}
                         </a>
                     </div>
                 </div>
@@ -94,7 +101,7 @@ const Footer: FC<IProps> = (props) => {
             </div>
             <div className={styles.bottom}>
                 <div className={styles.copyright}>
-                    © RCL 2021—2022 Все права защищены
+                    {intl(INTL_DATA.COPYRIGHT)}
                 </div>
                 <Networks className={styles.networks}/>
             </div>

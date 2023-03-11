@@ -15,6 +15,7 @@ import {
 
 import {
     useDarkTheme,
+    useIntl,
 } from 'helpers/hooks';
 
 import {
@@ -37,10 +38,15 @@ import Top from './Top';
 import {
     LIST_SIZE_MOBILE,
 } from './constants';
+import {
+    INTL_DATA,
+} from './intl';
 
 import styles from './TeamsList.module.scss';
 
 const TeamsList: FC<IProps> = (props) => {
+    const intl = useIntl();
+
     const {
         windowWidth,
         WINDOW_WIDTH,
@@ -73,7 +79,7 @@ const TeamsList: FC<IProps> = (props) => {
         }
         >
             <div className={styles.title}>
-                Турнирная таблица
+                {intl(INTL_DATA.TITLE)}
             </div>
             <div className={classNames(styles.list, props.listClassName)}>
                 <Top className={styles.item}/>
@@ -99,7 +105,7 @@ const TeamsList: FC<IProps> = (props) => {
                         className={styles.moreButton}
                         onClick={() => setIsOpen(true)}
                     >
-                        Развернуть
+                        {intl(INTL_DATA.BUTTON_TXT)}
                     </MagicButton>
                 </div>
             }

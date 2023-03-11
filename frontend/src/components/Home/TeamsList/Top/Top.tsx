@@ -8,12 +8,15 @@ import React, {
 } from 'react';
 
 import {
-    useDarkTheme,
+    useDarkTheme, useIntl,
 } from 'helpers/hooks';
 
 import styles from './Top.module.scss';
+import { INTL_DATA } from './intl';
 
 const Top: FC<IProps> = (props) => {
+    const intl = useIntl();
+
     const {
         isDarkTheme,
     } = useDarkTheme();
@@ -28,22 +31,22 @@ const Top: FC<IProps> = (props) => {
         }
         >
             <div className={styles.item}>
-                Место
+                {intl(INTL_DATA.PLACE)}
             </div>
             <div className={styles.item}>
-                Команда
+                {intl(INTL_DATA.TEAM)}
             </div>
             <div className={styles.item}>
-                Очки
+                {intl(INTL_DATA.SCORE)}
             </div>
             <div className={styles.item}>
-                Победы
+                {intl(INTL_DATA.WINS)}
             </div>
             <div className={styles.item}>
-                Ничьи
+                {intl(INTL_DATA.DRAWS)}
             </div>
             <div className={styles.item}>
-                Поражения
+                {intl(INTL_DATA.LOSSED)}
             </div>
         </div>
     );

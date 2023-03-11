@@ -1,12 +1,13 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/helpers';
+@import 'styles/constants';
 
 .teamsBar {
     @include dFlex();
     @include flexRow();
     @include hideScrollbar();
 
-    background: #F9F9FA;
+    background: $white4;
     overflow-x: auto;
 
     .team {
@@ -21,10 +22,10 @@
     .isActive {
         @include borderRadius(5px);
 
-        background: #DB0036;
+        background: $pink;
     }
 }
 
 .darkTheme {
-    background: #11192B;
+    background: $indigo5;
 }

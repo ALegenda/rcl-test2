@@ -26,6 +26,8 @@ export function useTranslationByUser() {
     const getTranslation = async (locale: LOCALE): Promise<IGetByUser> => {
         const res = await fetches.getByUser(locale);
 
+        console.log(res);
+
         if (!res.translation || res.error) {
             console.log(res.error);
 
@@ -33,6 +35,7 @@ export function useTranslationByUser() {
         }
 
         setTranslation(res.translation);
+        console.log(res);
 
         return res;
     };

@@ -22,7 +22,7 @@
             .text {
                 font-style: normal;
                 font-weight: 400;
-                color: #A4A4A4;
+                color: $grey2;
             }
 
             .files {
@@ -200,6 +200,14 @@
                 width: fit-content;
 
                 margin-bottom: 28px;
+            }
+        }
+    }
+
+    .darkFooter {
+        .topMobile {
+            .text {
+                color: $lightIndigo5;
             }
         }
     }

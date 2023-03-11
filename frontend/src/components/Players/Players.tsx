@@ -11,6 +11,7 @@ import {
 
 import {
     useDarkTheme,
+    useIntl,
 } from 'helpers/hooks';
 
 import {
@@ -30,10 +31,16 @@ import {
 
 import Player from './Player';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './Players.module.scss';
 
 const Players: FC = () => {
     const [isPending, setIsPending] = useState(false);
+
+    const intl = useIntl();
 
     const {
         windowWidth,
@@ -87,28 +94,28 @@ const Players: FC = () => {
                 <div className={styles.table}>
                     <div className={classNames(styles.row, styles.rowTop)}>
                         <div className={styles.column}>
-                            Игрок
+                            {intl(INTL_DATA.PLAYER)}
                         </div>
                         <div className={styles.column}>
-                            Команда
+                            {intl(INTL_DATA.TEAM)}
                         </div>
                         <div className={styles.column}>
-                            Матчей
+                            {intl(INTL_DATA.MATCHES)}
                         </div>
                         <div className={styles.column}>
-                            Фрагов
+                            {intl(INTL_DATA.KILLS)}
                         </div>
                         <div className={styles.column}>
-                            Помощи
+                            {intl(INTL_DATA.ASSISTS)}
                         </div>
                         <div className={styles.column}>
-                            Смертей
+                            {intl(INTL_DATA.DEATHS)}
                         </div>
                         <div className={styles.column}>
-                            K/D
+                            {intl(INTL_DATA.KD)}
                         </div>
                         <div className={styles.column}>
-                            K-D diff
+                            {intl(INTL_DATA.KD_DIFF)}
                         </div>
                     </div>
                     <InfiniteScroll

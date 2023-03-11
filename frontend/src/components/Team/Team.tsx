@@ -12,7 +12,7 @@ import {
 } from 'react-router-dom';
 
 import {
-    useDarkTheme,
+    useDarkTheme, useIntl,
 } from 'helpers/hooks';
 
 import {
@@ -28,8 +28,11 @@ import Lineup from './Lineup';
 import Stats from './Stats';
 
 import styles from './Team.module.scss';
+import { INTL_DATA } from './intl';
 
 const Team: FC = () => {
+    const intl = useIntl();
+
     const {
         id,
     } = useParams<IParams>();
@@ -75,7 +78,7 @@ const Team: FC = () => {
                     <div className={styles.basic}>
                         <div className={styles.row}>
                             <div className={styles.characteristic}>
-                                Название:
+                                {intl(INTL_DATA.TEAM_NAME)}
                             </div>
                             <div className={styles.value}>
                                 {team.name}
@@ -83,7 +86,7 @@ const Team: FC = () => {
                         </div>
                         <div className={styles.row}>
                             <div className={styles.characteristic}>
-                                Страна:
+                                {intl(INTL_DATA.COUNRTY)}
                             </div>
                             <div className={styles.value}>
                                 {team.country}
@@ -95,7 +98,7 @@ const Team: FC = () => {
                         </div>
                         <div className={styles.row}>
                             <div className={styles.characteristic}>
-                                Город:
+                                {intl(INTL_DATA.CITY)}
                             </div>
                             <div className={styles.value}>
                                 {team.city}

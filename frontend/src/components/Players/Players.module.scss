@@ -87,6 +87,7 @@
 
                     .column {
                         @include justifyContentCenter();
+                        @include alignItemsCenter();
                     }
                 }
 

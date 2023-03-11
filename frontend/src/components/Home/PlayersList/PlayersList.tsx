@@ -10,6 +10,10 @@ import React, {
 } from 'react';
 
 import {
+    useIntl,
+} from 'helpers/hooks';
+
+import {
     getDefaultQueryUser,
 } from 'instances/players/functions';
 import {
@@ -23,11 +27,16 @@ import {
 
 import Player from './Player';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './PlayersList.module.scss';
 
 const PlayersList: FC<IProps> = (props) => {
     const [isPending, setIsPending] = useState(false);
 
+    const intl = useIntl();
     const {
         players,
         playersTotal,
@@ -56,7 +65,7 @@ const PlayersList: FC<IProps> = (props) => {
     return (
         <div className={classNames(styles.playersList, props.className)}>
             <div className={styles.title}>
-                Игроки
+                {intl(INTL_DATA.TITLE)}
             </div>
             {
                 players && playersTotal !== null ?

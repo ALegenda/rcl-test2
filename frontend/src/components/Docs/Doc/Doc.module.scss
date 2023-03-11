@@ -1,5 +1,6 @@
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .doc {
     .name {
@@ -7,20 +8,20 @@
 
         font-style: normal;
         font-weight: 400;
-        color: #3173FF;
+        color: $brightBlue;
         cursor: pointer;
     }
 
     .size {
         font-style: normal;
         font-weight: 400;
-        color: #7C7C7C;
+        color: $grey7;
     }
 }
 
 .darkTheme {
     .size {
-        color: #7282A3;
+        color: $lightIndigo2;
     }
 }
 

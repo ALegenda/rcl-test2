@@ -13,6 +13,7 @@ import {
 
 import {
     useDarkTheme,
+    useIntl,
 } from 'helpers/hooks';
 
 import {
@@ -31,10 +32,15 @@ import Stats from './Stats';
 import {
     formatName,
 } from './functions';
+import {
+    INTL_DATA,
+} from './intl';
 
 import styles from './Player.module.scss';
 
 const Player: FC = () => {
+    const intl = useIntl();
+
     const {
         id,
     } = useParams<IParams>();
@@ -77,7 +83,7 @@ const Player: FC = () => {
                 <div className={styles.basic}>
                     <div className={styles.row}>
                         <div className={styles.characteristic}>
-                            Имя:
+                            {intl(INTL_DATA.NAME)}
                         </div>
                         <div className={classNames(styles.value, styles.name)}>
                             {formatName(baseInfo.nickName, baseInfo.firstName, baseInfo.lastName)}
@@ -85,7 +91,7 @@ const Player: FC = () => {
                     </div>
                     <div className={styles.row}>
                         <div className={styles.characteristic}>
-                            Возраст:
+                            {intl(INTL_DATA.AGE)}
                         </div>
                         <div className={styles.value}>
                             {baseInfo.age}
@@ -93,7 +99,7 @@ const Player: FC = () => {
                     </div>
                     <div className={styles.row}>
                         <div className={styles.characteristic}>
-                            Страна:
+                            {intl(INTL_DATA.COUNTRY)}
                         </div>
                         <div className={styles.value}>
                             {baseInfo.country}
@@ -105,7 +111,7 @@ const Player: FC = () => {
                     </div>
                     <div className={styles.row}>
                         <div className={styles.characteristic}>
-                            Команда:
+                            {intl(INTL_DATA.TEAM)}
                         </div>
                         <div className={styles.value}>
                             {baseInfo.team.name}

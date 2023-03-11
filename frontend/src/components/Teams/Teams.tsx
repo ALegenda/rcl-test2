@@ -6,6 +6,7 @@ import React, {
 
 import {
     useDarkTheme,
+    useIntl,
 } from 'helpers/hooks';
 
 import {
@@ -22,9 +23,15 @@ import {
 
 import Team from './Team';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './Teams.module.scss';
 
 const Teams: FC = () => {
+    const intl = useIntl();
+
     const {
         teams,
         teamsTotal,
@@ -64,10 +71,10 @@ const Teams: FC = () => {
         >
             <div className={styles.top}>
                 <div className={styles.title}>
-                    Клубы
+                    {intl(INTL_DATA.TITLE)}
                 </div>
                 <div className={styles.dateSeason}>
-                    Сезон 2022/2023
+                    {intl(INTL_DATA.SUBTITLE)}
                 </div>
             </div>
             <InfiniteScroll

@@ -12,7 +12,15 @@ import {
 
 import {
     useDarkTheme,
+    useIntl,
 } from 'helpers/hooks';
+
+import {
+    LOCALE,
+} from 'instances/translations/constants';
+import {
+    useTranslationByUser,
+} from 'instances/translations/hooks';
 
 import {
     Toggle,
@@ -22,16 +30,27 @@ import Networks from '../Networks';
 
 import Tabs from './Tabs';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import darkLogoImage from './media/dark-logo.svg';
 import lightLogoImage from './media/light-logo.svg';
 
 import styles from './Header.module.scss';
 
 const Header: FC<IProps> = (props) => {
+    const intl = useIntl();
+
     const {
         isDarkTheme,
         setIsDarkTheme,
     } = useDarkTheme();
+
+    const {
+        translation,
+        getTranslation,
+    } = useTranslationByUser();
 
     return (
         <div className={
@@ -53,11 +72,11 @@ const Header: FC<IProps> = (props) => {
                             alt={''}
                         />
                         <div className={styles.title}>
-                            Российская
+                            {intl(INTL_DATA.TITLE_1)}
                             <br/>
-                            Киберспортивная
+                            {intl(INTL_DATA.TITLE_2)}
                             <br/>
-                            Лига
+                            {intl(INTL_DATA.TITLE_3)}
                         </div>
                     </Link>
                 </div>
@@ -73,6 +92,11 @@ const Header: FC<IProps> = (props) => {
             <div className={styles.bottomTabsContainer}>
                 <Tabs className={styles.bottomTabs}/>
             </div>
+            <button
+                onClick={() => getTranslation(LOCALE.EN)}
+            >
+                {translation?.locale}
+            </button>
         </div>
     );
 };

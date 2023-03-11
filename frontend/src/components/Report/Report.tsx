@@ -17,6 +17,7 @@ import {
 
 import {
     useDarkTheme,
+    useIntl,
 } from 'helpers/hooks';
 
 import {
@@ -33,9 +34,15 @@ import {
     PrimaryButton,
 } from '../helpers/buttons';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './Report.module.scss';
 
 const Report: FC = () => {
+    const intl = useIntl();
+
     const {
         id,
     } = useParams<IParams>();
@@ -90,7 +97,7 @@ const Report: FC = () => {
                     to={'/news'}
                     className={styles.anotherButton}
                 >
-                    Другие новости
+                    {intl(INTL_DATA.OTHER_NEWS)}
                 </PrimaryButton>
             </div>
         </div>

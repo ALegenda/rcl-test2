@@ -10,6 +10,7 @@ import React, {
 
 import {
     useDarkTheme,
+    useIntl,
 } from 'helpers/hooks';
 
 import {
@@ -22,9 +23,15 @@ import {
 
 import Player from './Player';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './TeamCard.module.scss';
 
 const TeamCard: FC<IProps> = (props) => {
+    const intl = useIntl();
+
     const {
         players,
         getPlayersLineup,
@@ -49,7 +56,7 @@ const TeamCard: FC<IProps> = (props) => {
         }
         >
             <div className={styles.title}>
-                Состав команды
+                {intl(INTL_DATA.TITLE)}
             </div>
             <div className={styles.list}>
                 {

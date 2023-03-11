@@ -10,6 +10,7 @@ import React, {
 
 import {
     useDarkTheme,
+    useIntl,
 } from 'helpers/hooks';
 
 import {
@@ -22,9 +23,15 @@ import {
 
 import Match from './Match';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './MatchesList.module.scss';
 
 const MatchesList: FC<IProps> = (props) => {
+    const intl = useIntl();
+
     const {
         matches,
         getMatches,
@@ -50,7 +57,7 @@ const MatchesList: FC<IProps> = (props) => {
         }
         >
             <div className={styles.title}>
-                Ближайшие матчи
+                {intl(INTL_DATA.TITLE)}
             </div>
             {
                 matches ?

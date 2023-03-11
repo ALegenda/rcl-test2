@@ -15,6 +15,7 @@ import {
 
 import {
     useDarkTheme,
+    useIntl,
 } from 'helpers/hooks';
 
 import {
@@ -34,10 +35,16 @@ import {
 
 import Report from './Report';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './ReportsList.module.scss';
 
 const ReportsList: FC<IProps> = (props) => {
     const [isPending, setIsPending] = useState(false);
+
+    const intl = useIntl();
 
     const {
         windowWidth,
@@ -83,7 +90,7 @@ const ReportsList: FC<IProps> = (props) => {
         }
         >
             <div className={styles.title}>
-                Новости
+                {intl(INTL_DATA.TITLE)}
             </div>
             {
                 reports && reportsTotal !== null ?
@@ -111,7 +118,7 @@ const ReportsList: FC<IProps> = (props) => {
                         className={styles.moreButton}
                         onClick={() => loadMoreReports(reports.length)}
                     >
-                        Посмотреть остальные
+                        {intl(INTL_DATA.BUTTON_TXT)}
                     </MagicButton>
                 </div>
             }

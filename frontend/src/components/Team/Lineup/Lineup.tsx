@@ -10,6 +10,7 @@ import React, {
 
 import {
     useDarkTheme,
+    useIntl,
 } from 'helpers/hooks';
 
 import {
@@ -26,9 +27,15 @@ import {
     Loading,
 } from 'components/helpers/other';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './Lineup.module.scss';
 
 const Lineup: FC<IProps> = (props) => {
+    const intl = useIntl();
+
     const {
         players,
         getPlayersLineup,
@@ -56,7 +63,7 @@ const Lineup: FC<IProps> = (props) => {
             <div className={styles.lineup}>
                 <div className={styles.content}>
                     <div className={styles.title}>
-                        Текущий состав
+                        {intl(INTL_DATA.TITLE)}
                     </div>
                     <div className={styles.players}>
                         {

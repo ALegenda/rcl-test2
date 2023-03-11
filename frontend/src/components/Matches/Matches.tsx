@@ -7,6 +7,7 @@ import React, {
 
 import {
     useDarkTheme,
+    useIntl,
 } from 'helpers/hooks';
 
 import {
@@ -23,10 +24,16 @@ import {
 
 import Match from './Match';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './Matches.module.scss';
 
 const Matches: FC = () => {
     const [isPending, setIsPending] = useState(false);
+
+    const intl = useIntl();
 
     const {
         matches,
@@ -74,7 +81,7 @@ const Matches: FC = () => {
             {
                 matchesTotal === 0 ?
                     <div className={styles.emptyResult}>
-                        Ни один матч еще не завершён. Следите за обновлениями!
+                        {intl(INTL_DATA.EMPTY_RESULT)}
                     </div> :
                     <div>
                         <InfiniteScroll

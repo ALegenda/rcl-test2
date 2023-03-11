@@ -12,6 +12,7 @@ import {
 
 import {
     useDarkTheme,
+    useIntl,
 } from 'helpers/hooks';
 
 import {
@@ -21,6 +22,9 @@ import {
 import {
     BACKGROUND_COLOR,
 } from './constants';
+import {
+    INTL_DATA,
+} from './intl';
 
 import darkBackgroundLogo from './media/dark-background-logo.svg';
 import lightBackgroundLogo from './media/light-background-logo.svg';
@@ -28,6 +32,8 @@ import lightBackgroundLogo from './media/light-background-logo.svg';
 import styles from './LineupPlayer.module.scss';
 
 const LineupPlayer: FC<IProps> = (props) => {
+    const intl = useIntl();
+
     const {
         isDarkTheme,
     } = useDarkTheme();
@@ -72,7 +78,7 @@ const LineupPlayer: FC<IProps> = (props) => {
                 <div className={styles.maps}>
                     {props.player.totalMaps}
                     {' '}
-                    Карт
+                    {intl(INTL_DATA.MAPS)}
                 </div>
             </div>
         </Link>

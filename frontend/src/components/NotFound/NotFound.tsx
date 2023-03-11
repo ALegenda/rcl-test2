@@ -8,7 +8,12 @@ import {
 
 import {
     useDarkTheme,
+    useIntl,
 } from 'helpers/hooks';
+
+import {
+    INTL_DATA,
+} from './intl';
 
 import leftDarkLogoImage from './media/left-dark-logo.svg';
 import leftLightLogoImage from './media/left-light-logo.svg';
@@ -17,6 +22,8 @@ import notFoundImage from './media/not-found.svg';
 import styles from './NotFound.module.scss';
 
 const NotFound: FC = () => {
+    const intl = useIntl();
+
     const {
         isDarkTheme,
     } = useDarkTheme();
@@ -46,12 +53,12 @@ const NotFound: FC = () => {
                     className={styles.mainButton}
                     to={'/'}
                 >
-                    Вернуться на главную
+                    {intl(INTL_DATA.BUTTON_TXT)}
                 </Link>
             </div>
             <div className={styles.right}>
                 <span className={styles.rightText}>
-                    Страница не найдена
+                    {intl(INTL_DATA.TEXT)}
                 </span>
             </div>
         </div>
