@@ -12,7 +12,8 @@ import {
 } from 'react-router-dom';
 
 import {
-    useDarkTheme, useIntl,
+    useDarkTheme,
+    useIntl,
 } from 'helpers/hooks';
 
 import {
@@ -27,8 +28,11 @@ import {
 import Lineup from './Lineup';
 import Stats from './Stats';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './Team.module.scss';
-import { INTL_DATA } from './intl';
 
 const Team: FC = () => {
     const intl = useIntl();

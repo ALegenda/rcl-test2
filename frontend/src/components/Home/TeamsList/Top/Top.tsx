@@ -8,11 +8,15 @@ import React, {
 } from 'react';
 
 import {
-    useDarkTheme, useIntl,
+    useDarkTheme,
+    useIntl,
 } from 'helpers/hooks';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './Top.module.scss';
-import { INTL_DATA } from './intl';
 
 const Top: FC<IProps> = (props) => {
     const intl = useIntl();
