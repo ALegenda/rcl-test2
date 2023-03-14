@@ -11,6 +11,7 @@
 
     .emptyResult {
         text-align: center;
+        color: $black3;
     }
 
     .list {
@@ -19,12 +20,24 @@
         @include lightBlueScrollBar();
 
         width: 100%;
+
+        .match {
+            background: $white4;
+        }
     }
 }
 
-.darkMatches {
+.isDark {
+    .emptyResult {
+        color: $white1;
+    }
+
     .list {
         @include darkBlueScrollBar();
+
+        .match {
+            background: $indigo2;
+        }
     }
 }
 

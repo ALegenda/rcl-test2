@@ -12,13 +12,13 @@ const Toggle: FC<IProps> = (props) => {
     return (
         <div
             className={styles.toggle}
-            onClick={props.setIsMode}
+            onClick={props.onChange}
         >
             <input
                 type={'checkbox'}
-                checked={props.isMode}
-                onChange={props.setIsMode}
-                onClick={props.setIsMode}
+                checked={props.value}
+                onChange={props.onChange}
+                onClick={props.onChange}
             />
             <span/>
         </div>

@@ -37,9 +37,11 @@ const Footer: FC<IProps> = (props) => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkFooter,
                 styles.footer,
-                props.className
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
             )
         }
         >

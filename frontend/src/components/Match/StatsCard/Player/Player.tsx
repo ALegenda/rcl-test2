@@ -21,9 +21,11 @@ const Player: FC<IProps> = (props) => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkPlayer,
                 styles.player,
-                props.className
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
             )
         }
         >

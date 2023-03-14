@@ -6,6 +6,7 @@
 
 .lineupContainer {
     @include dFlex();
+    @include hideScrollbar();
 
     width: 100%;
     overflow: auto;
@@ -33,7 +34,7 @@
     }
 }
 
-.darkLineupContainer {
+.isDark {
     .lineup {
         background: $indigo4;
 
@@ -74,7 +75,7 @@
     }
 }
 
-@include applyResponsive1280() {
+@include applyResponsive768() {
     .lineupContainer {
         @include justifyContentCenter();
     }

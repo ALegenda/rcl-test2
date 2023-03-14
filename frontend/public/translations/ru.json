@@ -20,6 +20,7 @@
     "helpers/other/container/footer/sites": "КОНТАКТЫ",
     "helpers/other/container/footer/copyright": "© RCL 2021—2022 Все права защищены",
     "helpers/other/container/footer/text/bigTxt": "Все права на материалы, размещенные на сайте www.ruscyberleague.ru (далее – Сайт) и являющиеся объектами исключительных прав, в том числе на зарегистрированные товарные знаки и символику «РКЛ»/«RCL» (далее – Товарные знаки), а также на фото- и видеоизображения, статьи и т.п., правообладателем которых является ООО «Киберспортивная лига», охраняются в соответствии с законодательством РФ. Размещение и/или использование Товарных знаков и иных объектов интеллектуальной собственности, правообладателем которых является ООО «Киберспортивная лига», без согласования с ООО «Киберспортивная лига» рассматриваются и преследуются как нарушения интеллектуальных прав ООО «Киберспортивная лига» в соответствии с законодательством РФ. Запрещается автоматизированное извлечение информации Сайта любыми сервисами без официального разрешения ООО «Киберспортивная лига». Цитирование с Сайта и сателлитных проектов официальных сообщений Российской киберспортивной лиги допускается только при наличии прямой ссылки на сайт www.ruscyberleague.ru",
+    "helpers/instances/matches/match/live": "В эфире",
     "home/teamsList/title": "Турнирная таблица",
     "home/teamsList/buttonTxt": "Развернуть",
     "home/teamsList/top/place": "Место",
@@ -27,6 +28,7 @@
     "home/teamsList/top/score": "Очки",
     "home/teamsList/top/wins": "Победы",
     "home/teamsList/top/draws": "Ничьи",
+    "home/teamsList/top/games": "Игр",
     "home/teamsList/top/lossed": "Поражения",
     "home/reportsList/title": "Новости",
     "home/reportsList/buttonTxt": "Посмотреть остальное",
@@ -48,6 +50,8 @@
     "player/stats/assists": "Помощи",
     "player/stats/kd": "K/D",
     "player/stats/kdDiff": "K/D разница",
+    "player/matchesList/emptyResult": "У данного игрока еще не завершён ни один матч. Следите за обновлениями!",
+    "player/matchesList/title": "Матчей",
     "players/player": "Игрок",
     "players/team": "Команда",
     "players/matches": "Матчей",
@@ -69,6 +73,8 @@
     "team/stats/kdDiff": "K/D разница",
     "team/lineup/title": "Текущий состав",
     "team/lineup/player/maps": "Карт",
+    "team/matchesList/emptyResult": "У данной команды еще не завершён ни один матч. Следите за обновлениями!",
+    "team/matchesList/title": "Матчи",
     "teams/title": "Клубы",
     "teams/subtitle": "Сезон 2022/2023"
   }

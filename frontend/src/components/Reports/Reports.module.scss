@@ -53,7 +53,7 @@
         }
     }
 
-    .darkPeports {
+    .isDark {
         .list {
             @include darkBlueScrollBar();
         }

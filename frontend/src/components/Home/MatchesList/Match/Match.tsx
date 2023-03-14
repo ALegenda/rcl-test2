@@ -36,9 +36,11 @@ const Match: FC<IProps> = (props) => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkMatch,
                 styles.match,
-                props.className
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
             )
         }
         >

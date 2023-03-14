@@ -30,9 +30,12 @@ const Report: FC<IProps> = (props) => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkReport,
                 styles.report,
-                props.className)
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
+            )
         }
         >
             <Image

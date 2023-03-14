@@ -50,9 +50,11 @@ const MatchesList: FC<IProps> = (props) => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkMatchesList,
                 styles.matchesList,
-                props.className
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
             )
         }
         >

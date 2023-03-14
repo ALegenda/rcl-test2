@@ -54,9 +54,11 @@ const Lineup: FC<IProps> = (props) => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkLineupContainer,
                 styles.lineupContainer,
-                props.className
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
             )
         }
         >

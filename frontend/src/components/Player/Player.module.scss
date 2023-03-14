@@ -3,46 +3,59 @@
 @import 'tools/styles/adaptive';
 @import 'styles/constants';
 
-.player {
-    @include dFlex();
+.playerContainer {
+    .player {
+        @include dFlex();
 
-    .avatar {}
+        .avatar {}
 
-    .infoBlock {
-        font-weight: 500;
+        .info {
+            @include dFlex();
+            font-weight: 500;
 
-        .basic {
-            .row {
+            .basic {
                 @include dFlex();
 
-                .characteristic {
-                    color: $grey4;
-                    text-align: end;
-                }
-
-                .value {
+                .row {
                     @include dFlex();
-                    color: $black3;
 
-                    img {}
+                    .characteristic {
+                        text-align: end;
+                        color: $grey4;
+                    }
+
+                    .value {
+                        @include dFlex();
+                        color: $black3;
+
+                        img {}
+                    }
+
+                    .name {}
                 }
-
-                .name {}
             }
+
+            .stats {}
+
+            .insideMatchesList {}
         }
     }
+
+    .outsideMatchesList {}
 }
 
-.darkPlayer {
-    .infoBlock {
-        .basic {
-            .row {
-                .characteristic {
-                    color: $lightIndigo6;
-                }
+.isDark {
+    .player {
+        .info {
+            .basic {
+                .row {
+                    .characteristic {
+                        color: $lightIndigo6;
+                    }
 
-                .value {
-                    color: $white1;
+                    .value {
+                        color: $white1;
+                    }
                 }
             }
         }
@@ -50,88 +63,124 @@
 }
 
 @include applyResponsive320() {
-    .player {
-        @include flexColumn();
-        @include alignItemsCenter();
+    .playerContainer {
+        .player {
+            @include flexColumn();
+            @include alignItemsCenter();
 
-        gap: 22px;
-        padding: 10px 15px 15px 15px;
+            gap: 20px;
+            padding: 28px 15px 13px 15px;
 
-        .avatar {
-            width: 267px;
-            height: 364px;
-        }
+            .avatar {
+                width: 267px;
+                height: 364px;
+            }
 
-        .infoBlock {
-            font-size: 15px;
-            line-height: 35px;
+            .info {
+                @include flexColumn();
 
-            .basic {
-                padding-bottom: 29px;
+                font-size: 15px;
+                line-height: 35px;
 
-                .row {
-                    @include flexRow();
-                    @include alignItemsCenter();
+                .basic {
+                    @include flexColumn();
+                    @include alignItemsStart();
 
-                    gap: 23px;
+                    padding-bottom: 46px;
 
-                    .characteristic {
-                        width: 75px;
-                    }
-
-                    .value {
+                    .row {
                         @include flexRow();
-                        @include alignItemsCenter();
+                        gap: 23px;
 
-                        img {
-                            width: 19px;
-                            height: 13px;
+                        .characteristic {
+                            width: 86px;
+                        }
 
-                            margin-left: 10px;
+                        .value {
+                            @include flexRow();
+                            @include alignItemsCenter();
+
+                            img {
+                                width: 19px;
+                                height: 13px;
+
+                                margin-bottom: 5px;
+                                margin-left: 10px;
+                            }
+                        }
+
+                        .name {
+                            line-height: 21px;
                         }
                     }
+                }
 
-                    .name {
-                        line-height: 21px;
-                    }
+                .insideMatchesList {
+                    display: none !important;
+                }
+            }
+        }
+
+        .outsideMatchesList {
+            padding: 0 15px;
+        }
+    }
+}
+
+@include applyResponsive768() {
+    .playerContainer {
+        padding-bottom: 20px;
+
+        .player {
+            @include flexRow();
+            @include justifyContentCenter();
+            @include alignItemsStart();
+
+            padding-bottom: 20px;
+
+            .avatar {
+                width: 296px;
+                height: 404px;
+            }
+
+            .info {
+                .basic {
+                    padding-bottom: 15px;
                 }
             }
         }
     }
 }
 
-@include applyResponsive768() {
-    .player {
-        @include flexRow();
-        @include justifyContentCenter();
-        @include alignItemsStart();
-
-        gap: 23px;
-        padding-top: 15px;
-    }
-}
-
 @include applyResponsive1280() {
-    .player {
-        gap: 43px;
-        padding: 30px 0;
+    .playerContainer {
+        .player {
+            gap: 43px;
 
-        .avatar {
-            width: 346px;
-            height: 472px;
-        }
+            .avatar {
+                width: 346px;
+                height: 472px;
+            }
 
-        .infoBlock {
-            .basic {
-                padding-bottom: 19px;
+            .info {
+                gap: 15px;
+
+                .basic {
+                    padding-bottom: 5px;
+                }
+
+                .stats {
+                    max-width: 551px;
+                }
+
+                .insideMatchesList {
+                    @include dFlex();
+                }
             }
         }
-    }
-}
 
-@include applyResponsive1440() {
-    .player {
-        @include justifyContentStart();
-        gap: 47px;
+        .outsideMatchesList {
+            display: none !important;
+        }
     }
 }

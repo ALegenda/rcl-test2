@@ -41,3 +41,27 @@ export interface IStats {
     kd: number | null;
     kdDiff: number;
 }
+
+export interface ITeam {
+    id: number;
+
+    name: string;
+    logo: string;
+    city: string;
+    country: string;
+    countryLogo: string;
+}
+
+export interface IMatch {
+    id: number;
+
+    team1Id: number;
+    team2Id: number;
+
+    startedAt: string;
+    status: string;
+    team1Score: number;
+    team2Score: number;
+
+    teams: [ITeam, ITeam];
+}

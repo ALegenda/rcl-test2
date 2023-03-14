@@ -17,12 +17,11 @@ import {
     useMatchFinishedByUser,
 } from 'instances/matches/hooks';
 
+import Match from 'components/helpers/instances/matches/Match';
 import {
     InfiniteScroll,
     Loading,
 } from 'components/helpers/other';
-
-import Match from './Match';
 
 import {
     INTL_DATA,
@@ -73,8 +72,10 @@ const Matches: FC = () => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkMatches,
-                styles.matches
+                styles.matches,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
             )
         }
         >
@@ -94,7 +95,12 @@ const Matches: FC = () => {
                                     (match) =>
                                         <Match
                                             key={match.id}
+                                            className={styles.match}
                                             match={match}
+                                            team1={match.team1}
+                                            team2={match.team2}
+                                            team1Score={match.team1Score}
+                                            team2Score={match.team2Score}
                                         />
                                 )
                             }

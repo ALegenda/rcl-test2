@@ -9,17 +9,19 @@
     @include justifyContentBetween();
     @include alignItemsCenter();
 
-    min-height: 196px;
-
     @include borderRadius(10px);
     background: $white4;
 
     .date {
-        font-size: 12px;
         font-style: normal;
         font-weight: 400;
-        line-height: 14px;
         color: $brightBlue;
+    }
+
+    .live {
+        font-style: normal;
+        font-weight: 700;
+        color: $pink;
     }
 
     .basic {
@@ -42,10 +44,11 @@
             font-weight: 700;
             color: $black2;
 
-            gap: 50px;
-            padding: 0 25px;
-
             z-index: 2;
+        }
+
+        .pendingScore {
+            width: 130px;
         }
 
         .vsImage {
@@ -55,15 +58,18 @@
     }
 
     .time {
-        font-size: 10px;
         font-style: normal;
         font-weight: 400;
         color: $black2;
     }
 }
 
-.darkMatch {
+.isDark {
     background: $indigo2;
+
+    .live {
+        color: $lightPink;
+    }
 
     .basic {
         .score {
@@ -78,7 +84,18 @@
 
 @include applyResponsive320 {
     .match {
+        min-height: 196px;
         padding: 28px 20px 39px 20px;
+
+        .date {
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+        .live {
+            font-size: 14px;
+            line-height: 16px;
+        }
 
         .basic {
             .teamImage {
@@ -89,14 +106,22 @@
             .score {
                 font-size: 23px;
                 line-height: 26px;
+
+                gap: 35px;
+                padding: 0 15px;
             }
 
             .vsImage {
-                right: 98px;
+                right: 82px;
 
                 width: 48px;
                 height: 64px;
             }
+        }
+
+        .time {
+            font-size: 10px;
+            line-height: 14px;
         }
     }
 }
@@ -109,6 +134,8 @@
             .score {
                 font-size: 30px;
                 line-height: 35px;
+
+                gap: 40px;
             }
 
             .teamImage {
@@ -117,7 +144,7 @@
             }
 
             .vsImage {
-                right: 112px;
+                right: 98px;
 
                 width: 56px;
                 height: 72px;
@@ -137,7 +164,7 @@
             }
 
             .vsImage {
-                right: 120px;
+                right: 104px;
 
                 width: 73px;
                 height: 98px;

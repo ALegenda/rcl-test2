@@ -28,9 +28,11 @@ const Top: FC<IProps> = (props) => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkTop,
                 styles.top,
-                props.className
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
             )
         }
         >
@@ -50,6 +52,9 @@ const Top: FC<IProps> = (props) => {
                 {intl(INTL_DATA.DRAWS)}
             </div>
             <div className={styles.item}>
+                {intl(INTL_DATA.GAMES)}
+            </div>
+            <div className={classNames(styles.item, styles.endItem)}>
                 {intl(INTL_DATA.LOSSED)}
             </div>
         </div>

@@ -63,6 +63,18 @@
         padding-left: 7px;
     }
 
+    .gamesTotal {
+        font-style: normal;
+        font-weight: 700;
+        text-align: start;
+        color: $grey11;
+
+        font-size: 13px;
+        line-height: 12px;
+
+        padding-left: 5px;
+    }
+
     .loosesTotal {
         font-style: normal;
         font-weight: 700;
@@ -71,27 +83,33 @@
 
         font-size: 13px;
         line-height: 12px;
+
+        padding-right: 5px;
     }
 }
 
-.darkTeam {
+.isDark {
     .order {
-        color: $white1
+        color: $white1;
     }
 
     .points {
-        color: $white1
+        color: $white1;
     }
 
     .winsTotal {
-        color: $white1
+        color: $white1;
     }
 
     .draws {
-        color: $white1
+        color: $white1;
+    }
+
+    .gamesTotal {
+        color: $white1;
     }
 
     .loosesTotal {
-        color: $white1
+        color: $white1;
     }
 }

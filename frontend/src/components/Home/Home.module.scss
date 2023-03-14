@@ -23,17 +23,21 @@
     .reportsAndTeams {
         @include dFlex();
 
-        .reports {
-            background: $white4;
+        .reportsListContainer {
+            .reports {
+                background: $white4;
+            }
         }
 
-        .teams {
-            background: $white4;
+        .teamsListContainer {
+            .teams {
+                background: $white4;
+            }
         }
     }
 }
 
-.darkHome {
+.isDark {
     .matchesAndPlayers {
         .matches {
             background: $indigo4;
@@ -45,12 +49,16 @@
     }
 
     .reportsAndTeams {
-        .reports {
-            background: $indigo4;
+        .reportsListContainer {
+            .reports {
+                background: $indigo4;
+            }
         }
 
-        .teams {
-            background: $indigo4;
+        .teamsListContainer {
+            .teams {
+                background: $indigo4;
+            }
         }
     }
 }
@@ -60,6 +68,9 @@
         @include flexColumn();
         @include alignItemsCenter();
 
+        gap: 17px;
+        padding-bottom: 14px;
+
         .list {}
 
         .matchesAndPlayers {
@@ -68,14 +79,12 @@
 
             width: 100%;
 
-            padding: 0;
+            padding: 0 15px;
 
             .matches {
                 @include borderRadius(15px);
 
-                padding: 32px 25px 25px 25px;
-                margin-right: 0;
-                margin-bottom: 7px;
+                padding: 32px 20px 25px 20px;
             }
 
             .players {
@@ -87,21 +96,41 @@
 
         .reportsAndTeams {
             @include flexColumnReverse();
+            @include alignItemsCenter();
 
-            .reports {
-                @include borderRadius(25px);
+            width: 100%;
 
-                width: 320px;
+            gap: 17px;
 
-                padding: 32px 19px 18px 19px;
+            .reportsListContainer {
+                width: 100%;
+                padding: 0 15px;
+
+                .reports {
+                    @include borderRadius(25px);
+
+                    width: 100%;
+
+                    padding: 32px 19px 18px 19px;
+                }
             }
 
-            .teams {
-                @include borderRadius(25px);
+            .teamsListContainer {
+                @include hideScrollbar();
 
-                width: 320px;
+                width: 100%;
+                overflow-x: auto;
 
-                padding: 32px 11px 18px 10px;
+                padding: 0 15px;
+
+                .teams {
+                    @include borderRadius(25px);
+
+                    width: 100%;
+                    min-width: 480px;
+
+                    padding: 32px 11px 18px 10px;
+                }
             }
         }
     }
@@ -110,13 +139,34 @@
 @include applyResponsive768() {
     .home {
         @include flexColumn();
+        gap: 10px;
 
         .matchesAndPlayers {
             @include flexColumn();
+
+            padding: 0;
         }
 
         .reportsAndTeams {
             @include flexRow();
+            @include alignItemsStart();
+
+            gap: 10px;
+
+            .reportsListContainer {
+                padding: 0;
+
+                .reports {}
+            }
+
+            .teamsListContainer {
+                overflow-x: visible;
+                padding: 0;
+
+                .teams {
+                    min-width: auto;
+                }
+            }
         }
     }
 }
@@ -162,25 +212,25 @@
         .reportsAndTeams {
             @include flexRow();
 
-            .reports {
-                @include borderRadius(25px);
+            .reportsListContainer {
+                .reports {
+                    @include borderRadius(25px);
 
-                width: 550px;
-
-                padding: 32px 21px 0 33px;
+                    padding: 32px 21px 0 33px;
+                }
             }
 
-            .teams {
-                @include borderRadius(25px);
+            .teamsListContainer {
+                .teams {
+                    @include borderRadius(25px);
 
-                width: 412px;
-
-                padding: 32px 21px 0 33px;
+                    padding: 32px 20px 0 25px;
+                }
             }
         }
     }
 
-    .darkHome {
+    .isDark {
         .matchesAndPlayers {
             background: $indigo4;
         }

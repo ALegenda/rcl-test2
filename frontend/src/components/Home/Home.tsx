@@ -21,8 +21,10 @@ const Home: FC = () => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkHome,
-                styles.home
+                styles.home,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
             )
         }
         >
@@ -33,14 +35,18 @@ const Home: FC = () => {
                 />
             </div>
             <div className={styles.reportsAndTeams}>
-                <ReportsList
-                    className={styles.reports}
-                    listClassName={styles.list}
-                />
-                <TeamsList
-                    className={styles.teams}
-                    listClassName={styles.list}
-                />
+                <div className={styles.reportsListContainer}>
+                    <ReportsList
+                        className={styles.reports}
+                        listClassName={styles.list}
+                    />
+                </div>
+                <div className={styles.teamsListContainer}>
+                    <TeamsList
+                        className={styles.teams}
+                        listClassName={styles.list}
+                    />
+                </div>
             </div>
         </div>
     );

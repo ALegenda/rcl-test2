@@ -27,10 +27,12 @@ const PrimaryButton: FC<IProps> = (props) => {
                 to={props.to}
                 className={
                     classNames(
-                        isDarkTheme && styles.darkPrimaryButton,
                         styles.primaryButton,
                         styles.link,
-                        props.className
+                        props.className,
+                        {
+                            [styles.isDark]: isDarkTheme,
+                        }
                     )
                 }
                 onClick={props.onClick}
@@ -44,9 +46,11 @@ const PrimaryButton: FC<IProps> = (props) => {
         <button
             className={
                 classNames(
-                    isDarkTheme && styles.darkPrimaryButton,
                     styles.primaryButton,
-                    props.className
+                    props.className,
+                    {
+                        [styles.isDark]: isDarkTheme,
+                    }
                 )
             }
             onClick={props.onClick}

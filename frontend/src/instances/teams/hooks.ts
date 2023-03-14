@@ -1,4 +1,5 @@
 import {
+    IMatch,
     IStats,
     ITeamDemoUser,
     ITeamUser,
@@ -11,6 +12,7 @@ import {
     IGetByUser,
     IGetDemoByUser,
     IGetOneByUser,
+    IGetOneByUserMatches,
     IGetOneByUserStats,
 } from './types/responses';
 
@@ -114,11 +116,8 @@ export function useTeamsByUser() {
 
 export function useTeamByUser() {
     const [team, setTeam] = useState<ITeamUser | null>(null);
-    const [stats, setStats] = useState<IStats | null>(null);
 
     const getTeam = async (id: number): Promise<IGetOneByUser> => {
-        setTeam(null);
-
         const res = await fetches.getOneByUser(id);
 
         if (!res.team || res.error) {
@@ -131,6 +130,15 @@ export function useTeamByUser() {
 
         return res;
     };
+
+    return {
+        team,
+        getTeam,
+    };
+}
+
+export function useTeamStatsByUser() {
+    const [stats, setStats] = useState<IStats | null>(null);
 
     const getStats = async (id: number): Promise<IGetOneByUserStats> => {
         const res = await fetches.getOneByUserStats(id);
@@ -147,9 +155,30 @@ export function useTeamByUser() {
     };
 
     return {
-        team,
         stats,
-        getTeam,
         getStats,
+    };
+}
+
+export function useTeamMatchesByUser() {
+    const [matches, setMatches] = useState<IMatch[] | null>(null);
+
+    const getMatches = async (id: number): Promise<IGetOneByUserMatches> => {
+        const res = await fetches.getOneByUserMatches(id);
+
+        if (!res.matches || res.error) {
+            console.log(res.error);
+
+            return res;
+        }
+
+        setMatches(res.matches);
+
+        return res;
+    };
+
+    return {
+        matches,
+        getMatches,
     };
 }

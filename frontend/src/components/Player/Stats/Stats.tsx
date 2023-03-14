@@ -54,8 +54,11 @@ const Stats: FC<IProps> = (props) => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkStats,
-                styles.stats
+                styles.stats,
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
             )
         }
         >

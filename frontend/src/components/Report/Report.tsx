@@ -71,8 +71,10 @@ const Report: FC = () => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkReport,
-                styles.report
+                styles.report,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
             )
         }
         >

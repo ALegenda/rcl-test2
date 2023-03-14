@@ -42,9 +42,11 @@ const LineupPlayer: FC<IProps> = (props) => {
         <Link
             className={
                 classNames(
-                    isDarkTheme && styles.darkLineupPlayer,
                     styles.lineupPlayer,
-                    props.className
+                    props.className,
+                    {
+                        [styles.isDark]: isDarkTheme,
+                    }
                 )
             }
             to={`/players/${props.player.id}`}

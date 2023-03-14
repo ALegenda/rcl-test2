@@ -50,9 +50,12 @@ const TeamCard: FC<IProps> = (props) => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkTeamCard,
                 styles.teamCard,
-                props.className)
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
+            )
         }
         >
             <div className={styles.title}>

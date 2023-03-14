@@ -69,12 +69,16 @@ const TeamsList: FC<IProps> = (props) => {
         })();
     }, []);
 
+    console.log(teams);
+
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkTeamsList,
                 styles.teamsList,
-                props.className
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
             )
         }
         >

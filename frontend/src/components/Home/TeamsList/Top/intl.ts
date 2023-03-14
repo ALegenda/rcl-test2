@@ -4,5 +4,6 @@ export enum INTL_DATA {
     SCORE = 'home/teamsList/top/score',
     WINS = 'home/teamsList/top/wins',
     DRAWS = 'home/teamsList/top/draws',
+    GAMES = 'home/teamsList/top/games',
     LOSSED = 'home/teamsList/top/lossed',
 }

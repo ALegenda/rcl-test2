@@ -26,8 +26,10 @@ const Docs: FC = () => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkDocs,
-                styles.docs
+                styles.docs,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
             )
         }
         >

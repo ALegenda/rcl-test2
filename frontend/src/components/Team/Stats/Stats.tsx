@@ -14,7 +14,7 @@ import {
 } from 'helpers/hooks';
 
 import {
-    useTeamByUser,
+    useTeamStatsByUser,
 } from 'instances/teams/hooks';
 
 import {
@@ -33,7 +33,7 @@ const Stats: FC<IProps> = (props) => {
     const {
         stats,
         getStats,
-    } = useTeamByUser();
+    } = useTeamStatsByUser();
 
     const {
         isDarkTheme,
@@ -54,9 +54,11 @@ const Stats: FC<IProps> = (props) => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkStats,
                 styles.stats,
-                props.className
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
             )
         }
         >

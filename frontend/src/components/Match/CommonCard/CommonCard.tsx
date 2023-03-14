@@ -34,9 +34,11 @@ const CommonCard: FC<IProps> = (props) => {
         <div
             className={
                 classNames(
-                    isDarkTheme && styles.darkCommonCard,
                     styles.commonCard,
-                    props.className
+                    props.className,
+                    {
+                        [styles.isDark]: isDarkTheme,
+                    }
                 )
             }
             onClick={props.onClick}

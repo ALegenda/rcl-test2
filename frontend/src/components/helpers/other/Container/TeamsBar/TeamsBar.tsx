@@ -83,9 +83,12 @@ const TeamsBar: FC<IProps> = (props) => {
         <InfiniteScroll
             className={
                 classNames(
-                    isDarkTheme && styles.darkTheme,
                     styles.teamsBar,
-                    props.className)
+                    props.className,
+                    {
+                        [styles.isDark]: isDarkTheme,
+                    }
+                )
             }
             hasMore={teams.length < teamsTotal}
             loadMore={() => loadMoreTeams(teams.length)}

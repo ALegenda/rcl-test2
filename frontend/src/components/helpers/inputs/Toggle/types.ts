@@ -1,5 +1,6 @@
 export interface IProps {
-    isMode: boolean;
+    value: boolean;
 
-    setIsMode(): void;
+    onChange(): void;
+    // onChange(e: ChangeEvent<HTMLInputElement>): void; // вот тут не понял
 }

@@ -1,3 +1,3 @@
 export enum INTL_DATA {
-    EMPTY_RESULT = 'metches/emptyResult',
+    EMPTY_RESULT = 'matches/emptyResult',
 }

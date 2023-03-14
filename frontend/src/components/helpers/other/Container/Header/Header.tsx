@@ -55,9 +55,11 @@ const Header: FC<IProps> = (props) => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkHeader,
                 styles.header,
-                props.className
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
             )
         }
         >
@@ -85,8 +87,8 @@ const Header: FC<IProps> = (props) => {
                 </div>
                 <Networks/>
                 <Toggle
-                    isMode={isDarkTheme}
-                    setIsMode={() => setIsDarkTheme(!isDarkTheme)}
+                    value={isDarkTheme}
+                    onChange={() => setIsDarkTheme(!isDarkTheme)}
                 />
                 <div
                     className={styles.buttonLocale}

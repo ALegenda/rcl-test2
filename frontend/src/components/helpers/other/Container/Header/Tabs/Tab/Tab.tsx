@@ -59,10 +59,10 @@ const Tab: FC<IProps> = (props) => {
         <Link
             className={
                 classNames(
-                    isDarkTheme && styles.darkTheme,
                     styles.tab,
                     props.className,
                     {
+                        [styles.isDark]: isDarkTheme,
                         [isDarkTheme ? styles.isDarkActive : styles.isActive]: isActive,
                     }
                 )

@@ -5,6 +5,7 @@ import {
 
 import {
     IBaseInfoUser,
+    IMatch,
     IPlayerLineupUser,
     IPlayerUser,
     IStatsUser,
@@ -28,4 +29,8 @@ export interface IGetOneByUserBaseInfo extends IWithResponseError {
 export interface IGetOneByUserStats extends IWithResponseError {
     stats?: IStatsUser;
     notFoundError?: IResponseError;
+}
+
+export interface IGetOneByUserMatches extends IWithResponseError {
+    matches?: IMatch[];
 }

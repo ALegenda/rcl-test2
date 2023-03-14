@@ -29,8 +29,10 @@ const Team: FC<IProps> = (props) => {
         <Link
             className={
                 classNames(
-                    isDarkTheme && styles.darkTheme,
-                    styles.team
+                    styles.team,
+                    {
+                        [styles.isDark]: isDarkTheme,
+                    }
                 )
             }
             to={`/teams/${props.team.id}`}

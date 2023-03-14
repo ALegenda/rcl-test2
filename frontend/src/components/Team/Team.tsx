@@ -26,6 +26,7 @@ import {
 } from 'components/helpers/other';
 
 import Lineup from './Lineup';
+import MatchesList from './MatchesList';
 import Stats from './Stats';
 
 import {
@@ -65,8 +66,10 @@ const Team: FC = () => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkTeamContainer,
-                styles.teamContainer
+                styles.teamContainer,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
             )
         }
         >
@@ -78,7 +81,7 @@ const Team: FC = () => {
                         mode={'contain'}
                     />
                 </div>
-                <div className={styles.infoContainer}>
+                <div className={styles.info}>
                     <div className={styles.basic}>
                         <div className={styles.row}>
                             <div className={styles.characteristic}>
@@ -120,10 +123,18 @@ const Team: FC = () => {
                         className={styles.insideLineup}
                         id={id ?? ''}
                     />
+                    <MatchesList
+                        className={styles.insideMatchesList}
+                        id={id ?? ''}
+                    />
                 </div>
             </div>
             <Lineup
                 className={styles.outsideLineup}
+                id={id ?? ''}
+            />
+            <MatchesList
+                className={styles.outsideMatchesList}
                 id={id ?? ''}
             />
         </div>

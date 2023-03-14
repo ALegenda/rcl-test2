@@ -17,7 +17,7 @@
             .logoImg {}
         }
 
-        .infoContainer {
+        .info {
             @include dFlex();
             font-weight: 500;
 
@@ -43,20 +43,24 @@
                 .stats {}
 
                 .insideLineup {}
+
+                .insideMatchesList {}
             }
         }
 
         .outsideLineup {}
+
+        .outsideMatchesList {}
     }
 }
 
-.darkTeamContainer {
+.isDark {
     .team {
         .baguetteLogo {
             background: $indigo4;
         }
 
-        .infoContainer {
+        .info {
             .basic {
                 .row {
                     .characteristic {
@@ -95,7 +99,7 @@
                 }
             }
 
-            .infoContainer {
+            .info {
                 @include flexColumn();
 
                 font-size: 15px;
@@ -133,13 +137,19 @@
                 .insideLineup {
                     display: none !important;
                 }
+
+                .insideMatchesList {
+                    display: none !important;
+                }
             }
         }
 
         .outsideLineup {
-            @include hideScrollbar();
+            padding: 0 15px 15px 15px;
+        }
 
-            padding: 0 15px 20px 15px;
+        .outsideMatchesList {
+            padding: 0 15px 15px 15px;
         }
     }
 }
@@ -162,7 +172,7 @@
                 }
             }
 
-            .infoContainer {
+            .info {
                 .basic {
                     padding-bottom: 15px;
                 }
@@ -170,6 +180,10 @@
         }
 
         .outsideLineup {
+            padding-bottom: 20px;
+        }
+
+        .outsideMatchesList {
             padding-bottom: 28px;
         }
     }
@@ -189,20 +203,28 @@
                 }
             }
 
-            .infoContainer {
-                gap: 11px;
+            .info {
+                gap: 15px;
 
                 .basic {
-                    padding-bottom: 12px;
+                    padding-bottom: 5px;
                 }
 
                 .insideLineup {
+                    @include dFlex();
+                }
+
+                .insideMatchesList {
                     @include dFlex();
                 }
             }
         }
 
         .outsideLineup {
+            display: none !important;
+        }
+
+        .outsideMatchesList {
             display: none !important;
         }
     }

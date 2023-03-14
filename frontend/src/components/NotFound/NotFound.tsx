@@ -31,8 +31,10 @@ const NotFound: FC = () => {
     return (
         <div className={
             classNames(
-                isDarkTheme && styles.darkNotFound,
-                styles.notFound
+                styles.notFound,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
             )
         }
         >
