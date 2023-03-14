@@ -17,7 +17,9 @@ import {
     useMatchFinishedByUser,
 } from 'instances/matches/hooks';
 
-import Match from 'components/helpers/instances/matches/Match';
+import {
+    Match,
+} from 'components/helpers/instances/matches';
 import {
     InfiniteScroll,
     Loading,
