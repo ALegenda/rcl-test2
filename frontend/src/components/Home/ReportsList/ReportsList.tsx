@@ -14,6 +14,11 @@ import {
 } from 'tools/hooks';
 
 import {
+    useDarkTheme,
+    useIntl,
+} from 'helpers/hooks';
+
+import {
     getDefaultQueryUser,
 } from 'instances/reports/functions';
 import {
@@ -30,15 +35,25 @@ import {
 
 import Report from './Report';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './ReportsList.module.scss';
 
 const ReportsList: FC<IProps> = (props) => {
     const [isPending, setIsPending] = useState(false);
 
+    const intl = useIntl();
+
     const {
         windowWidth,
         WINDOW_WIDTH,
     } = useWindowWidth();
+
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
 
     const {
         reports,
@@ -66,9 +81,18 @@ const ReportsList: FC<IProps> = (props) => {
     }, []);
 
     return (
-        <div className={classNames(styles.reportsList, props.className)}>
+        <div className={
+            classNames(
+                styles.reportsList,
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
+            )
+        }
+        >
             <div className={styles.title}>
-                Новости
+                {intl(INTL_DATA.TITLE)}
             </div>
             {
                 reports && reportsTotal !== null ?
@@ -96,7 +120,7 @@ const ReportsList: FC<IProps> = (props) => {
                         className={styles.moreButton}
                         onClick={() => loadMoreReports(reports.length)}
                     >
-                        Посмотреть остальные
+                        {intl(INTL_DATA.BUTTON_TXT)}
                     </MagicButton>
                 </div>
             }

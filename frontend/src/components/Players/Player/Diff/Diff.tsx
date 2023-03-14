@@ -8,16 +8,26 @@ import React, {
 } from 'react';
 
 import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
+import {
     formatValue,
 } from './functions';
 
 import styles from './Diff.module.scss';
 
 const Diff: FC<IProps> = (props) => {
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
         <span className={classNames({
-            [styles.green]: (props.diff ?? 0) > 0,
-            [styles.red]: (props.diff ?? 0) < 0,
+            [isDarkTheme ? styles.darkPositive : styles.lightPositive]:
+                (props.diff ?? 0) > 0,
+            [isDarkTheme ? styles.darkNegative : styles.lightNegative]:
+                (props.diff ?? 0) < 0,
         })}
         >
             {formatValue(props.diff)}

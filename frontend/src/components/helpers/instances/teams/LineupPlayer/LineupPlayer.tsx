@@ -11,20 +11,52 @@ import {
 } from 'react-router-dom';
 
 import {
+    useDarkTheme,
+    useIntl,
+} from 'helpers/hooks';
+
+import {
     Image,
 } from 'components/helpers/other';
 
-import backgroundLogo from './media/backgroundLogo.svg';
+import {
+    BACKGROUND_COLOR,
+} from './constants';
+import {
+    INTL_DATA,
+} from './intl';
+
+import darkBackgroundLogo from './media/dark-background-logo.svg';
+import lightBackgroundLogo from './media/light-background-logo.svg';
 
 import styles from './LineupPlayer.module.scss';
 
 const LineupPlayer: FC<IProps> = (props) => {
+    const intl = useIntl();
+
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
         <Link
-            className={classNames(styles.lineupPlayer, props.className)}
+            className={
+                classNames(
+                    styles.lineupPlayer,
+                    props.className,
+                    {
+                        [styles.isDark]: isDarkTheme,
+                    }
+                )
+            }
             to={`/players/${props.player.id}`}
         >
-            <div className={props.lineup ? styles.greyTop : styles.whiteTop}>
+            <div className={
+                props.backgroundColor === BACKGROUND_COLOR.GREY ?
+                    styles.greyTop :
+                    styles.whiteTop
+            }
+            >
                 <Image
                     className={styles.avatarImg}
                     src={props.player.imageUrl}
@@ -32,7 +64,7 @@ const LineupPlayer: FC<IProps> = (props) => {
                 />
                 <img
                     className={styles.backgroundLogo}
-                    src={backgroundLogo}
+                    src={isDarkTheme ? darkBackgroundLogo : lightBackgroundLogo}
                     alt={''}
                 />
             </div>
@@ -48,7 +80,7 @@ const LineupPlayer: FC<IProps> = (props) => {
                 <div className={styles.maps}>
                     {props.player.totalMaps}
                     {' '}
-                    Карт
+                    {intl(INTL_DATA.MAPS)}
                 </div>
             </div>
         </Link>

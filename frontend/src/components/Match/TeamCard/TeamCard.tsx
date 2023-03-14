@@ -9,6 +9,11 @@ import React, {
 } from 'react';
 
 import {
+    useDarkTheme,
+    useIntl,
+} from 'helpers/hooks';
+
+import {
     usePlayersLineupByUser,
 } from 'instances/players/hooks';
 
@@ -18,13 +23,23 @@ import {
 
 import Player from './Player';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './TeamCard.module.scss';
 
 const TeamCard: FC<IProps> = (props) => {
+    const intl = useIntl();
+
     const {
         players,
         getPlayersLineup,
     } = usePlayersLineupByUser();
+
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
 
     useEffect(() => {
         (async () => {
@@ -33,9 +48,18 @@ const TeamCard: FC<IProps> = (props) => {
     }, []);
 
     return (
-        <div className={classNames(styles.teamCard, props.className)}>
+        <div className={
+            classNames(
+                styles.teamCard,
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
+            )
+        }
+        >
             <div className={styles.title}>
-                Состав команды
+                {intl(INTL_DATA.TITLE)}
             </div>
             <div className={styles.list}>
                 {

@@ -2,6 +2,7 @@ import {
     IProps,
 } from './types';
 
+import classNames from 'classnames';
 import React, {
     FC,
 } from 'react';
@@ -14,15 +15,38 @@ import {
 } from 'tools/functions';
 
 import {
+    useDarkTheme,
+    useIntl,
+} from 'helpers/hooks';
+
+import {
     Image,
     MultilineText,
 } from 'components/helpers/other';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './Report.module.scss';
 
 const Report: FC<IProps> = (props) => {
+    const intl = useIntl();
+
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
-        <div className={styles.report}>
+        <div className={
+            classNames(
+                styles.report,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
+            )
+        }
+        >
             <Image
                 className={styles.image}
                 src={props.report.imageUrl}
@@ -44,7 +68,7 @@ const Report: FC<IProps> = (props) => {
                     className={styles.more}
                     to={`/news/${props.report.id}`}
                 >
-                    Читать подробнее
+                    {intl(INTL_DATA.MORE)}
                 </Link>
             </div>
         </div>

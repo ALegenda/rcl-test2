@@ -1,5 +1,6 @@
 import {
     IBaseInfoUser,
+    IMatch,
     IPlayerLineupUser,
     IPlayerUser,
     IStatsUser,
@@ -11,6 +12,7 @@ import {
     IGetByUser,
     IGetLineupByUser,
     IGetOneByUserBaseInfo,
+    IGetOneByUserMatches,
     IGetOneByUserStats,
 } from './types/responses';
 
@@ -112,5 +114,28 @@ export function usePlayerStatsByUser() {
     return {
         stats,
         getStats,
+    };
+}
+
+export function usePlayerMatchesByUser() {
+    const [matches, setMatches] = useState<IMatch[] | null>(null);
+
+    const getMatches = async (id: number): Promise<IGetOneByUserMatches> => {
+        const res = await fetches.getOneByUserMatches(id);
+
+        if (!res.matches || res.error) {
+            console.log(res.error);
+
+            return res;
+        }
+
+        setMatches(res.matches);
+
+        return res;
+    };
+
+    return {
+        matches,
+        getMatches,
     };
 }

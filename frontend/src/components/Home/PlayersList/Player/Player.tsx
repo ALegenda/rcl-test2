@@ -11,14 +11,24 @@ import {
 } from 'react-router-dom';
 
 import {
+    useIntl,
+} from 'helpers/hooks';
+
+import {
     Image,
 } from 'components/helpers/other';
+
+import {
+    INTL_DATA,
+} from './intl';
 
 import backgroundImage from './media/background.svg';
 
 import styles from './Player.module.scss';
 
 const Player: FC<IProps> = (props) => {
+    const intl = useIntl();
+
     return (
         <Link
             className={classNames(styles.player, props.className)}
@@ -49,7 +59,7 @@ const Player: FC<IProps> = (props) => {
             <div className={styles.stats}>
                 {props.player.stats.kills}
                 {' '}
-                Фрагов
+                {intl(INTL_DATA.FRAGS)}
             </div>
         </Link>
     );

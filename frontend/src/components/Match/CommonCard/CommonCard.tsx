@@ -8,6 +8,10 @@ import React, {
 } from 'react';
 
 import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
+import {
     formatDate,
     formatTime,
 } from 'instances/matches/functions';
@@ -16,14 +20,27 @@ import {
     Image,
 } from 'components/helpers/other';
 
-import vsImage from './media/vs.svg';
+import darkVsImage from './media/vs-dark.svg';
+import lightVsImage from './media/vs-light.svg';
 
 import styles from './CommonCard.module.scss';
 
 const CommonCard: FC<IProps> = (props) => {
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
         <div
-            className={classNames(styles.commonCard, props.className)}
+            className={
+                classNames(
+                    styles.commonCard,
+                    props.className,
+                    {
+                        [styles.isDark]: isDarkTheme,
+                    }
+                )
+            }
             onClick={props.onClick}
         >
             <div className={styles.date}>
@@ -44,7 +61,7 @@ const CommonCard: FC<IProps> = (props) => {
                     </div>
                     <img
                         className={styles.vsImage}
-                        src={vsImage}
+                        src={isDarkTheme ? darkVsImage : lightVsImage}
                         alt={''}
                     />
                 </div>

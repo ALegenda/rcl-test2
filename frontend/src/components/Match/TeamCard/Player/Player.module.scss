@@ -1,11 +1,12 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .player {
     @include removeLinkUnderline();
 
-    background: #FFFFFF;
+    background: $white1;
 
     .avatar {
         @include dFlex();
@@ -22,23 +23,39 @@
             width: 100%;
             height: 100%;
         }
+
         .avatarImage {
             position: relative;
         }
     }
+
     .name {
         @include dFlex();
         @include flexRow();
         @include justifyContentCenter();
         @include alignItemsCenter();
 
-        .countryImage {
+        .countryImage {}
 
-        }
         .nickname {
             font-style: normal;
             font-weight: 500;
-            color: #000000;
+            color: $black1;
+        }
+    }
+}
+
+.isDark {
+    background: $indigo2;
+
+    .avatar {
+        @include borderRadius(10px);
+        background: $lightIndigo7;
+    }
+
+    .name {
+        .nickname {
+            color: $white1;
         }
     }
 }
@@ -55,14 +72,14 @@
 
             margin-bottom: 9px;
 
-            .backgroundImage {
+            .backgroundImage {}
 
-            }
             .avatarImage {
                 max-width: 100%;
                 max-height: calc(100% - 7px);
             }
         }
+
         .name {
             margin-bottom: 21px;
 
@@ -72,6 +89,7 @@
 
                 margin-right: 2px;
             }
+
             .nickname {
                 font-size: 13px;
                 line-height: 14px;
@@ -92,14 +110,14 @@
 
             margin-bottom: 9px;
 
-            .backgroundImage {
+            .backgroundImage {}
 
-            }
             .avatarImage {
                 max-width: 100%;
                 max-height: calc(100% - 7px);
             }
         }
+
         .name {
             margin-bottom: 21px;
 
@@ -109,6 +127,7 @@
 
                 margin-right: 2px;
             }
+
             .nickname {
                 font-size: 13px;
                 line-height: 14px;

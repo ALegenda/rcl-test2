@@ -2,13 +2,13 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .notFound {
     .left {
-        .leftLogo {
-
-        }
+        .leftLogo {}
     }
+
     .main {
         position: relative;
 
@@ -22,7 +22,10 @@
 
             width: 100%;
             height: 100%;
+
+            mix-blend-mode: luminosity;
         }
+
         .mainButton {
             @include dFlex();
             @include flexRow();
@@ -32,19 +35,34 @@
 
             position: absolute;
 
-            background: #494949;
+            background: $grey9;
 
             font-style: normal;
             font-weight: 700;
-            color: #FFFFFF;
+            color: $white1;
             cursor: pointer;
         }
     }
+
     .right {
         .rightText {
             font-style: normal;
             font-weight: 400;
-            color: #000000;
+            color: $black3;
+        }
+    }
+}
+
+.isDark {
+    .main {
+        .mainButton {
+            background: $blue2;
+        }
+    }
+
+    .right {
+        .rightText {
+            color: $lightIndigo5;
         }
     }
 }
@@ -61,10 +79,9 @@
         .left {
             display: none;
 
-            .leftLogo {
-
-            }
+            .leftLogo {}
         }
+
         .main {
             width: 271px;
             height: 204px;
@@ -72,9 +89,8 @@
             padding: 0 25px 0 25px;
             margin-bottom: 53px;
 
-            .notFoundImage {
+            .notFoundImage {}
 
-            }
             .mainButton {
                 @include borderRadius(5px);
 
@@ -88,6 +104,7 @@
                 line-height: 11px;
             }
         }
+
         .right {
             @include dFlex();
             @include flexRow();
@@ -121,6 +138,7 @@
                 height: 34px;
             }
         }
+
         .main {
             width: 658px;
             height: 494px;
@@ -128,9 +146,8 @@
             padding: 0 33px 0 33px;
             margin-bottom: 0;
 
-            .notFoundImage {
+            .notFoundImage {}
 
-            }
             .mainButton {
                 @include borderRadius(5px);
 
@@ -145,6 +162,7 @@
                 line-height: 11px;
             }
         }
+
         .right {
             @include dFlex();
             @include flexRow();

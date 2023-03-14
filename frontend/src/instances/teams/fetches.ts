@@ -6,6 +6,7 @@ import {
     IGetByUser,
     IGetDemoByUser,
     IGetOneByUser,
+    IGetOneByUserMatches,
     IGetOneByUserStats,
 } from './types/responses';
 
@@ -91,6 +92,25 @@ export async function getOneByUserStats(id: number): Promise<IGetOneByUserStats>
         .on([404], (body) => {
             return {
                 notFoundError: body,
+            };
+        })
+        .on([500], (body) => {
+            return {
+                error: body,
+            };
+        })
+        .exec();
+}
+
+export async function getOneByUserMatches(id: number): Promise<IGetOneByUserMatches> {
+    return new Fetch<IGetOneByUserMatches>({
+        url: `${config.URL}${INSTANCE_PATH}/matches/${id}`,
+        method: 'GET',
+        credentials: 'omit',
+    })
+        .on([200], (body) => {
+            return {
+                matches: body,
             };
         })
         .on([500], (body) => {

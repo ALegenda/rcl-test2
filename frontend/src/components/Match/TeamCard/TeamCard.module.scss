@@ -1,18 +1,28 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .teamCard {
-    background: #F9F9FA;
+    background: $white4;
 
     .title {
         font-style: normal;
         font-weight: 500;
-        color: #000000;
+        color: $black1;
     }
+
     .list {
         @include dFlex();
         @include flexRow();
+    }
+}
+
+.isDark {
+    background: $indigo4;
+
+    .title {
+        color: $white1;
     }
 }
 
@@ -28,6 +38,7 @@
 
             margin-bottom: 26px;
         }
+
         .list {
             gap: 4px;
         }
@@ -46,6 +57,7 @@
 
             margin-bottom: 26px;
         }
+
         .list {
             gap: 4px;
         }

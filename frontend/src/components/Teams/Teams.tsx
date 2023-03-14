@@ -1,7 +1,13 @@
+import classNames from 'classnames';
 import React, {
     FC,
     useEffect,
 } from 'react';
+
+import {
+    useDarkTheme,
+    useIntl,
+} from 'helpers/hooks';
 
 import {
     getDefaultQueryUser,
@@ -17,14 +23,24 @@ import {
 
 import Team from './Team';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './Teams.module.scss';
 
 const Teams: FC = () => {
+    const intl = useIntl();
+
     const {
         teams,
         teamsTotal,
         getTeams,
     } = useTeamsByUser();
+
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
 
     const loadMoreTeams = async (skip: number) => {
         await getTeams({
@@ -46,16 +62,23 @@ const Teams: FC = () => {
     }
 
     return (
-        <div className={styles.teams}>
+        <div className={
+            classNames(
+                styles.teams,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
+            )
+        }
+        >
             <div className={styles.top}>
                 <div className={styles.title}>
-                    Клубы
+                    {intl(INTL_DATA.TITLE)}
                 </div>
                 <div className={styles.dateSeason}>
-                    Сезон 2022/2023
+                    {intl(INTL_DATA.SUBTITLE)}
                 </div>
             </div>
-            <div className={styles.magicTop}/>
             <InfiniteScroll
                 className={styles.list}
                 hasMore={teams.length < teamsTotal}
@@ -72,7 +95,6 @@ const Teams: FC = () => {
                     )
                 }
             </InfiniteScroll>
-            <div className={styles.magicBottom}/>
         </div>
     );
 };

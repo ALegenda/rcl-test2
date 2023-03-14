@@ -7,6 +7,10 @@ import React, {
     FC,
 } from 'react';
 
+import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
 import Footer from './Footer';
 import Header from './Header';
 import TeamsBar from './TeamsBar';
@@ -14,8 +18,21 @@ import TeamsBar from './TeamsBar';
 import styles from './Container.module.scss';
 
 const Container: FC<IProps> = (props) => {
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
-        <div className={classNames(styles.container, props.containerClassName)}>
+        <div className={
+            classNames(
+                styles.container,
+                props.containerClassName,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
+            )
+        }
+        >
             <div className={styles.main}>
                 <Header className={styles.header}/>
                 <TeamsBar className={styles.teamsBar}/>

@@ -1,5 +1,6 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .player {
     @include dFlex();
@@ -8,7 +9,11 @@
 
     font-style: normal;
     font-weight: 500;
-    color: #000000;
+    color: $grey11;
+}
+
+.isDark {
+    color: $white1;
 }
 
 @include applyResponsive320() {

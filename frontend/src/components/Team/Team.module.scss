@@ -2,57 +2,73 @@
 @import 'tools/styles/grid';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
-.team {
-    @include dFlex();
-
-    .baguetteContainer {
+.teamContainer {
+    .team {
         @include dFlex();
 
-        .baguette {
+        .baguetteLogo {
             @include dFlex();
-
             @include borderRadius(25px);
-            background: #F9F9FA;
+
+            background: $white4;
 
             .logoImg {}
         }
-    }
 
-    .infoBlock {
-        font-size: 15px;
-        line-height: 35px;
-        font-weight: 500;
-
-        .basic {
+        .info {
             @include dFlex();
+            font-weight: 500;
 
-            .row {
+            .basic {
                 @include dFlex();
-                @include flexRow();
 
-                gap: 23px;
+                .row {
+                    @include dFlex();
 
-                .characteristic {
-                    width: 86px;
+                    .characteristic {
+                        text-align: end;
+                        color: $grey4;
+                    }
 
-                    color: #A0A0A0;
-                    text-align: end;
+                    .value {
+                        @include dFlex();
+                        color: $black3;
+
+                        img {}
+                    }
                 }
 
-                .value {
-                    @include dFlex();
-                    @include flexRow();
-                    @include alignItemsCenter();
+                .stats {}
 
-                    color: #000000;
+                .insideLineup {}
 
-                    img {
-                        width: 19px;
-                        height: 13px;
+                .insideMatchesList {}
+            }
+        }
 
-                        margin-bottom: 5px;
-                        margin-left: 10px;
+        .outsideLineup {}
+
+        .outsideMatchesList {}
+    }
+}
+
+.isDark {
+    .team {
+        .baguetteLogo {
+            background: $indigo4;
+        }
+
+        .info {
+            .basic {
+                .row {
+                    .characteristic {
+                        color: $lightIndigo6;
+                    }
+
+                    .value {
+                        color: $white1;
                     }
                 }
             }
@@ -61,19 +77,15 @@
 }
 
 @include applyResponsive320() {
-    .team {
-        @include flexColumn();
-        @include alignItemsCenter();
+    .teamContainer {
+        .team {
+            @include flexColumn();
+            @include alignItemsCenter();
 
-        gap: 20px;
+            gap: 20px;
+            padding: 28px 15px 13px 15px;
 
-        .baguetteContainer {
-            @include justifyContentCenter();
-
-            width: 100%;
-            padding: 0 20px;
-
-            .baguette {
+            .baguetteLogo {
                 @include justifyContentCenter();
 
                 width: 100%;
@@ -84,96 +96,136 @@
                 .logoImg {
                     min-width: 129px;
                     height: 129px;
+                }
+            }
 
-                    margin: 5px 0;
+            .info {
+                @include flexColumn();
+
+                font-size: 15px;
+                line-height: 35px;
+
+                .basic {
+                    @include flexColumn();
+                    @include alignItemsStart();
+
+                    padding-bottom: 46px;
+
+                    .row {
+                        @include flexRow();
+                        gap: 23px;
+
+                        .characteristic {
+                            width: 86px;
+                        }
+
+                        .value {
+                            @include flexRow();
+                            @include alignItemsCenter();
+
+                            img {
+                                width: 19px;
+                                height: 13px;
+
+                                margin-bottom: 5px;
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
+
+                .insideLineup {
+                    display: none !important;
+                }
+
+                .insideMatchesList {
+                    display: none !important;
                 }
             }
         }
 
-        .infoBlock {
-            .basic {
-                @include flexColumn();
-                @include alignItemsStart();
+        .outsideLineup {
+            padding: 0 15px 15px 15px;
+        }
 
-                margin: 0 20px 46px 35px;
-            }
+        .outsideMatchesList {
+            padding: 0 15px 15px 15px;
         }
     }
 }
 
 @include applyResponsive768() {
-    .team {
-        @include flexRow();
-        @include alignItemsStart();
+    .teamContainer {
+        .team {
+            @include flexRow();
+            @include justifyContentCenter();
+            @include alignItemsStart();
 
-        margin-bottom: 18px;
+            padding-bottom: 20px;
 
-        .baguetteContainer {
-            width: auto;
-            padding: 0;
-
-            .baguette {
-                width: auto;
-                max-width: none;
-
-                padding: 65px 24px 51px 25px;
+            .baguetteLogo {
+                padding: 68px 15px 68px 15px;
 
                 .logoImg {
-                    min-width: 187px;
-                    height: 187px;
+                    min-width: 159px;
+                    height: 159px;
+                }
+            }
 
-                    margin: 10px 0;
+            .info {
+                .basic {
+                    padding-bottom: 15px;
                 }
             }
         }
 
-        .infoBlock {
-            .basic {
-                margin: 0;
-                margin-bottom: 23px;
-            }
+        .outsideLineup {
+            padding-bottom: 20px;
+        }
+
+        .outsideMatchesList {
+            padding-bottom: 28px;
         }
     }
 }
 
 @include applyResponsive1280() {
-    .team {
-        @include flexRow();
+    .teamContainer {
+        .team {
+            gap: 43px;
 
-        margin: 0;
-        gap: 36px;
-
-        .baguetteContainer {
-            .baguette {
+            .baguetteLogo {
                 padding: 67px 64px 62px 65px;
 
                 .logoImg {
                     min-width: 217px;
                     height: 217px;
+                }
+            }
 
-                    margin: 10px 0;
+            .info {
+                gap: 15px;
+
+                .basic {
+                    padding-bottom: 5px;
+                }
+
+                .insideLineup {
+                    @include dFlex();
+                }
+
+                .insideMatchesList {
+                    @include dFlex();
                 }
             }
         }
 
-        .infoBlock {
-            margin-top: 30px;
-
-            .basic {
-                margin-bottom: 23px;
-            }
+        .outsideLineup {
+            display: none !important;
         }
-    }
-}
 
-@include applyResponsive1440() {
-    .team {
-        .infoBlock {
-            margin-top: 18px;
-
-            .basic {
-                margin-bottom: 34px;
-            }
+        .outsideMatchesList {
+            display: none !important;
         }
     }
 }

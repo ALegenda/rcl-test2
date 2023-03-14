@@ -1,60 +1,61 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .footer {
     width: 100%;
 
     .topMobile {
         .logos {
-            .topLogo {
+            .topLogo {}
 
-            }
-            .bottomLogo {
-
-            }
+            .bottomLogo {}
         }
-        .text {
 
-        }
+        .text {}
     }
-    .top {
-        .leftLogo {
 
-        }
+    .top {
+        .leftLogo {}
+
         .middle {
             .text {
                 font-style: normal;
                 font-weight: 400;
-                color: #A4A4A4;
+                color: $grey2;
             }
+
             .files {
                 .agreement {
                     display: block;
 
                     font-size: 10px;
                     line-height: 177.69%;
-                    color: #000000;
+                    color: $black3;
 
                     margin-right: 69px;
                 }
+
                 .personalData {
                     display: block;
 
                     font-size: 10px;
                     line-height: 177.69%;
-                    color: #000000;
+                    color: $black3;
 
                     margin-right: 84px;
                 }
+
                 .sites {
                     display: block;
 
                     font-size: 10px;
                     line-height: 177.69%;
-                    color: #000000;
+                    color: $black3;
                 }
             }
         }
+
         .rightLogo {
             width: 101px;
             height: 34px;
@@ -62,16 +63,48 @@
             margin-left: 31px;
         }
     }
+
     .bottom {
         @include dFlex();
 
         .copyright {
             font-style: normal;
             font-weight: 400;
-            color: #5C5C5C;
+            color: $grey8;
         }
+
         .networks {
             width: fit-content;
+        }
+    }
+}
+
+.isDark {
+    .top {
+        .middle {
+            .text {
+                color: $lightIndigo5;
+            }
+
+            .files {
+                .agreement {
+                    color: $white1;
+                }
+
+                .personalData {
+                    color: $white1;
+                }
+
+                .sites {
+                    color: $white1;
+                }
+            }
+        }
+    }
+
+    .bottom {
+        .copyright {
+            color: $lightIndigo5;
         }
     }
 }
@@ -96,30 +129,35 @@
 
                     margin-bottom: 24px;
                 }
+
                 .bottomLogo {
                     width: 77px;
                     height: 26px;
                 }
             }
+
             .text {
                 font-style: normal;
                 font-weight: 400;
-                color: #8A8A8A;
+                color: $grey6;
 
                 font-size: 6px;
                 line-height: 177.69%;
             }
         }
+
         .top {
             margin-bottom: 34px;
 
             .leftLogo {
                 display: none;
             }
+
             .middle {
                 .text {
                     display: none;
                 }
+
                 .files {
                     .agreement {
                         font-size: 10px;
@@ -127,22 +165,26 @@
 
                         margin-bottom: 14px;
                     }
+
                     .personalData {
                         font-size: 10px;
                         line-height: 177.69%;
 
                         margin-bottom: 14px;
                     }
+
                     .sites {
                         font-size: 10px;
                         line-height: 177.69%;
                     }
                 }
             }
+
             .rightLogo {
                 display: none;
             }
         }
+
         .bottom {
             @include flexColumnReverse();
             @include alignItemsCenter();
@@ -153,10 +195,19 @@
 
                 margin-right: 0;
             }
+
             .networks {
                 width: fit-content;
 
                 margin-bottom: 28px;
+            }
+        }
+    }
+
+    .isDark {
+        .topMobile {
+            .text {
+                color: $lightIndigo5;
             }
         }
     }
@@ -170,17 +221,14 @@
             display: none !important;
 
             .logos {
-                .topLogo {
+                .topLogo {}
 
-                }
-                .bottomLogo {
-
-                }
+                .bottomLogo {}
             }
-            .text {
 
-            }
+            .text {}
         }
+
         .top {
             @include dFlex();
             @include flexRow();
@@ -195,6 +243,7 @@
 
                 margin-right: 31px;
             }
+
             .middle {
                 margin-bottom: 38px;
 
@@ -206,6 +255,7 @@
 
                     margin-bottom: 33px;
                 }
+
                 .files {
                     @include dFlex();
                     @include flexRow();
@@ -217,6 +267,7 @@
                         margin-right: 69px;
                         margin-bottom: 0;
                     }
+
                     .personalData {
                         font-size: 10px;
                         line-height: 177.69%;
@@ -224,12 +275,14 @@
                         margin-right: 84px;
                         margin-bottom: 0;
                     }
+
                     .sites {
                         font-size: 10px;
                         line-height: 177.69%;
                     }
                 }
             }
+
             .rightLogo {
                 display: block;
 
@@ -239,6 +292,7 @@
                 margin-left: 31px;
             }
         }
+
         .bottom {
             @include flexRow();
             @include justifyContentEnd();
@@ -250,6 +304,7 @@
 
                 margin-right: 27px;
             }
+
             .networks {
                 width: fit-content;
 

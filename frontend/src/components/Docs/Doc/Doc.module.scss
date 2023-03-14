@@ -1,5 +1,6 @@
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .doc {
     .name {
@@ -7,13 +8,20 @@
 
         font-style: normal;
         font-weight: 400;
-        color: #3173FF;
+        color: $brightBlue;
         cursor: pointer;
     }
+
     .size {
         font-style: normal;
         font-weight: 400;
-        color: #7C7C7C;
+        color: $grey7;
+    }
+}
+
+.isDark {
+    .size {
+        color: $lightIndigo2;
     }
 }
 
@@ -25,6 +33,7 @@
 
             margin-bottom: 2px;
         }
+
         .size {
             font-size: 11px;
             line-height: 13px;
@@ -40,6 +49,7 @@
 
             margin-bottom: 2px;
         }
+
         .size {
             font-size: 11px;
             line-height: 13px;

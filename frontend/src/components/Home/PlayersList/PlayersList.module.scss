@@ -2,15 +2,17 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .playersList {
-    background: #FFFFFF;
+    background: $white1;
 
     .title {
         font-style: normal;
         font-weight: 700;
-        color: #000000;
+        color: $black3;
     }
+
     .list {
         @include dFlex();
 
@@ -26,6 +28,7 @@
 
             margin-bottom: 20px;
         }
+
         .list {
             @include flexRow();
             @include borderRadius(15px);
@@ -36,7 +39,7 @@
 
             gap: 7px;
 
-            background: #F9F9FA;
+            background: $white4;
         }
     }
 }
@@ -49,17 +52,18 @@
 
             margin-bottom: 20px;
         }
+
         .list {
             @include flexColumn();
             @include alignItemsCenter();
             @include borderRadius(10px);
-            @include blueScrollBar();
+            @include lightBlueScrollBar();
             @include showScrollbar();
             @include overflowX(hidden);
 
             gap: 7px;
 
-            background: #EDEDED;
+            background: $white5;
 
             padding: 12px 11px 12px 11px;
         }

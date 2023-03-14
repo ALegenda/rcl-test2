@@ -2,10 +2,16 @@ import {
     IProps,
 } from './types';
 
+import classNames from 'classnames';
 import React, {
     FC,
     useEffect,
 } from 'react';
+
+import {
+    useDarkTheme,
+    useIntl,
+} from 'helpers/hooks';
 
 import {
     usePlayersLineupByUser,
@@ -15,16 +21,29 @@ import {
     LineupPlayer,
 } from 'components/helpers/instances/teams';
 import {
+    BACKGROUND_COLOR,
+} from 'components/helpers/instances/teams/LineupPlayer/constants';
+import {
     Loading,
 } from 'components/helpers/other';
+
+import {
+    INTL_DATA,
+} from './intl';
 
 import styles from './Lineup.module.scss';
 
 const Lineup: FC<IProps> = (props) => {
+    const intl = useIntl();
+
     const {
         players,
         getPlayersLineup,
     } = usePlayersLineupByUser();
+
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
 
     useEffect(() => {
         (async () => {
@@ -33,11 +52,20 @@ const Lineup: FC<IProps> = (props) => {
     }, [props.id]);
 
     return (
-        <div className={styles.lineupContainer}>
+        <div className={
+            classNames(
+                styles.lineupContainer,
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
+            )
+        }
+        >
             <div className={styles.lineup}>
                 <div className={styles.content}>
                     <div className={styles.title}>
-                        Текущий состав
+                        {intl(INTL_DATA.TITLE)}
                     </div>
                     <div className={styles.players}>
                         {
@@ -48,7 +76,7 @@ const Lineup: FC<IProps> = (props) => {
                                             className={styles.player}
                                             key={player.id}
                                             player={player}
-                                            lineup={true}
+                                            backgroundColor={BACKGROUND_COLOR.GREY}
                                         />
                                 ) :
                                 <Loading size={40}/>

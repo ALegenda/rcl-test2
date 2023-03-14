@@ -4,6 +4,7 @@ import {
 } from 'tools/Fetch';
 
 import {
+    IMatch,
     IStats,
     ITeamDemoUser,
     ITeamUser,
@@ -27,4 +28,8 @@ export interface IGetOneByUser extends IWithResponseError {
 export interface IGetOneByUserStats extends IWithResponseError {
     stats?: IStats;
     notFoundError?: IResponseError;
+}
+
+export interface IGetOneByUserMatches extends IWithResponseError {
+    matches?: IMatch[];
 }

@@ -9,6 +9,11 @@ import React, {
 } from 'react';
 
 import {
+    useDarkTheme,
+    useIntl,
+} from 'helpers/hooks';
+
+import {
     usePendingMatchesByUser,
 } from 'instances/matches/hooks';
 
@@ -18,13 +23,23 @@ import {
 
 import Match from './Match';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './MatchesList.module.scss';
 
 const MatchesList: FC<IProps> = (props) => {
+    const intl = useIntl();
+
     const {
         matches,
         getMatches,
     } = usePendingMatchesByUser();
+
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
 
     useEffect(() => {
         (async () => {
@@ -33,9 +48,18 @@ const MatchesList: FC<IProps> = (props) => {
     }, []);
 
     return (
-        <div className={classNames(styles.matchesList, props.className)}>
+        <div className={
+            classNames(
+                styles.matchesList,
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
+            )
+        }
+        >
             <div className={styles.title}>
-                Ближайшие матчи
+                {intl(INTL_DATA.TITLE)}
             </div>
             {
                 matches ?

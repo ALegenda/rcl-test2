@@ -2,6 +2,7 @@ import {
     IParams,
 } from './types';
 
+import classNames from 'classnames';
 import React, {
     FC,
     useEffect,
@@ -9,6 +10,11 @@ import React, {
 import {
     useParams,
 } from 'react-router-dom';
+
+import {
+    useDarkTheme,
+    useIntl,
+} from 'helpers/hooks';
 
 import {
     useTeamByUser,
@@ -20,11 +26,18 @@ import {
 } from 'components/helpers/other';
 
 import Lineup from './Lineup';
+import MatchesList from './MatchesList';
 import Stats from './Stats';
+
+import {
+    INTL_DATA,
+} from './intl';
 
 import styles from './Team.module.scss';
 
 const Team: FC = () => {
+    const intl = useIntl();
+
     const {
         id,
     } = useParams<IParams>();
@@ -33,6 +46,10 @@ const Team: FC = () => {
         team,
         getTeam,
     } = useTeamByUser();
+
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
 
     useEffect(() => {
         (async () => {
@@ -47,22 +64,28 @@ const Team: FC = () => {
     }
 
     return (
-        <div>
+        <div className={
+            classNames(
+                styles.teamContainer,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
+            )
+        }
+        >
             <div className={styles.team}>
-                <div className={styles.baguetteContainer}>
-                    <div className={styles.baguette}>
-                        <Image
-                            className={styles.logoImg}
-                            src={team.logo}
-                            mode={'contain'}
-                        />
-                    </div>
+                <div className={styles.baguetteLogo}>
+                    <Image
+                        className={styles.logoImg}
+                        src={team.logo}
+                        mode={'contain'}
+                    />
                 </div>
-                <div className={styles.infoBlock}>
+                <div className={styles.info}>
                     <div className={styles.basic}>
                         <div className={styles.row}>
                             <div className={styles.characteristic}>
-                                Название:
+                                {intl(INTL_DATA.TEAM_NAME)}
                             </div>
                             <div className={styles.value}>
                                 {team.name}
@@ -70,7 +93,7 @@ const Team: FC = () => {
                         </div>
                         <div className={styles.row}>
                             <div className={styles.characteristic}>
-                                Страна:
+                                {intl(INTL_DATA.COUNRTY)}
                             </div>
                             <div className={styles.value}>
                                 {team.country}
@@ -82,7 +105,7 @@ const Team: FC = () => {
                         </div>
                         <div className={styles.row}>
                             <div className={styles.characteristic}>
-                                Город:
+                                {intl(INTL_DATA.CITY)}
                             </div>
                             <div className={styles.value}>
                                 {team.city}
@@ -90,14 +113,30 @@ const Team: FC = () => {
                         </div>
                     </div>
                     <Stats
+                        className={styles.stats}
                         id={id ?? ''}
                         totalWins={team.totalWins}
                         totalDraws={team.totalDraws}
                         totalLoses={team.totalLoses}
                     />
+                    <Lineup
+                        className={styles.insideLineup}
+                        id={id ?? ''}
+                    />
+                    <MatchesList
+                        className={styles.insideMatchesList}
+                        id={id ?? ''}
+                    />
                 </div>
             </div>
-            <Lineup id={id ?? ''}/>
+            <Lineup
+                className={styles.outsideLineup}
+                id={id ?? ''}
+            />
+            <MatchesList
+                className={styles.outsideMatchesList}
+                id={id ?? ''}
+            />
         </div>
     );
 };

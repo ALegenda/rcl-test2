@@ -7,11 +7,35 @@ import React, {
     FC,
 } from 'react';
 
+import {
+    useDarkTheme,
+    useIntl,
+} from 'helpers/hooks';
+
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './Doc.module.scss';
 
 const Doc: FC<IProps> = (props) => {
+    const intl = useIntl();
+
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
-        <div className={classNames(styles.doc, props.className)}>
+        <div className={
+            classNames(
+                styles.doc,
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
+            )
+        }
+        >
             <a
                 className={styles.name}
                 href={props.url}
@@ -23,7 +47,7 @@ const Doc: FC<IProps> = (props) => {
             <div className={styles.size}>
                 {props.sizeKB}
                 {' '}
-                Кб
+                {intl(INTL_DATA.KB)}
             </div>
         </div>
     );

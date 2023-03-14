@@ -4,4 +4,6 @@ export interface IProps {
     totalWins: number;
     totalDraws: number;
     totalLoses: number;
+
+    className?: string;
 }

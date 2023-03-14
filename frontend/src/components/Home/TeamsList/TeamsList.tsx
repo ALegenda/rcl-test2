@@ -14,6 +14,11 @@ import {
 } from 'tools/hooks';
 
 import {
+    useDarkTheme,
+    useIntl,
+} from 'helpers/hooks';
+
+import {
     getDefaultDemoQueryUser,
 } from 'instances/teams/functions';
 import {
@@ -33,10 +38,15 @@ import Top from './Top';
 import {
     LIST_SIZE_MOBILE,
 } from './constants';
+import {
+    INTL_DATA,
+} from './intl';
 
 import styles from './TeamsList.module.scss';
 
 const TeamsList: FC<IProps> = (props) => {
+    const intl = useIntl();
+
     const {
         windowWidth,
         WINDOW_WIDTH,
@@ -49,16 +59,31 @@ const TeamsList: FC<IProps> = (props) => {
         getTeams,
     } = useTeamsDemoByUser();
 
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     useEffect(() => {
         (async () => {
             await getTeams(getDefaultDemoQueryUser());
         })();
     }, []);
 
+    console.log(teams);
+
     return (
-        <div className={classNames(styles.teamsList, props.className)}>
+        <div className={
+            classNames(
+                styles.teamsList,
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
+            )
+        }
+        >
             <div className={styles.title}>
-                Турнирная таблица
+                {intl(INTL_DATA.TITLE)}
             </div>
             <div className={classNames(styles.list, props.listClassName)}>
                 <Top className={styles.item}/>
@@ -84,7 +109,7 @@ const TeamsList: FC<IProps> = (props) => {
                         className={styles.moreButton}
                         onClick={() => setIsOpen(true)}
                     >
-                        Развернуть
+                        {intl(INTL_DATA.BUTTON_TXT)}
                     </MagicButton>
                 </div>
             }

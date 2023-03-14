@@ -1,8 +1,14 @@
+import classNames from 'classnames';
 import React, {
     FC,
     useEffect,
     useState,
 } from 'react';
+
+import {
+    useDarkTheme,
+    useIntl,
+} from 'helpers/hooks';
 
 import {
     getDefaultQueryUser,
@@ -12,22 +18,33 @@ import {
 } from 'instances/matches/hooks';
 
 import {
+    Match,
+} from 'components/helpers/instances/matches';
+import {
     InfiniteScroll,
     Loading,
 } from 'components/helpers/other';
 
-import Match from './Match';
+import {
+    INTL_DATA,
+} from './intl';
 
 import styles from './Matches.module.scss';
 
 const Matches: FC = () => {
     const [isPending, setIsPending] = useState(false);
 
+    const intl = useIntl();
+
     const {
         matches,
         matchesTotal,
         getMatches,
     } = useMatchFinishedByUser();
+
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
 
     const loadMoreMatches = async (skip: number) => {
         if (isPending) {
@@ -55,14 +72,21 @@ const Matches: FC = () => {
     }
 
     return (
-        <div className={styles.matches}>
+        <div className={
+            classNames(
+                styles.matches,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
+            )
+        }
+        >
             {
                 matchesTotal === 0 ?
                     <div className={styles.emptyResult}>
-                        Ни один матч еще не завершён. Следите за обновлениями!
+                        {intl(INTL_DATA.EMPTY_RESULT)}
                     </div> :
                     <div>
-                        <div className={styles.magicTop}></div>
                         <InfiniteScroll
                             className={styles.list}
                             hasMore={matches.length < matchesTotal}
@@ -73,12 +97,16 @@ const Matches: FC = () => {
                                     (match) =>
                                         <Match
                                             key={match.id}
+                                            className={styles.match}
                                             match={match}
+                                            team1={match.team1}
+                                            team2={match.team2}
+                                            team1Score={match.team1Score}
+                                            team2Score={match.team2Score}
                                         />
                                 )
                             }
                         </InfiniteScroll>
-                        <div className={styles.magicBottom}></div>
                     </div>
             }
         </div>

@@ -1,5 +1,6 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/helpers';
+@import 'styles/constants';
 
 .primaryButton {
     @include dFlex();
@@ -9,12 +10,16 @@
     @include defaultButton();
     @include borderRadius(5px);
 
-    background: #446ABB;
+    background: $dullBlue;
 
-    color: #FFFFFF;
+    color: $white1;
     cursor: pointer;
 }
 
 .link {
     @include removeLinkUnderline();
+}
+
+.isDark {
+    background: $dullBlue;
 }

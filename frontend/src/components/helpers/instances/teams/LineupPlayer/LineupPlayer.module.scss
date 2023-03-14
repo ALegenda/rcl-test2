@@ -1,9 +1,10 @@
 @import 'tools/styles/helpers';
 @import 'tools/styles/flex';
 @import 'tools/styles/grid';
+@import 'styles/constants';
 
 .lineupPlayer {
-    background: #FFFFFF;
+    background: $white1;
     @include borderRadius(10px);
     @include removeLinkUnderline();
 
@@ -18,7 +19,7 @@
         width: 118px;
         height: 93px;
 
-        background: #eeeeee;
+        background: $white5;
         @include borderRadius(10px);
 
         .avatarImg {
@@ -41,7 +42,7 @@
 
     .whiteTop {
         @extend .greyTop;
-        background: #ffffff;
+        background: $white1;
     }
 
     .bottom {
@@ -61,7 +62,7 @@
             font-size: 15px;
             line-height: 16px;
             font-weight: 500;
-            color: #000000;
+            color: $black3;
 
             gap: 3px;
 
@@ -80,7 +81,29 @@
             font-size: 15px;
             line-height: 16px;
             font-weight: 500;
-            color: #8491AC;
+            color: $lightIndigo1;
+        }
+    }
+}
+
+.isDark {
+    background: $indigo2;
+
+    .greyTop {
+        background: $lightIndigo7;
+    }
+
+    .whiteTop {
+        background: $lightIndigo7;
+    }
+
+    .bottom {
+        .name {
+            color: $white1;
+        }
+
+        .maps {
+            color: $lightIndigo1;
         }
     }
 }

@@ -11,6 +11,10 @@ import {
 } from 'react-router-dom';
 
 import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
+import {
     Image,
 } from 'components/helpers/other';
 
@@ -20,9 +24,21 @@ import Kd from './Kd';
 import styles from './Player.module.scss';
 
 const Player: FC<IProps> = (props) => {
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
         <Link
-            className={classNames(styles.player, props.playerClassName)}
+            className={
+                classNames(
+                    styles.player,
+                    props.playerClassName,
+                    {
+                        [styles.isDark]: isDarkTheme,
+                    }
+                )
+            }
             to={`/players/${props.player.player.id}`}
         >
             <div className={classNames(styles.row, props.rowClassName)}>

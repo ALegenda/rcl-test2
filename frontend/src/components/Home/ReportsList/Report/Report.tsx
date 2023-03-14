@@ -11,6 +11,10 @@ import {
 } from 'react-router-dom';
 
 import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
+import {
     Image,
 } from 'components/helpers/other';
 
@@ -19,8 +23,21 @@ import arrowImage from './media/arrow.svg';
 import styles from './Report.module.scss';
 
 const Report: FC<IProps> = (props) => {
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
-        <div className={classNames(styles.report, props.className)}>
+        <div className={
+            classNames(
+                styles.report,
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
+            )
+        }
+        >
             <Image
                 className={styles.image}
                 src={props.report.imageUrl}

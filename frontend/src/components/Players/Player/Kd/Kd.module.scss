@@ -1,9 +1,19 @@
-.green {
+@import 'styles/constants';
+
+.lightPositive {
     font-weight: 700;
-    color: #159800;
+    color: $green;
 }
 
-.red {
+.lightNegative {
     font-weight: 700;
-    color: #BD0000;
+    color: $red;
+}
+
+.darkPositive {
+    color: $lightGreen;
+}
+
+.darkNegative {
+    color: $lightPink;
 }

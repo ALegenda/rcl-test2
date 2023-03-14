@@ -1,7 +1,12 @@
+import classNames from 'classnames';
 import React, {
     FC,
     useEffect,
 } from 'react';
+
+import {
+    useDarkTheme,
+} from 'helpers/hooks';
 
 import {
     getDefaultQueryUser,
@@ -26,6 +31,10 @@ const Reports: FC = () => {
         getReports,
     } = useReportsByUser();
 
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     const loadMoreReports = async (skip: number) => {
         await getReports({
             ...getDefaultQueryUser(),
@@ -46,7 +55,15 @@ const Reports: FC = () => {
     }
 
     return (
-        <div className={styles.reports}>
+        <div className={
+            classNames(
+                styles.reports,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
+            )
+        }
+        >
             <InfiniteScroll
                 className={styles.list}
                 hasMore={reports.length < reportsTotal}

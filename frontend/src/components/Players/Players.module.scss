@@ -3,16 +3,20 @@
 @import 'tools/styles/grid';
 @import 'tools/styles/animations';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .players {
     .tableContainer {
+        @include hideScrollbar();
+
         .table {
             font-size: 12px;
             line-height: 14px;
             font-weight: 500;
+            color: $black3;
 
             @include borderRadius(25px);
-            background: #F9F9FA;
+            background: $white4;
 
             .row {
                 @include dGrid();
@@ -26,8 +30,6 @@
 
             .rowTop {}
 
-            .magicTop {}
-
             .list {
                 @include dFlex();
                 @include flexColumn();
@@ -37,12 +39,10 @@
                     @include borderRadius(10px);
 
                     &:nth-child(odd) {
-                        background: #FFFFFF;
+                        background: $white1;
                     }
                 }
             }
-
-            .magicBottom {}
         }
     }
 
@@ -50,6 +50,23 @@
         .moreButton {
             font-style: normal;
             font-weight: 700;
+        }
+    }
+}
+
+.isDark {
+    .tableContainer {
+        .table {
+            color: $white1;
+            background: $indigo4;
+
+            .list {
+                .player {
+                    &:nth-child(odd) {
+                        background: $indigo2;
+                    }
+                }
+            }
         }
     }
 }
@@ -72,19 +89,12 @@
 
                     .column {
                         @include justifyContentCenter();
+                        @include alignItemsCenter();
                     }
                 }
 
                 .rowTop {
                     padding: 30px 6px;
-                }
-
-                .magicTop {
-                    display: none !important;
-                }
-
-                .magicBottom {
-                    display: none !important;
                 }
             }
         }
@@ -145,38 +155,20 @@
                     padding-right: 61px;
                 }
 
-                .magicTop {
-                    display: block !important;
-
-                    position: absolute;
-                    left: 15px;
-                    right: 35px;
-                    top: 38px;
-
-                    height: 30px;
-
-                    background: #F9F9FA;
-                    filter: blur(5px);
-                }
-
                 .list {
-                    @include blueScrollBar();
+                    @include lightBlueScrollBar();
 
                     padding: 10px 25px 18px 0;
                 }
+            }
+        }
+    }
 
-                .magicBottom {
-                    display: block !important;
-
-                    position: absolute;
-                    left: 15px;
-                    right: 35px;
-                    bottom: 10px;
-
-                    height: 38px;
-
-                    background: #F9F9FA;
-                    filter: blur(7px);
+    .isDark {
+        .tableContainer {
+            .table {
+                .list {
+                    @include darkBlueScrollBar();
                 }
             }
         }

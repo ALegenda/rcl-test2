@@ -2,6 +2,7 @@
 @import 'tools/styles/grid';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .header {
     width: 100%;
@@ -17,33 +18,58 @@
 
                 width: fit-content;
 
-                img {
+                img {}
 
-                }
                 .title {
                     font-style: normal;
                     font-weight: 700;
-                    color: #11192A;
+                    color: $indigo5;
                 }
             }
         }
-        .tabsContainer {
 
+        .tabsContainer {}
+
+        .buttonLocale {
+            font-weight: bold;
+            text-transform: uppercase;
+            color: $black3;
+
+            cursor: pointer;
         }
     }
-    .bottomTabsContainer {
-        .bottomTabs {
 
+    .bottomTabsContainer {
+        .bottomTabs {}
+    }
+}
+
+.isDark {
+    .content {
+        .logoContainer {
+            .logo {
+                .title {
+                    color: $white1;
+                }
+            }
+        }
+
+        .buttonLocale {
+            color: $white1;
         }
     }
 }
 
 @include applyResponsive320() {
     .header {
-        .content {
-            @include gridColumns(1fr 1fr);
+        padding-bottom: 25px;
 
-            padding: 13px 35px 6px 35px;
+        .content {
+            @include gridColumns(1fr auto auto);
+            @include alignItemsCenter();
+
+            gap: 9px;
+            padding: 33px 25px 25px 30px;
 
             .logoContainer {
                 .logo {
@@ -51,24 +77,38 @@
                         width: 37px;
                         height: 38px;
 
-                        margin-right: 13px;
+                        padding-right: 6px;
                     }
+
                     .title {
                         font-size: 10px;
                         line-height: 12px;
+
+                        padding-top: 3px;
                     }
                 }
             }
+
             .tabsContainer {
                 display: none;
             }
+
+            .buttonLocale {
+                width: fit-content;
+
+                font-size: 13px;
+                line-height: 15px;
+
+                margin-left: 6px;
+            }
         }
+
         .bottomTabsContainer {
             @include dFlex();
             @include flexRow();
             @include justifyContentCenter();
 
-            padding-left: 35px;
+            padding-left: 30px;
 
             .bottomTabs {
                 padding-right: 35px;
@@ -79,31 +119,74 @@
 
 @include applyResponsive768() {
     .header {
-        .content {
-            @include gridColumns(1fr 1fr 1fr);
+        padding-bottom: 0;
 
-            padding: 26px 74px 27px 74px;
+        .content {
+            @include gridColumns(auto 1fr auto auto);
+
+            padding: 26px 30px 27px 50px;
 
             .logoContainer {
                 .logo {
                     img {
-                        width: 37px;
+                        width: 46px;
                         height: 38px;
 
-                        margin-right: 13px;
+                        padding-right: 10px;
                     }
+
                     .title {
                         font-size: 10px;
                         line-height: 12px;
                     }
                 }
             }
+
             .tabsContainer {
                 display: block;
             }
+
+            .buttonLocale {
+                margin-left: 8px;
+            }
         }
+
         .bottomTabsContainer {
             display: none !important;
+        }
+    }
+}
+
+@include applyResponsive1024() {
+    .header {
+        .content {
+            @include gridColumns(auto 1fr auto auto auto);
+
+            gap: 10px;
+            padding: 26px 75px 27px 75px;
+
+            .buttonLocale {
+                font-size: 16px;
+                line-height: 18px;
+
+                padding-top: 2px;
+                margin: 0;
+            }
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .header {
+        .content {
+            gap: 18px;
+        }
+
+        .buttonLocale {
+            font-size: 18px;
+            line-height: 20px;
+
+            padding: 0;
         }
     }
 }

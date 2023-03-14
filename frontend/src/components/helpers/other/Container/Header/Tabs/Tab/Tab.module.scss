@@ -1,4 +1,6 @@
 @import 'tools/styles/helpers';
+@import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .tab {
     @include removeLinkUnderline();
@@ -6,21 +8,47 @@
 
     display: block;
     position: relative;
-    background: #F2F3F3;
+    background: $white3;
     width: fit-content;
 
     font-style: normal;
     font-weight: 400;
-    color: #7C7C7C;
+    color: $grey7;
     cursor: pointer;
 
     font-size: 9px;
     line-height: 11px;
-
-    padding: 12px 20px 12px 20px;
 }
 
 .isActive {
-    color: #FFFFFF;
-    background: #446ABB;
+    background: $blue2;
+    color: $white1;
+}
+
+.isDark {
+    background: $indigo4;
+    color: $lightIndigo3;
+}
+
+.isDarkActive {
+    background: $blue1;
+    color: $white1;
+}
+
+@include applyResponsive320() {
+    .tab {
+        padding: 12px 20px;
+    }
+}
+
+@include applyResponsive768() {
+    .tab {
+        padding: 10px 14px;
+    }
+}
+
+@include applyResponsive1024() {
+    .tab {
+        padding: 12px 20px;
+    }
 }

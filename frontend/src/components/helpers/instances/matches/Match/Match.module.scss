@@ -1,0 +1,180 @@
+@import 'tools/styles/flex';
+@import 'tools/styles/helpers';
+@import 'tools/styles/adaptive';
+@import 'styles/constants';
+
+.match {
+    @include dFlex();
+    @include flexColumn();
+    @include justifyContentBetween();
+    @include alignItemsCenter();
+
+    @include borderRadius(10px);
+    background: $white4;
+
+    .date {
+        font-style: normal;
+        font-weight: 400;
+        color: $brightBlue;
+    }
+
+    .live {
+        font-style: normal;
+        font-weight: 700;
+        color: $pink;
+    }
+
+    .basic {
+        @include dFlex();
+        @include flexRow();
+        @include justifyContentBetween();
+        @include alignItemsCenter();
+
+        position: relative;
+
+        .teamImage {
+            z-index: 2;
+        }
+
+        .score {
+            @include dFlex();
+            @include flexRow();
+
+            font-style: normal;
+            font-weight: 700;
+            color: $black2;
+
+            z-index: 2;
+        }
+
+        .pendingScore {
+            width: 130px;
+        }
+
+        .vsImage {
+            position: absolute;
+            z-index: 1;
+        }
+    }
+
+    .time {
+        font-style: normal;
+        font-weight: 400;
+        color: $black2;
+    }
+}
+
+.isDark {
+    background: $indigo2;
+
+    .live {
+        color: $lightPink;
+    }
+
+    .basic {
+        .score {
+            color: $white1;
+        }
+    }
+
+    .time {
+        color: $white1;
+    }
+}
+
+@include applyResponsive320 {
+    .match {
+        min-height: 196px;
+        padding: 28px 20px 39px 20px;
+
+        .date {
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+        .live {
+            font-size: 14px;
+            line-height: 16px;
+        }
+
+        .basic {
+            .teamImage {
+                width: 55px;
+                min-height: 55px;
+            }
+
+            .score {
+                font-size: 23px;
+                line-height: 26px;
+
+                gap: 35px;
+                padding: 0 15px;
+            }
+
+            .vsImage {
+                right: 82px;
+
+                width: 48px;
+                height: 64px;
+            }
+        }
+
+        .time {
+            font-size: 10px;
+            line-height: 14px;
+        }
+    }
+}
+
+@include applyResponsive768() {
+    .match {
+        padding: 28px 28px 39px 28px;
+
+        .basic {
+            .score {
+                font-size: 30px;
+                line-height: 35px;
+
+                gap: 40px;
+            }
+
+            .teamImage {
+                width: 68px;
+                max-height: 68px;
+            }
+
+            .vsImage {
+                right: 98px;
+
+                width: 56px;
+                height: 72px;
+            }
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .match {
+        padding: 28px 29px 30px 29px;
+
+        .basic {
+            .teamImage {
+                width: 82px;
+                min-height: 82px;
+            }
+
+            .vsImage {
+                right: 104px;
+
+                width: 73px;
+                height: 98px;
+            }
+        }
+    }
+}
+
+@include applyResponsive1440() {
+    .match {
+        padding: 28px 49px 30px 49px;
+    }
+}

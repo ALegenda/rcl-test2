@@ -10,6 +10,11 @@ import {
 } from 'tools/hooks';
 
 import {
+    useDarkTheme,
+    useIntl,
+} from 'helpers/hooks';
+
+import {
     getDefaultQueryUser,
 } from 'instances/players/functions';
 import {
@@ -20,17 +25,22 @@ import {
     MagicButton,
 } from 'components/helpers/buttons';
 import {
-    Container,
     InfiniteScroll,
     Loading,
 } from 'components/helpers/other';
 
 import Player from './Player';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './Players.module.scss';
 
 const Players: FC = () => {
     const [isPending, setIsPending] = useState(false);
+
+    const intl = useIntl();
 
     const {
         windowWidth,
@@ -42,6 +52,10 @@ const Players: FC = () => {
         playersTotal,
         getPlayers,
     } = usePlayersByUser();
+
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
 
     const loadMorePlayers = async (skip: number) => {
         if (isPending) {
@@ -69,36 +83,43 @@ const Players: FC = () => {
     }
 
     return (
-        <div className={styles.players}>
+        <div className={
+            classNames(
+                styles.players,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
+            )
+        }
+        >
             <div className={styles.tableContainer}>
                 <div className={styles.table}>
                     <div className={classNames(styles.row, styles.rowTop)}>
                         <div className={styles.column}>
-                            Игрок
+                            {intl(INTL_DATA.PLAYER)}
                         </div>
                         <div className={styles.column}>
-                            Команда
+                            {intl(INTL_DATA.TEAM)}
                         </div>
                         <div className={styles.column}>
-                            Матчей
+                            {intl(INTL_DATA.MATCHES)}
                         </div>
                         <div className={styles.column}>
-                            Фрагов
+                            {intl(INTL_DATA.KILLS)}
                         </div>
                         <div className={styles.column}>
-                            Помощи
+                            {intl(INTL_DATA.ASSISTS)}
                         </div>
                         <div className={styles.column}>
-                            Смертей
+                            {intl(INTL_DATA.DEATHS)}
                         </div>
                         <div className={styles.column}>
-                            K/D
+                            {intl(INTL_DATA.KD)}
                         </div>
                         <div className={styles.column}>
-                            K-D diff
+                            {intl(INTL_DATA.KD_DIFF)}
                         </div>
                     </div>
-                    <div className={styles.magicTop}/>
                     <InfiniteScroll
                         className={styles.list}
                         hasMore={players.length < playersTotal && windowWidth >= WINDOW_WIDTH.W1280}
@@ -116,7 +137,6 @@ const Players: FC = () => {
                             )
                         }
                     </InfiniteScroll>
-                    <div className={styles.magicBottom}/>
                 </div>
             </div>
             {

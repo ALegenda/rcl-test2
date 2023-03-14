@@ -3,30 +3,48 @@
 @import 'tools/styles/grid';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .teamsList {
     .title {
         font-style: normal;
         font-weight: 700;
-        color: #000000;
+        color: $black3;
     }
+
     .list {
-        @include blueScrollBar();
+        @include lightBlueScrollBar();
         @include overflowY(auto);
 
-        background: #FFFFFF;
+        background: $white1;
 
         .item {
             @include dGrid();
             @include alignItemsCenter();
 
-            border-bottom: 1px solid #F2F2F2;
+            border-bottom: 1px solid $white2;
         }
     }
+
     .moreButtonContainer {
         .moreButton {
             font-style: normal;
             font-weight: 700;
+        }
+    }
+}
+
+.isDark {
+    .title {
+        color: $white1;
+    }
+
+    .list {
+        @include darkBlueScrollBar();
+        background: $indigo2;
+
+        .item {
+            border-bottom: 1px solid $lightIndigo8;
         }
     }
 }
@@ -40,16 +58,18 @@
             margin-bottom: 23px;
             margin-left: 20px;
         }
+
         .list {
             @include borderRadius(10px);
 
-            padding: 0 25px 0 25px;
+            padding: 0 25px;
             margin-bottom: 21px;
 
             .item {
-                @include gridColumns(22px + 18px 30px + 20px 35px 45px 27px + 11px 40px);
+                @include gridColumns(50px 65px repeat(5, minmax(60px, auto)));
             }
         }
+
         .moreButtonContainer {
             @include dFlex();
             @include flexRow();
@@ -66,6 +86,18 @@
     }
 }
 
+@include applyResponsive768() {
+    .teamsList {
+        .list {
+            margin-bottom: 15px;
+
+            .item {
+                @include gridColumns(50px 65px repeat(5, 55px));
+            }
+        }
+    }
+}
+
 @include applyResponsive1280() {
     .teamsList {
         .title {
@@ -75,23 +107,26 @@
             margin-bottom: 20px;
             margin-left: 0;
         }
+
         .list {
             @include borderRadius(10px);
-            @include blueScrollBar();
+            @include lightBlueScrollBar();
 
-            padding: 0 24px 0 24px;
             margin-bottom: 0;
 
-            .item {
-                @include gridColumns(22px + 28px 30px + 30px 50px 50px 27px + 11px 40px);
-            }
+            .item {}
         }
+
         .moreButtonContainer {
             display: none !important;
 
-            .moreButton {
+            .moreButton {}
+        }
+    }
 
-            }
+    .isDark {
+        .list {
+            @include darkBlueScrollBar();
         }
     }
 }

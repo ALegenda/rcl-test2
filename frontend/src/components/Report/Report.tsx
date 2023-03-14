@@ -2,6 +2,7 @@ import {
     IParams,
 } from './types';
 
+import classNames from 'classnames';
 import React, {
     FC,
     useEffect,
@@ -13,6 +14,11 @@ import {
 import {
     formatDate,
 } from 'tools/functions';
+
+import {
+    useDarkTheme,
+    useIntl,
+} from 'helpers/hooks';
 
 import {
     useReportByUser,
@@ -28,9 +34,15 @@ import {
     PrimaryButton,
 } from '../helpers/buttons';
 
+import {
+    INTL_DATA,
+} from './intl';
+
 import styles from './Report.module.scss';
 
 const Report: FC = () => {
+    const intl = useIntl();
+
     const {
         id,
     } = useParams<IParams>();
@@ -39,6 +51,10 @@ const Report: FC = () => {
         report,
         getReport,
     } = useReportByUser();
+
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
 
     useEffect(() => {
         (async () => {
@@ -53,7 +69,15 @@ const Report: FC = () => {
     }
 
     return (
-        <div className={styles.report}>
+        <div className={
+            classNames(
+                styles.report,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
+            )
+        }
+        >
             <Image
                 className={styles.image}
                 src={report.imageUrl}
@@ -75,7 +99,7 @@ const Report: FC = () => {
                     to={'/news'}
                     className={styles.anotherButton}
                 >
-                    Другие новости
+                    {intl(INTL_DATA.OTHER_NEWS)}
                 </PrimaryButton>
             </div>
         </div>

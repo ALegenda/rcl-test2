@@ -1,12 +1,17 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .mapsCard {
     @include dFlex();
     @include flexRow();
 
-    background: #F9F9FA;
+    background: $white4;
+}
+
+.isDark {
+    background: $indigo4;
 }
 
 @include applyResponsive320() {

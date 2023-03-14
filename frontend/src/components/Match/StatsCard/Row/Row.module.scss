@@ -1,14 +1,25 @@
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .row {
     .item {
         font-style: normal;
         font-weight: 500;
-        color: #000000;
+        color: $black3;
         text-align: center;
 
         &:not(:last-child) {
-            border-right: 1px solid #EDEDED;;
+            border-right: 1px solid $white5;
+        }
+    }
+}
+
+.isDark {
+    .item {
+        color: $white1;
+
+        &:not(:last-child) {
+            border-right: 1px solid $lightIndigo8;
         }
     }
 }

@@ -1,10 +1,11 @@
 @import 'tools/styles/grid';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .stats {
     @include borderRadius(25px);
-    background: #F9F9FA;
+    background: $white4;
 
     .content {
         @include dGrid();
@@ -12,7 +13,7 @@
         .card {
             font-weight: 500;
 
-            background: #FFFFFF;
+            background: $white1;
             @include borderRadius(10px);
 
             padding: 14px 50px 15px 25px;
@@ -20,7 +21,7 @@
             .value {
                 font-size: 16px;
                 line-height: 18px;
-                color: #040404;
+                color: $black1;
 
                 margin-bottom: 4px;
             }
@@ -28,7 +29,25 @@
             .characteristic {
                 font-size: 9px;
                 line-height: 10px;
-                color: #AFAFAF;
+                color: $grey1;
+            }
+        }
+    }
+}
+
+.isDark {
+    background: $indigo4;
+
+    .content {
+        .card {
+            background: $indigo2;
+
+            .value {
+                color: $white1;
+            }
+
+            .characteristic {
+                color: $lightIndigo4;
             }
         }
     }

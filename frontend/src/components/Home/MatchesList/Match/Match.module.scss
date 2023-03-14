@@ -1,35 +1,44 @@
 @import 'tools/styles/flex';
 @import 'tools/styles/helpers';
 @import 'tools/styles/adaptive';
+@import 'styles/constants';
 
 .match {
     @include dFlex();
     @include flexColumn();
     @include alignItemsCenter();
 
-    background: #FFFFFF;
+    background: $white1;
 
     .date {
         font-style: normal;
         font-weight: 400;
-        color: #3173FF;
+        color: $brightBlue;
     }
+
     .vs {
         @include dFlex();
         @include flexRow();
         @include justifyContentBetween();
         @include alignItemsCenter();
 
-        .teamImage {
+        .teamImage {}
 
-        }
-        .vsImage {
-
-        }
+        .vsImage {}
     }
+
     .time {
         font-style: normal;
         font-weight: 400;
+        color: $grey7;
+    }
+}
+
+.isDark {
+    background: $indigo2;
+
+    .time {
+        color: $white1 !important;
     }
 }
 
@@ -47,6 +56,7 @@
 
             margin-bottom: 13px;
         }
+
         .vs {
             width: 100%;
 
@@ -56,13 +66,15 @@
                 width: 50px;
                 height: 50px;
             }
+
             .vsImage {
                 width: 34px;
                 height: 46px
             }
         }
+
         .time {
-            color: #000000;
+            color: $black3;
             font-size: 13px;
             line-height: 14px;
         }
@@ -83,6 +95,7 @@
 
             margin-bottom: 13px;
         }
+
         .vs {
             width: 100%;
 
@@ -92,13 +105,15 @@
                 width: 50px;
                 height: 50px;
             }
+
             .vsImage {
                 width: 34px;
                 height: 46px
             }
         }
+
         .time {
-            color: #7A7A7A;
+            color: $grey7;
             font-size: 13px;
             line-height: 14px;
         }

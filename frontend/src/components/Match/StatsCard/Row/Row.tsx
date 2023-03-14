@@ -7,11 +7,28 @@ import React, {
     FC,
 } from 'react';
 
+import {
+    useDarkTheme,
+} from 'helpers/hooks';
+
 import styles from './Row.module.scss';
 
 const Row: FC<IProps> = (props) => {
+    const {
+        isDarkTheme,
+    } = useDarkTheme();
+
     return (
-        <div className={classNames(styles.row, props.className)}>
+        <div className={
+            classNames(
+                styles.row,
+                props.className,
+                {
+                    [styles.isDark]: isDarkTheme,
+                }
+            )
+        }
+        >
             {
                 props.items.map(
                     (item, i) =>
