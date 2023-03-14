@@ -66,7 +66,7 @@
             margin-bottom: 21px;
 
             .item {
-                @include gridColumns(50px repeat(6, minmax(60px, auto)));
+                @include gridColumns(50px 65px repeat(5, minmax(60px, auto)));
             }
         }
 
@@ -92,7 +92,7 @@
             margin-bottom: 15px;
 
             .item {
-                @include gridColumns(50px repeat(6, 55px));
+                @include gridColumns(50px 65px repeat(5, 55px));
             }
         }
     }

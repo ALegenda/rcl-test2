@@ -63,7 +63,7 @@
         padding-left: 7px;
     }
 
-    .gamesTotal {
+    .loosesTotal {
         font-style: normal;
         font-weight: 700;
         text-align: start;
@@ -72,10 +72,10 @@
         font-size: 13px;
         line-height: 12px;
 
-        padding-left: 5px;
+        padding-left: 15px;
     }
 
-    .loosesTotal {
+    .gamesTotal {
         font-style: normal;
         font-weight: 700;
         text-align: end;
@@ -84,7 +84,7 @@
         font-size: 13px;
         line-height: 12px;
 
-        padding-right: 5px;
+        padding-right: 15px;
     }
 }
 
@@ -105,11 +105,11 @@
         color: $white1;
     }
 
-    .gamesTotal {
+    .loosesTotal {
         color: $white1;
     }
 
-    .loosesTotal {
+    .gamesTotal {
         color: $white1;
     }
 }

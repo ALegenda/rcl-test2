@@ -52,16 +52,16 @@ const Match: FC<IProps> = (props) => {
         }
         >
             {
-                props.status !== 'started' ?
+                props.status === 'started' ?
+                    <div className={styles.live}>
+                        {intl(INTL_DATA.LIVE)}
+                    </div> :
                     <Link
                         className={styles.date}
                         to={`/games/${props.match.id}`}
                     >
                         {formatDate(props.match.startedAt)}
-                    </Link> :
-                    <div className={styles.live}>
-                        {intl(INTL_DATA.LIVE)}
-                    </div>
+                    </Link>
             }
             <div className={styles.basic}>
                 {

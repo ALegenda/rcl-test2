@@ -56,13 +56,13 @@ const Team: FC<IProps> = (props) => {
             <div className={styles.draws}>
                 {props.team.draws}
             </div>
+            <div className={styles.loosesTotal}>
+                {props.team.loses}
+            </div>
             <div className={styles.gamesTotal}>
                 {
                     props.team.wins + props.team.loses + props.team.draws
                 }
-            </div>
-            <div className={styles.loosesTotal}>
-                {props.team.loses}
             </div>
         </div>
     );
