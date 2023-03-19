@@ -1,0 +1,73 @@
+@import 'tools/styles/flex';
+@import 'tools/styles/grid';
+@import 'tools/styles/adaptive';
+@import 'styles/constants';
+
+.matches {
+    .emptyResult {
+        color: $white1;
+    }
+
+    .listContainer {
+        @include dFlex();
+
+        .list {
+            @include dGrid();
+
+            .match {}
+        }
+    }
+}
+
+.isDark {
+    .emptyResult {
+        color: $black3;
+    }
+}
+
+@include applyResponsive320() {
+    .matches {
+        .emptyResult {}
+
+        .listContainer {
+            @include justifyContentCenter();
+            width: 100%;
+
+            .list {
+                @include gridColumns(repeat(1, minmax(100%, 360px)));
+                gap: 10px;
+
+                .match {}
+            }
+        }
+    }
+}
+
+@include applyResponsive768() {
+    .matches {
+        .emptyResult {}
+
+        .listContainer {
+            .list {
+                @include gridColumns(repeat(2, 1fr));
+                gap: 15px;
+
+                .match {}
+            }
+        }
+    }
+}
+
+@include applyResponsive1280() {
+    .matches {
+        .emptyResult {}
+
+        .listContainer {
+            .list {
+                @include gridColumns(repeat(3, 1fr));
+
+                .match {}
+            }
+        }
+    }
+}

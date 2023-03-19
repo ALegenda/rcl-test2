@@ -109,7 +109,14 @@ const Match: FC<IProps> = (props) => {
                     />
                 }
                 <img
-                    className={styles.vsImage}
+                    className={
+                        classNames(
+                            styles.vsImage,
+                            {
+                                [styles.pendingVsImage]: props.status === 'pending',
+                            }
+                        )
+                    }
                     src={isDarkTheme ? vsDarkImage : vsLightImage}
                     alt={''}
                 />

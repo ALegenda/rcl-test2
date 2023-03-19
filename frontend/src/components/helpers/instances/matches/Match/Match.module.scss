@@ -55,6 +55,8 @@
             position: absolute;
             z-index: 1;
         }
+
+        .pendingVsImage {}
     }
 
     .time {
@@ -112,10 +114,14 @@
             }
 
             .vsImage {
-                right: 82px;
+                right: 80px;
 
                 width: 48px;
                 height: 64px;
+            }
+
+            .pendingVsImage {
+                right: 97px;
             }
         }
 
@@ -144,10 +150,14 @@
             }
 
             .vsImage {
-                right: 98px;
+                right: 96px;
 
                 width: 56px;
                 height: 72px;
+            }
+
+            .pendingVsImage {
+                right: 107px;
             }
         }
     }
@@ -168,6 +178,10 @@
 
                 width: 73px;
                 height: 98px;
+            }
+
+            .pendingVsImage {
+                right: 113px;
             }
         }
     }

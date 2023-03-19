@@ -43,14 +43,12 @@
                 .stats {}
 
                 .insideLineup {}
-
-                .insideMatchesList {}
             }
         }
 
         .outsideLineup {}
 
-        .outsideMatchesList {}
+        .outsideMatches {}
     }
 }
 
@@ -137,10 +135,6 @@
                 .insideLineup {
                     display: none !important;
                 }
-
-                .insideMatchesList {
-                    display: none !important;
-                }
             }
         }
 
@@ -148,7 +142,7 @@
             padding: 0 15px 15px 15px;
         }
 
-        .outsideMatchesList {
+        .outsideMatches {
             padding: 0 15px 15px 15px;
         }
     }
@@ -183,7 +177,7 @@
             padding-bottom: 20px;
         }
 
-        .outsideMatchesList {
+        .outsideMatches {
             padding-bottom: 28px;
         }
     }
@@ -213,18 +207,10 @@
                 .insideLineup {
                     @include dFlex();
                 }
-
-                .insideMatchesList {
-                    @include dFlex();
-                }
             }
         }
 
         .outsideLineup {
-            display: none !important;
-        }
-
-        .outsideMatchesList {
             display: none !important;
         }
     }
