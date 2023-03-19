@@ -11,33 +11,29 @@
         .commonCardContainer {
             @include dFlex();
 
-            .commonCard {
-
-            }
+            .commonCard {}
         }
-        .mapsCardContainer {
-            .mapsCard {
 
-            }
+        .mapsCardContainer {
+            @include dFlex();
+
+            .mapsCard {}
         }
     }
+
     .statsCardContainer {
         @include dFlex();
 
-        .statsCard {
-
-        }
+        .statsCard {}
     }
+
     .right {
         @include dFlex();
 
         .teamCardContainer {
-            .team1Card {
+            .team1Card {}
 
-            }
-            .team2Card {
-
-            }
+            .team2Card {}
         }
     }
 }
@@ -48,29 +44,29 @@
 
         width: 100%;
 
+        gap: 12px;
+
         .left {
             @include flexColumn();
 
-            margin-right: 12px;
+            gap: 10px;
 
             .commonCardContainer {
                 @include flexRow();
                 @include justifyContentCenter();
 
-                .commonCard {
-                    margin-bottom: 12px;
-                }
+                .commonCard {}
             }
-            .mapsCardContainer {
-                @include hideScrollbar();
 
-                overflow: auto;
+            .mapsCardContainer {
+                @include justifyContentCenter();
 
                 .mapsCard {
                     width: fit-content;
                 }
             }
         }
+
         .statsCardContainer {
             @include flexRow();
             @include justifyContentCenter();
@@ -80,6 +76,7 @@
                 margin-bottom: 12px;
             }
         }
+
         .right {
             @include flexColumn();
 
@@ -91,10 +88,12 @@
                 .team1Card {
                     width: fit-content;
 
-                    margin-bottom: 12px;
+                    margin: 0 15px 12px 15px;
                 }
+
                 .team2Card {
                     width: fit-content;
+                    margin: 0 15px;
                 }
             }
         }
@@ -105,32 +104,39 @@
     .match {
         .left {
             @include flexRow();
+            @include justifyContentCenter();
+            @include alignItemsCenter();
+
+            margin-right: 0;
 
             .commonCardContainer {
                 .commonCard {
-
+                    margin-bottom: 0;
                 }
             }
-            .mapsCardContainer {
-                .mapsCard {
 
-                }
+            .mapsCardContainer {
+                .mapsCard {}
             }
         }
+
         .statsCardContainer {
             .statsCard {
-
+                margin-bottom: 0;
             }
         }
+
         .right {
             @include alignItemsCenter();
 
             .teamCardContainer {
                 .team1Card {
-
+                    margin: 0;
+                    margin-bottom: 12px;
                 }
-                .team2Card {
 
+                .team2Card {
+                    margin: 0;
                 }
             }
         }
@@ -143,34 +149,31 @@
 
         .left {
             @include flexColumn();
-
-            margin-right: 12px;
+            @include justifyContentStart();
+            @include alignItemsStart();
 
             .commonCardContainer {
-                .commonCard {
-                    margin-bottom: 12px;
-                }
+                .commonCard {}
             }
-            .mapsCardContainer {
-                .mapsCard {
 
-                }
+            .mapsCardContainer {
+                .mapsCard {}
             }
         }
+
         .statsCardContainer {
             .statsCard {
-                margin-right: 12px;
                 margin-bottom: 0;
             }
         }
+
         .right {
             .teamCardContainer {
                 .team1Card {
                     margin-bottom: 12px;
                 }
-                .team2Card {
 
-                }
+                .team2Card {}
             }
         }
     }
