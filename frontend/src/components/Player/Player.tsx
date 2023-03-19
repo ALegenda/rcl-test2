@@ -25,7 +25,7 @@ import {
 } from 'components/helpers/other';
 
 import Avatar from './Avatar';
-import MatchesList from './MatchesList';
+import Matches from './Matches';
 import Stats from './Stats';
 
 import {
@@ -124,14 +124,10 @@ const Player: FC = () => {
                         className={styles.stats}
                         id={id ?? ''}
                     />
-                    <MatchesList
-                        className={styles.insideMatchesList}
-                        id={id ?? ''}
-                    />
                 </div>
             </div>
-            <MatchesList
-                className={styles.outsideMatchesList}
+            <Matches
+                className={styles.outsideMatches}
                 id={id ?? ''}
             />
         </div>

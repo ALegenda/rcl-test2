@@ -36,12 +36,10 @@
             }
 
             .stats {}
-
-            .insideMatchesList {}
         }
     }
 
-    .outsideMatchesList {}
+    .outsideMatches {}
 }
 
 .isDark {
@@ -79,6 +77,9 @@
             .info {
                 @include flexColumn();
 
+                width: 100%;
+                max-width: 360px;
+
                 font-size: 15px;
                 line-height: 35px;
 
@@ -114,14 +115,10 @@
                         }
                     }
                 }
-
-                .insideMatchesList {
-                    display: none !important;
-                }
             }
         }
 
-        .outsideMatchesList {
+        .outsideMatches {
             padding: 0 15px;
         }
     }
@@ -163,6 +160,9 @@
             }
 
             .info {
+                width: auto;
+                max-width: none;
+
                 gap: 15px;
 
                 .basic {
@@ -172,15 +172,7 @@
                 .stats {
                     max-width: 551px;
                 }
-
-                .insideMatchesList {
-                    @include dFlex();
-                }
             }
-        }
-
-        .outsideMatchesList {
-            display: none !important;
         }
     }
 }

@@ -14,8 +14,8 @@ import {
 } from 'helpers/hooks';
 
 import {
-    useTeamMatchesByUser,
-} from 'instances/teams/hooks';
+    usePlayerMatchesByUser,
+} from 'instances/players/hooks';
 
 import {
     Match,
@@ -36,7 +36,7 @@ const Matches: FC<IProps> = (props) => {
     const {
         matches,
         getMatches,
-    } = useTeamMatchesByUser();
+    } = usePlayerMatchesByUser();
 
     const {
         isDarkTheme,
