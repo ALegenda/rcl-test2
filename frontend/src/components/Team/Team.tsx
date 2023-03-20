@@ -26,7 +26,7 @@ import {
 } from 'components/helpers/other';
 
 import Lineup from './Lineup';
-import MatchesList from './MatchesList';
+import Matches from './Matches';
 import Stats from './Stats';
 
 import {
@@ -123,18 +123,14 @@ const Team: FC = () => {
                         className={styles.insideLineup}
                         id={id ?? ''}
                     />
-                    <MatchesList
-                        className={styles.insideMatchesList}
-                        id={id ?? ''}
-                    />
                 </div>
             </div>
             <Lineup
                 className={styles.outsideLineup}
                 id={id ?? ''}
             />
-            <MatchesList
-                className={styles.outsideMatchesList}
+            <Matches
+                className={styles.outsideMatches}
                 id={id ?? ''}
             />
         </div>

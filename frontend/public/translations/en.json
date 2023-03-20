@@ -73,8 +73,7 @@
     "team/stats/kdDiff": "K/D ratio",
     "team/lineup/title": "Current lineup",
     "team/lineup/player/maps": "Maps",
-    "team/matchesList/emptyResult": "This team has not completed any matches yet. Stay tuned!",
-    "team/matchesList/title": "Matches",
+    "team/matches/emptyResult": "This team has not completed any matches yet. Stay tuned!",
     "teams/title": "Clubs",
     "teams/subtitle": "Season 2022/2023"
   }

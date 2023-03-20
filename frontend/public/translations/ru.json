@@ -73,8 +73,7 @@
     "team/stats/kdDiff": "K/D разница",
     "team/lineup/title": "Текущий состав",
     "team/lineup/player/maps": "Карт",
-    "team/matchesList/emptyResult": "У данной команды еще не завершён ни один матч. Следите за обновлениями!",
-    "team/matchesList/title": "Матчи",
+    "team/matches/emptyResult": "У данной команды еще не завершён ни один матч. Следите за обновлениями!",
     "teams/title": "Клубы",
     "teams/subtitle": "Сезон 2022/2023"
   }
