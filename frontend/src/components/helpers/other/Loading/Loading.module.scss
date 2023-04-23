@@ -1,8 +1,0 @@
-@import 'tools/styles/flex';
-
-.loading {
-    @include dFlex();
-    @include flexRow();
-    @include justifyContentCenter();
-    @include alignItemsCenter();
-}
