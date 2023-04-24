@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "./logo.js";
 import SocFooter from "./social_footer.js";
 
-let docLinks = ['/docs/Kartochka_organizacii.pdf', '/docs/Usloviya_polzovania_saitom.docx', '/docs/Contacts.pdf',]
+let docLinks = ['/docs/Usloviya_polzovania_saitom.docx', '/docs/Contacts.pdf',]
 
 export default class Footer extends React.Component {
     render() {
