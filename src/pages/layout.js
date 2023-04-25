@@ -24,9 +24,9 @@ function Layout() {
     let bullets = [{ 'href': '/news', 'title': 'Новости' }, { 'href': '/matches', 'title': 'Результаты' }, { 'href': '/teams', 'title': 'Команды' }, { 'href': '/players', 'title': 'Игроки' }, { 'href': '/docs', 'title': 'Документы' }];
 
     // Footer constants
-    let contacts = { 'phone': '+7 495 7972727', 'email': 'info@ruscyberleague.ru' };
+    let contacts = { 'email': 'info@ruscyberleague.ru' };
     let footer_general = [{ 'link': '/news', 'text': 'Новости' }, { 'link': '/matches', 'text': 'Результаты' }, { 'link': '/players', 'text': 'Игроки' }, { 'link': '/docs', 'text': 'Документы' }];
-    let footer_links = ['УСЛОВИЯ ПОЛЬЗОВАНИЯ САЙТОМ', 'КОНТАКТЫ']; // TODO рефактор со ссылками, пока пустые
+    let footer_links = ['СВЕДЕНИЯ ОБ ОРГАНИЗАЦИИ', 'УСЛОВИЯ ПОЛЬЗОВАНИЯ САЙТОМ', 'КОНТАКТЫ']; // TODO рефактор со ссылками, пока пустые
     let disclaimer = '© RCL 2021—' + currentYear + ' Все права защищены';
 
     useEffect(() => {
