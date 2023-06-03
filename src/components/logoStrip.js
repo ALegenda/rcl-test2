@@ -5,7 +5,6 @@ export default class LogoStrip extends React.Component {
         let isMobile = window.screen.width > 1100 ? false : true;
         if (!isMobile){
             return (<div class="logo-strip desktop">
-                        <div class="image-wrapper"><img class="logo-strip-img" src="img/logo_gd.svg"></img></div>
                         <div class="image-wrapper"><img class="logo-strip-img" src="img/logo_fcsr.svg"></img></div>
                         <div class="image-wrapper"><img class="logo-strip-img" src="img/logo_syn.svg"></img></div>
                         <div class="image-wrapper"><img class="logo-strip-img" src="img/logo_odinn.svg"></img></div>
@@ -15,7 +14,6 @@ export default class LogoStrip extends React.Component {
             </div>)
         } else {
             return (<div class="logo-strip mobile">
-                        <div class="image-wrapper"><img class="logo-strip-img" src="img/logo_gd_inverse.svg"></img></div>
                         <div class="image-wrapper"><img class="logo-strip-img" src="img/logo_fcsr_inverse.svg"></img></div>
                         <div class="image-wrapper"><img class="logo-strip-img" src="img/logo_syn_inverse.svg"></img></div>
                         <div class="image-wrapper"><img class="logo-strip-img" src="img/logo_odinn_inverse.svg"></img></div>
