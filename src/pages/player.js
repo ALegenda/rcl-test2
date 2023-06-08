@@ -40,6 +40,7 @@ function Player() {
                 </div>
                 <div class="detail">
                     <div class="info">
+                        <div class="info-item">ФИО: {`${player.firstName} ${player.lastName}`}</div>
                         <div class="info-item">Никнейм: {player.nickName}</div>
                         <div class="info-item">Возраст: {player.age}</div>
                         <div class="info-item">Страна: {player.country} <img class="country-logo" src={player.countryLogo}></img></div>
