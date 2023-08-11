@@ -18,6 +18,15 @@ img {
   transition: all 0.2s ease-in-out !important;
 }
 
+.playoff-team {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -29,6 +38,166 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.playoffcard-wrapper {
+  display: flex;
+  border: 1px solid #dfdfdf;
+  box-shadow: 0px 0px 25px rgba(0,0,0,0.1);
+}
+
+.playoff-team {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.playoff-team {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 1em;
+  padding-right: 0px;
+}
+
+.playoff-group {
+  max-width: 100%;
+}
+
+div#bracket3 {
+  height: 520px;
+  display: flex;
+}
+
+div#bracket1 {
+  display: flex;
+  height: 270px;
+}
+
+div#bracket2 {
+  display: flex;
+  height: 270px;
+}
+
+div#group5 {
+  flex-direction: row !important;
+  align-items: center;
+}
+
+svg {
+  width: 100%;
+}
+
+.svg-wrap {
+  width: 100%;
+  min-width: 100px;
+  height: 100%;
+}
+
+div#group4 {
+  margin-top: 4em;
+}
+
+.playoff-wrapper.news-page-wrapper {
+  padding: 10%;
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+.playoff-group {
+  gap: 1em;
+  display: flex;
+}
+
+.playoffcard-wrapper {
+  height: max-content;
+}
+
+.playoff-team:last-child {
+  border-bottom: 0px;
+}
+
+div#follow1 {
+  height: 800px;
+  display: flex;
+}
+
+div#group4 {
+  justify-content: space-between;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+div#group5 {
+  flex-direction: row !important;
+}
+
+div#group9 {
+  flex-direction: column;
+}
+
+div#group7 {
+  flex-direction: column;
+}
+
+div#group5 {
+  flex-direction: column;
+}
+
+div#group8 {
+  align-items: center;
+}
+
+div#group1 {
+  flex-direction: column;
+}
+
+div#group3 {
+  align-items: center;
+}
+
+div#group2 {
+  flex-direction: column;
+}
+
+div#group6 {
+  align-items: center;
+}
+
+.playoff-score {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  border-left: 1px solid #cfcfcf;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.playoff-team {
+  gap: 1em;
+  text-transform: uppercase;
+}
+
+.playoff-score {
+  font-weight: 600;
+}
+
+.playoffcard-wrapper {
+  max-width: max-content;
+  min-width: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.playoff-teams {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+img.playoff-logo-team {
+  max-width: 50px;
 }
 
 .navigation-wrapper {
@@ -165,6 +334,79 @@ img.featured-team-logo {
 .cap {
   font-weight: 400;
   font-size: 14px;
+}
+
+@media(max-width:1450px){
+div#group5 {
+  overflow-x: scroll;
+  width: max-content;
+}
+div#group5 {
+  overflow-x: scroll;
+  width: max-content;
+  padding-left: 10%;
+  padding-right: 2em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+div#group9 {
+  max-width: max-content;
+}
+div#group5 {
+  padding: 0px;
+}
+.playoff-wrapper.news-page-wrapper {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+div#group5 {
+}
+div#group4 {
+  justify-content: space-between;
+  padding-left: 15%;
+  padding-right: 0px;
+}
+.playoff-wrapper.news-page-wrapper {
+  overflow-x: hidden;
+}
+.playoff-team a {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+div#group8 {
+  padding: 10%;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.playoff-team {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 4px;
+  padding-right: 0px;
+}
+div#group4 {
+  padding-right: 0px;
+}
+}
+
+@media (max-width:1100px){
+  div#group8 {
+    padding: 0px !important;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .playoff-wrapper.news-page-wrapper {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+  }
+  div#group4 {
+    padding-right: 15%;
+  }
+  div#group5 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
 }
 
 .days-wrapper,

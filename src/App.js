@@ -11,6 +11,7 @@ import Player from "./pages/player";
 import FourOhFour from "./pages/404";
 import Team from './pages/team';
 import Home from "./pages/home";
+import Playoff from './pages/playoff';
 import Matches from './pages/matches';
 
 import 'animate.css';
@@ -52,6 +53,7 @@ function App() {
               <Route path="team">
                 <Route path=":teamId" element={<Team />} />
               </Route>
+              <Route path="playoff" element={<Playoff />} />
               <Route path="news" element={<News />} />
               <Route path="ladder" element={<Ladder />} />
               <Route path="match">
@@ -67,5 +69,9 @@ function App() {
       </div>
     );
 }
+
+/*<Route path="playoff">
+<Route path=":playoffId" element={<Playoff />} />
+</Route>*/
 
 export default App;
