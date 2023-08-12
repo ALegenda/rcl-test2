@@ -336,6 +336,30 @@ img.featured-team-logo {
   font-size: 14px;
 }
 
+.playoffcard-wrapper {
+  color: black !important;
+}
+
+.playoff-time {
+  background: #f3f3f3;
+}
+
+.playoff-inner {
+  display: flex !important;
+  flex-direction: row !important;
+  color: black !important;
+}
+
+.playoffcard-wrapper {
+  flex-direction: column;
+}
+
+.playoff-time {
+    color: grey;
+    text-align: center;
+    padding: 0.5em;
+}
+
 @media(max-width:1450px){
 div#group5 {
   overflow-x: scroll;
@@ -373,6 +397,7 @@ div#group4 {
   margin-left: 0px;
   margin-right: 0px;
 }
+
 div#group8 {
   padding: 10%;
   padding-top: 0px;
