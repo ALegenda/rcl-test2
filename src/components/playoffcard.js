@@ -20,7 +20,7 @@ export default class PlayoffCard extends React.Component {
                     <div class="playoff-score">{this.props.team2Score}</div>
                 </div>
             </div>
-            <div class="playoff-time">{("0" + date.getDay().toString()).slice(-2) + "." + ("0" + date.getMonth().toString()).slice(-2) + " " + ("0" + date.getHours().toString()).slice(-2) + ":" + ("0" + date.getMinutes().toString()).slice(-2)}</div>
+            <div class="playoff-time">{("0" + date.getDate().toString()).slice(-2) + "." + ("0" + (date.getMonth() + 1).toString()).slice(-2) + " " + ("0" + date.getHours().toString()).slice(-2) + ":" + ("0" + date.getMinutes().toString()).slice(-2)}</div>
         </div></a>)
     }
 }
