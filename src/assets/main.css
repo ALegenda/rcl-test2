@@ -1,0 +1,13 @@
+@import "@/assets/fonts/Stratum2/Stratum2.css";
+@import url('https://fonts.cdnfonts.com/css/sf-ui-display');
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.muted {
+    color: #666F90;
+}

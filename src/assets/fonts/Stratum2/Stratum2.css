@@ -1,0 +1,95 @@
+@font-face {
+    font-family: "Stratum2";
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebThin.eot");
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebThin.eot?#iefix") format("embedded-opentype"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebThin.woff") format("woff"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebThin.woff2") format("woff2");
+    font-weight: 100;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "Stratum2";
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebLight.eot");
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebLight.eot?#iefix") format("embedded-opentype"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebLight.woff") format("woff"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebLight.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "Stratum2";
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebRegular.eot");
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebRegular.eot?#iefix") format("embedded-opentype"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebRegular.woff") format("woff"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebRegular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "Stratum2";
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebMedium.eot");
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebMedium.eot?#iefix") format("embedded-opentype"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebMedium.woff") format("woff"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebMedium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "Stratum2";
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebBold.eot");
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebBold.eot?#iefix") format("embedded-opentype"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebBold.woff") format("woff"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebBold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "Stratum2";
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebBlack.eot");
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebBlack.eot?#iefix") format("embedded-opentype"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebBlack.woff") format("woff"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebBlack.woff2") format("woff2");
+    font-weight: 900;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "Stratum2";
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebThinItalic.eot");
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebThinItalic.eot?#iefix") format("embedded-opentype"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebThinItalic.woff") format("woff"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebThinItalic.woff2") format("woff2");
+    font-weight: 100;
+    font-style: italic
+}
+
+@font-face {
+    font-family: "Stratum2";
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebLightItalic.eot");
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebLightItalic.eot?#iefix") format("embedded-opentype"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebLightItalic.woff") format("woff"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebLightItalic.woff2") format("woff2");
+    font-weight: 300;
+    font-style: italic
+}
+
+@font-face {
+    font-family: "Stratum2";
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebRegularItalic.eot");
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebRegularItalic.eot?#iefix") format("embedded-opentype"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebRegularItalic.woff") format("woff"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebRegularItalic.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic
+}
+
+@font-face {
+    font-family: "Stratum2";
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebMediumItalic.eot");
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebMediumItalic.eot?#iefix") format("embedded-opentype"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebMediumItalic.woff") format("woff"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebMediumItalic.woff2") format("woff2");
+    font-weight: 500;
+    font-style: italic
+}
+
+@font-face {
+    font-family: "Stratum2";
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebBoldItalic.eot");
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebBoldItalic.eot?#iefix") format("embedded-opentype"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebBoldItalic.woff") format("woff"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebBoldItalic.woff2") format("woff2");
+    font-weight: 700;
+    font-style: italic
+}
+
+@font-face {
+    font-family: "Stratum2";
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebBlackItalic.eot");
+    src: url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebBlackItalic.eot?#iefix") format("embedded-opentype"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebBlackItalic.woff") format("woff"), url("https://cdn.akamai.steamstatic.com/apps/csgo/fonts/Stratum2WebBlackItalic.woff2") format("woff2");
+    font-weight: 900;
+    font-style: italic
+}
