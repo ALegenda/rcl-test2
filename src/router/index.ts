@@ -11,6 +11,14 @@ const router = createRouter({
                 title: 'Открытые квалификации // РКЛ',
             }
         },
+        {
+            path: '/docs',
+            name: 'docs',
+            component: () => import('../views/DocsView.vue'),
+            meta: {
+                title: 'Документы // РКЛ',
+            }
+        },
     ]
 })
 

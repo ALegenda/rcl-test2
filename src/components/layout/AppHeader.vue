@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header :class="$style.headerWrapper">
     <div :class="$style.headerContainer">
       <RouterLink :class="$style.logoItem" to="/">
         <LogoIcon/>
@@ -17,7 +17,7 @@
           </TabButton>
         </RouterLink>
 
-        <a href="https://ruscyberleague.ru/" rel="noopener">
+        <a href="https://first.ruscyberleague.ru/matches" rel="noopener">
           <TabButton highlighted>
             {{ t('navigation.s1Results') }}
           </TabButton>
@@ -48,6 +48,11 @@ const {t} = useI18n({useScope: 'global'})
 </script>
 
 <style module lang="scss">
+.headerWrapper {
+  position: relative;
+  z-index: 2;
+}
+
 .headerContainer {
   max-width: 115rem;
   margin: 0 auto;

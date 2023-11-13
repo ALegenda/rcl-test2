@@ -15,6 +15,10 @@ export const localeMessages = {
                 action: 'Перейти',
             },
         },
+        docs: {
+            subTitle: '2 Сезон 2023 – 2024',
+            sizeKb: 'КБ',
+        },
         socials: {
             vk: 'ВКонтакте',
             tg: 'Telegram',
@@ -43,6 +47,22 @@ export const localeMessages = {
                 caption: 'Apply for participation',
                 action: 'Apply now',
             },
+        },
+        docs: {
+            subTitle: '2 Season 2023 – 2024',
+            sizeKb: 'KB',
+        },
+        socials: {
+            vk: 'VK',
+            tg: 'Telegram',
+            tw: 'Twitch',
+            yt: 'YouTube',
+        },
+        partners: {
+            nft: 'VK NFT',
+            cgd: 'State Duma Committee on Physical Culture and Sports',
+            fed: 'Russian Federation of Computer Sports',
+            sin: 'Synergy University',
         },
     },
 }

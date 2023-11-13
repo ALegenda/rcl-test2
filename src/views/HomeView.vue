@@ -85,6 +85,7 @@ const {t} = useI18n({useScope: 'global'})
   font-size: 10.3rem;
   font-weight: 900;
   color: #EEEBDA;
+  -webkit-text-stroke: 3px #070A15;
   text-transform: uppercase;
   line-height: 1;
 
@@ -291,14 +292,13 @@ const {t} = useI18n({useScope: 'global'})
   .pageWrapper {
     &:before {
       position: absolute;
-      top: 19rem;
+      top: 17rem;
       left: 0;
 
-      width: 84rem;
-      height: 35rem;
+      width: 36rem;
+      height: 27rem;
       content: '';
-      //background: url("@/assets/images/bg/bg-m-lm.png") 0px -12.8rem / 84rem 47rem no-repeat;
-      background: url("@/assets/images/bg/bg-m-lm.png") no-repeat -38rem -16.5rem / 77rem 48rem;
+      background: url("@/assets/images/bg/bg-m-lm.png") transparent no-repeat left -5rem / 40rem 32rem;
 
       user-select: none;
       pointer-events: none;
@@ -308,13 +308,13 @@ const {t} = useI18n({useScope: 'global'})
       position: absolute;
       bottom: 0;
 
-      $width: 60rem;
+      $width: 57rem;
       left: calc(100% - $width);
       width: $width;
-      height: 24rem;
+      height: 29rem;
 
       content: '';
-      background: url("@/assets/images/bg/bg-m-rb.png") no-repeat -26rem -10rem / 132rem 75rem;
+      background: url("@/assets/images/bg/bg-m-rb.png") transparent no-repeat bottom right / 50rem 23rem;
 
       user-select: none;
       pointer-events: none;
@@ -359,6 +359,7 @@ const {t} = useI18n({useScope: 'global'})
     font-size: 14.765rem;
     font-weight: 900;
     text-transform: uppercase;
+    text-align: center;
     line-height: 0.75;
     color: #EEEBDA;
 
@@ -455,6 +456,11 @@ const {t} = useI18n({useScope: 'global'})
         }
       }
     }
+  }
+
+  .partnersList {
+    margin-left: 0;
+    display: grid;
   }
 }
 </style>
